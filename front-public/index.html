@@ -14,7 +14,7 @@
   <body>
     <div class="common-header">
       <div class="container">
-        <div class="common-header__logo"><a class="logo" href="#"><span>Интернет-магазин электроники</span><img src="img/xcom-logo.svg"/></a></div>
+        <div class="common-header__logo"><a class="logo" href="#"><span class="logo__text logo__text_m">Интернет-магазин электроники</span><span class="logo__img"><img src="img/xcom-logo.svg"/></span><span class="logo__text">Входит в «X-Com | Группа Компаний» </span></a></div>
         <div class="common-header__navbar navbar">
           <div class="navbar__buttons">
             <div class="navbar__user user user_mini">
@@ -27,21 +27,44 @@
             <div class="container">
               <div class="menu menu_main">
                 <ul>
-                  <li><a href="#">Доставка</a></li>
-                  <li><a href="#">Контакты</a></li>
-                  <li><a href="#">Оплата</a></li>
-                  <li><a href="#">Гарантия</a></li>
-                  <li><a href="#">О нас</a></li>
-                  <li><a href="#">Форум</a></li>
-                  <li><a href="#">Распродажа</a></li>
+                  <li class="delivery"><a href="#">Доставка</a></li>
+                  <li class="contacts"><a href="#">Контакты</a></li>
+                  <li class="payment"><a href="#">Оплата</a></li>
+                  <li class="warranty"><a href="#">Гарантия</a></li>
+                  <li class="about"><a href="#">О нас</a></li>
+                  <li class="forum"><a href="#">Форум</a></li>
+                  <li class="hobby-blog"><a href="#">Распродажа</a></li>
                 </ul>
               </div>
-              <div class="common-header__contacts">
-                <div class="common-header__phones">
-                  <div class="item"><a class="link link_phone" href="#">+7 495 799-96-69</a></div>
-                  <div class="item"><a class="link link_phone" href="#">8 800 200-00-69</a></div>
+              <div class="col col_1">
+                <div class="menu menu_sites">
+                  <ul>
+                    <li class="mobile"><a href="/m.xcom-shop.ru/?allways=1">Моб. версия</a></li>
+                    <li class="moscow">Москва</li>
+                    <li class="petersburg"><a class="gray" href="http://www.xcomspb.ru/">Санкт-Петербург</a></li>
+                  </ul>
                 </div>
-                <div class="common-header__social">               <span class="item"><a class="link link_social" href="#"><img src="img/icon_teleg.svg" width="48px" height="48px"/></a></span><span class="item"><a class="link link_social link_social_sms" href="#"><img src="img/icon_comment.svg" width="48px" height="48px"/></a></span><span class="item"><a class="link link_social" href="#"><img src="img/icon_viber.svg" width="48px" height="48px"/></a></span><span class="item"><a class="link link_social" href="#"><img src="img/icon_whatsapp.svg" width="48px" height="48px"/></a></span></div>
+              </div>
+              <div class="col col_2">
+                <div class="common-header__contacts">
+                  <div class="common-header__phones">
+                    <div class="item"><a class="link link_phone" href="#">+7 495 799-96-69</a></div>
+                    <div class="item"><a class="link link_phone" href="#">8 800 200-00-69</a></div>
+                  </div>
+                  <div class="common-header__social">               <span class="item"><a class="link link_social" href="#"><img src="img/icon_viber.svg" width="48px" height="48px"/></a></span><span class="item"><a class="link link_social" href="#"><img src="img/icon_whatsapp.svg" width="48px" height="48px"/></a></span></div>
+                </div>
+                <div class="common-header__off">
+                  Сейчас мы&nbsp;не&nbsp;можем ответить вам.
+                  Вы&nbsp;можете заказать <a href="/www.xcom-shop.ru/feedback/" rel="nofollow">обратный звонок</a>,
+                  мы&nbsp;перезвоним с&nbsp;9:00
+                  до&nbsp;21:00.
+                </div>
+              </div>
+              <div class="col col_3">
+                <div class="common-header__user" id="head_username">
+                  <p align="right"><span>Османов Сервер</span>[<a href="#" onclick="logout();return false;">Выйти</a>]<br/>[<a href="profile/">профиль</a>]&nbsp;[<a href="history/">история&nbsp;заказов</a>]</p>
+                  <p class="green push" align="right">Бонусный счет: 0&nbsp;баллов.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -55,12 +78,12 @@
                 <div class="search search_mini"><a class="search__link" href="#">Поиск</a><a class="search__close" href="#"><span></span><span></span></a>
                   <form class="search__form" action="">
                     <input class="search__input" type="text" placeholder="Поиск по каталогу"/>
-                    <input class="search__submit" type="submit"/>
+                    <button class="search__submit" type="submit">Найти Икс-комое</button>
                   </form>
                 </div>
               </li>
               <li> <span>|</span></li>
-              <li><a class="trigger trigger_catalog" href="#">Каталог</a></li>
+              <li><a class="trigger trigger_catalog" href="#"> <span>Весь </span><span>Каталог</span></a></li>
             </ul>
           </div>
         </div>
@@ -69,26 +92,26 @@
     <div class="navbar navbar_catalog">
       <div class="menu menu_catalog">
         <ul>
-          <li class="active"><a href="catalog.html">КОМПЬЮТЕРЫ И НОУТБУКИ</a></li>
-          <li><a href="catalog.html">КОМПЬЮТЕРНЫЕ КОМПЛЕКТУЮЩИЕ</a></li>
-          <li><a href="catalog.html">СЕРВЕРЫ И СХД</a></li>
-          <li><a href="catalog.html">ПЕРИФЕРИЯ</a></li>
-          <li><a href="catalog.html">ОРГТЕХНИКА</a></li>
-          <li><a href="catalog.html">ИБП</a></li>
-          <li><a href="catalog.html">РАСХОДНЫЕ МАТЕРИАЛЫ</a></li>
-          <li><a href="catalog.html">СЕТЕВОЕ ОБОРУДОВАНИЕ</a></li>
-          <li><a href="catalog.html">ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ</a></li>
-          <li><a href="catalog.html">СКС</a></li>
-          <li><a href="catalog.html">СИСТЕМЫ БЕЗОПАСНОСТИ</a></li>
-          <li><a href="catalog.html">СРЕДСТВА ЗАЩИТЫ ИНФОРМАЦИИ</a></li>
-          <li><a href="catalog.html">ЭЛЕКТРИКА И СИСТЕМЫ ЭЛЕКТРОПИТАНИЯ</a></li>
-          <li><a href="catalog.html">ТОРГОВОЕ ОБОРУДОВАНИЕ</a></li>
-          <li><a href="catalog.html">ТЕЛЕФОНИЯ</a></li>
-          <li><a href="catalog.html">ТОВАРЫ ДЛЯ ГЕЙМЕРОВ</a></li>
-          <li><a href="catalog.html">APPLE</a></li>
-          <li><a href="catalog.html">КЛИМАТИЧЕСКОЕ ОБОРУДОВАНИЕ</a></li>
-          <li><a href="catalog.html">ТЕЛЕВИЗОРЫ И ПРОЕКТОРЫ</a></li>
-          <li><a href="catalog.html">ПОРТАТИВНАЯ ТЕХНИКА</a></li>
+          <li class="active item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/comp-notebook.png" alt=""/></span><span class="item__title">КОМПЬЮТЕРЫ И НОУТБУКИ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/comp-komplekt.png" alt=""/></span><span class="item__title">КОМПЬЮТЕРНЫЕ КОМПЛЕКТУЮЩИЕ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/servers-shd.png" alt=""/></span><span class="item__title">СЕРВЕРЫ И СХД</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/perifiriya.png" alt=""/></span><span class="item__title">ПЕРИФЕРИЯ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/orgtechnika.png" alt=""/></span><span class="item__title">ОРГТЕХНИКА</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/ibp.png" alt=""/></span><span class="item__title">ИБП</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/rashodnie-materiali.png" alt=""/></span><span class="item__title">РАСХОДНЫЕ МАТЕРИАЛЫ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/setevoe-oborudovanie.png" alt=""/></span><span class="item__title">СЕТЕВОЕ ОБОРУДОВАНИЕ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/programm-obespechenie.png" alt=""/></span><span class="item__title">ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/sks.png" alt=""/></span><span class="item__title">СКС</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/sistemi-bezopasnosti.png" alt=""/></span><span class="item__title">СИСТЕМЫ БЕЗОПАСНОСТИ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/sredstva-zashiti.png" alt=""/></span><span class="item__title">СРЕДСТВА ЗАЩИТЫ ИНФОРМАЦИИ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/elektricka-sistema.png" alt=""/></span><span class="item__title">ЭЛЕКТРИКА И СИСТЕМЫ ЭЛЕКТРОПИТАНИЯ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/torgovoe-oborudovanie.png" alt=""/></span><span class="item__title">ТОРГОВОЕ ОБОРУДОВАНИЕ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/telefonia.png" alt=""/></span><span class="item__title">ТЕЛЕФОНИЯ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/tovari-geymeri.png" alt=""/></span><span class="item__title">ТОВАРЫ ДЛЯ ГЕЙМЕРОВ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/apple.png" alt=""/></span><span class="item__title">APPLE</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/klimaticheskoe-oborudovanie.png" alt=""/></span><span class="item__title">КЛИМАТИЧЕСКОЕ ОБОРУДОВАНИЕ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/tv-proektionnoe.png" alt=""/></span><span class="item__title">ТЕЛЕВИЗОРЫ И ПРОЕКТОРЫ</span></a></li>
+          <li class="item"><a href="catalog.html"> <span class="item__icon"><img src="https://www.xcom-shop.ru/mod/catalog/images/portativnaya-technika.png" alt=""/></span><span class="item__title">ПОРТАТИВНАЯ ТЕХНИКА</span></a></li>
         </ul>
       </div>
     </div>
