@@ -19,6 +19,9 @@
     .link_phone {
         font-size: 18px;
     }
+    .header .column.column-1 .sites-nav .mobile {
+        display: none;
+    }
 
 }
 
