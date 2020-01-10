@@ -19,10 +19,9 @@
     .link_phone {
         font-size: 18px;
     }
-    .header .column.column-1 .sites-nav .mobile {
+    .header .sites-nav li.mobile{
         display: none;
     }
-
 }
 
 @media screen and (max-width: 1023px){
