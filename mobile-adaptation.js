@@ -1,6 +1,8 @@
 $(document).ready(function () {
-  const header = $('.header')
-  const mHeader = $('.m-header')
+  const header = $('.header'),
+    mHeader = $('.m-header'),
+    bonusNum = $('#head_username .green.push').text()
+
   const mHeaderContent = function () {
     return (
       `<div class='m-header'>
@@ -31,6 +33,8 @@ $(document).ready(function () {
               <li class='m-user-list__item'><a href='/profile/'>Профиль</a></li>
               <li class='m-user-list__item'><a href='/history/'>История заказов</a></li>
               <li class='m-user-list__item'><a href='#' onclick="logout();return false;">Выйти</a></li>
+              <li class='m-user-list__item'><span class='green'>${bonusNum}</span></li>
+
             </ul>
           </div>
           <div class='m-menu'>
@@ -39,7 +43,7 @@ $(document).ready(function () {
             <div></div>
           </div>
           <div class='m-menu-block m-scroll'>
-            <div class='m-menu-block__close'></div>
+            <div class='m-menu-block__close'>Закрыть</div>
             <ul class='m-menu-list'>
               <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/delivery/">Доставка</a></li>
               <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/contacts/">Контакты</a></li>
@@ -110,8 +114,20 @@ $(document).ready(function () {
   $(document).on('click', '.m-menu', function () {
     $('.m-menu-block').fadeToggle(200)
   })
+  $(document).on('click', 'a.btn-show', function () {
+    $(this).closest('.catalog-menu').toggleClass('show')
 
+  })
+  $(document).on('click', '.m-menu-block__close', function () {
+    $('.m-menu-block').fadeOut(200)
+  })
 
+  $('#foot').find('table').addClass('footer-info')
+  $('#recent_topics').closest('table').addClass('forum-public')
+  $('.catalog-nav .search .show-main-menu').attr('id', 'main-menu')
+  $(document).on('click', '.main-menu__close', function () {
+    $('.catalog-nav .main-menu').fadeOut(200)
+  })
 
   //1023
   function w1023() {
@@ -125,11 +141,73 @@ $(document).ready(function () {
       mHeader.hide()
     }
   }
+  let catalogNavBtnCreate = false,
+    mainMenuBtnCreate = false
+  function w999() {
+    if (screen.width <= 999) {
+      console.log('Table');
+      let catalog = $('#catalog_nav')
+      const catalogNavBtn = `
+      <li class="catalog-menu__item catalog-menu__item--arrow">
+        <a href="#" class='btn-show'>
+          <span class="catalog-menu__icon">
+            <img src="./assets/icons/chevron-down-white.svg" alt=""></span>
+          <span class="catalog-menu__title">Показать все</span>
+        </a>
+      </li>
+      `
+      const mainMenuBtn = `
+        <div class="show-main-menu" id='main-menu2'>
+            <span>Каталог</span>
+        </div>
+      `
+      if (!catalogNavBtnCreate) {
+        catalog.find('.catalog-menu').prepend(catalogNavBtn)
+        catalogNavBtnCreate = true
+      }
+      if (!mainMenuBtnCreate) {
+        $('#main-menu').hide()
+        $('#search-div').find('form').append(mainMenuBtn)
+        mainMenuBtnCreate = true
+      }
+    } else {
+      $('#catalog_nav').find('.catalog-menu__item--arrow').remove()
+      catalogNavBtnCreate = false
+      $('#main-menu2').remove()
+      catalogNavBtnCreate = false
+      $('#main-menu').show()
+    }
+  }
+
+  let closeBtnCreate = false
+  function w767() {
+
+    if (screen.width <= 767) {
+      const closeBtn = `
+        <div class="main-menu__close">Закрыть</div>
+      `
+
+      if (!closeBtnCreate) {
+        setTimeout(function () {
+          $('.catalog-nav .catalog-menu .main-menu').prepend(closeBtn)
+        }, 1000)
+
+        closeBtnCreate = true
+      }
+    } else {
+      $('.catalog-nav .catalog-menu .main-menu').find('.main-menu__close').remove()
+      closeBtnCreate = false
+    }
+  }
 
   w1023()
+  w999()
+  w767()
 
   $(window).resize(function () {
     w1023()
+    w999()
+    w767()
   });
 
 
