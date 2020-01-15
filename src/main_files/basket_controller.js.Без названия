@@ -1,0 +1,34 @@
+function BasketController(basket) {
+    this.basketWidget = new basket_widget();
+
+    this.basketHandler = new basket_handler(basket);
+    this.checkoutHandler = new checkout_handler(this.basketHandler);
+    this.checkoutCalendar = new checkout_calendar(this.basketHandler, '#calendar_box');
+
+    this.basketHandler.fixBasketState();
+
+    this.basketWidget.drawBillBox(basket);
+    this.basketHandler.initHandlers();
+    this.checkoutHandler.initHandlers();
+
+    $('#bill_box').on('dlv_selectors:redrawn', this.basketHandler.initHandlers);
+}
+
+$(function() {
+    var controller = new BasketController(remote_basket);
+
+    setInterval(function(){
+        $.ajax({
+            url: '/ajax_request/',
+            data: {
+                interface: 'basket',
+                action: 'handler',
+                operation: 'refresh'
+            },
+            success: controller.basketWidget.drawBillBox,
+            dataType: 'json'
+        });
+    }, 60 * 1000);
+
+    bw_obj = controller.basketWidget; //leagcy
+});

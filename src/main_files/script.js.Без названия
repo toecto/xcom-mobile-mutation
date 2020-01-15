@@ -1,0 +1,46 @@
+$(document).ready(function($) {
+
+    var maxScrollLeft = $(".action_tiles__wrap"),
+    	carW = $('.action_tiles__carousel').width(),
+    	wrapW = $('.action_tiles__wrap').width();
+
+	var niceScroll = $(".action_tiles__wrap").niceScroll({
+		cursorcolor:"#0069ab"
+	});
+
+	var shadowsActions = function(x, maxScroll){
+		var actionTiles = $('#action_tiles'),
+			shadowLeft = $('.action_tiles-left'),
+			shadowRight = $('.action_tiles-right');
+		if (x <= 0) {
+            actionTiles.removeClass('active_left');
+        } else {
+        	actionTiles.addClass('active_left');
+        }
+        if (x >= maxScroll - 5) {
+            actionTiles.removeClass('active_right');
+        } else {
+            actionTiles.addClass('active_right');
+        }
+        if(x <= 60){
+        	shadowLeft.css('opacity', x / 60);
+        }
+        if(x >= maxScroll - 65){
+        	shadowRight.css('opacity', (maxScroll - x) / 60);
+        }
+	}
+
+	niceScroll.onscrollend = function (data) {
+		shadowsActions(data.end.x, this.page.maxw);
+    };
+    niceScroll.triggerScrollEnd();
+
+    $(".action_tiles__wrap").scroll(function(e) {
+       	
+       	var scrollL = $(this).scrollLeft();
+        
+        shadowsActions(scrollL, carW - wrapW);
+
+    });
+
+});

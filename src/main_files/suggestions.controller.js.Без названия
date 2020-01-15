@@ -1,0 +1,72 @@
+function formSuggestions(token)
+{
+    var _this = this;
+
+    _this.token = token;
+
+    _this.tryFix = $(':input[name="standartized"]').length && !+$(':input[name="standartized"]').val();
+
+
+    //_this.$fio = $(':input[name="lastname"], :input[name="firstname"], :input[name="midname"]');
+    _this.$address = $(':input[name="dlv_address"], :input[name="firm_address"]');
+    _this.$firm = $(':input[name="firm_inn"], :input[name="firm_name"]');
+
+    /*_this.gender = "UNKNOWN";
+    _this.fioParts = ["SURNAME", "NAME", "PATRONYMIC"];
+
+    if (_this.$fio.length == 3) {
+        _this.$fio.each(function(index){
+            var sgt = $(this).suggestions({
+                token: _this.token,
+                type: "NAME",
+                triggerSelectOnSpace: false,
+                hint: "",
+                noCache: true,
+                params: {
+                    parts: [_this.fioParts[index]]
+                },
+                onSearchStart: function(params) {
+                    params.gender = _this.gender;
+                },
+                onSelect: function(suggestion) {
+                    _this.gender = suggestion.data.gender;
+                }
+            });
+        });
+    }*/
+
+
+    _this.$address.suggestions({
+        token: _this.token,
+        type: "ADDRESS",
+        deferRequestBy: 200,
+        minChars: 5
+    });
+
+    _this.$firm.suggestions({
+        token: _this.token,
+        type: "PARTY",
+        deferRequestBy: 200,
+        minChars: 4,
+        onSelect: function(suggestion) {
+            $(':input[name="firm_address"]').val(suggestion.data.address.unrestricted_value);
+            $(':input[name="firm_inn"]').val(suggestion.data.inn);
+            $(':input[name="firm_kpp"]').val(suggestion.data.kpp);
+            $(':input[name="firm_name"]').val(suggestion.unrestricted_value);
+        }
+    });
+
+    if (_this.tryFix) {
+        var addr = $(':input[name="dlv_address"]:visible').suggestions();
+        if (addr) {
+            addr.fixData();
+        }
+
+        var inn = $(':input[name="firm_inn"]:visible').suggestions();
+        if (inn) {
+            inn.fixData();
+        }
+
+        $(':input[name="standartized"]').val(1);
+    }
+}
