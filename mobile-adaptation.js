@@ -1,9 +1,9 @@
 $(document).ready(function () {
   const header = $('.header'),
-    mHeader = $('.m-header'),
-    bonusNum = $('#head_username .green.push').text()
+        mHeader = $('.m-header'),
+        bonusNum = $('#head_username .green.push').text()
 
-  const mHeaderContent = function () {
+  const mHeaderContent = function(){
     return (
       `<div class='m-header'>
         <div class='m-header__leftSide'>
@@ -92,7 +92,7 @@ $(document).ready(function () {
   }
   header.append(mHeaderContent)
   mHeader.hide()
-
+  
   $(document).on('mouseup', function (e) {
     var div = $('.m-location')
     if (!div.is(e.target) && div.has(e.target).length === 0) {
@@ -121,77 +121,120 @@ $(document).ready(function () {
   $(document).on('click', '.m-menu-block__close', function () {
     $('.m-menu-block').fadeOut(200)
   })
-
+  
   $('#foot').find('table').addClass('footer-info')
   $('#recent_topics').closest('table').addClass('forum-public')
   $('.catalog-nav .search .show-main-menu').attr('id', 'main-menu')
-  $(document).on('click', '.main-menu__close', function () {
-    $('.catalog-nav .main-menu').fadeOut(200)
+  $(document).on('click', '.main-menu-mobile__close', function () {
+    $('#main-menu-mobile').fadeOut(200)
   })
+
+  $(document).on('click', '#main-menu-btn', function () {
+    $('#main-menu-mobile').fadeIn(200)
+  })
+  
+  //main-menu
+  let items = []
+  $('.navbar-catalog .catalog-menu .catalog-menu__item').each(function (i, el) {
+    const item = {}
+    let str = ''
+
+    item.title = $(el).find('.catalog-menu__title').text()
+    item.href = $(el).find('a').attr('href')
+
+    item.img = $(el).find('.catalog-menu__icon').find('img').attr('src').match(/[^\/\\]*$/)
+    items.push(item)
+  })
+
+  
+
+  // end main-menu
+
+  let mainMenuBtnCreate = false,
+    mainMenuMobileCreate = false
 
   //1023
   function w1023() {
-    if (screen.width <= 1023) {
+    if (document.body.clientWidth <= 1023) {
       console.log('Desktop');
       header.find('.right-block').hide()
       mHeader.show()
 
-    } else {
+    } else {  
       header.find('.right-block').show()
       mHeader.hide()
     }
   }
-  let catalogNavBtnCreate = false,
-    mainMenuBtnCreate = false
+  
   function w999() {
-    if (screen.width <= 999) {
+    if (document.body.clientWidth <= 999) {
       console.log('Table');
       let catalog = $('#catalog_nav')
-      const catalogNavBtn = `
-      <li class="catalog-menu__item catalog-menu__item--arrow">
-        <a href="#" class='btn-show'>
-          <span class="catalog-menu__icon">
-            <img src="./assets/icons/chevron-down-white.svg" alt=""></span>
-          <span class="catalog-menu__title">Показать все</span>
-        </a>
-      </li>
-      `
+      
       const mainMenuBtn = `
-        <div class="show-main-menu" id='main-menu2'>
+        <div id='main-menu-btn'>
             <span>Каталог</span>
         </div>
       `
-      if (!catalogNavBtnCreate) {
-        catalog.find('.catalog-menu').prepend(catalogNavBtn)
-        catalogNavBtnCreate = true
-      }
+
       if (!mainMenuBtnCreate) {
         $('#main-menu').hide()
         $('#search-div').find('form').append(mainMenuBtn)
         mainMenuBtnCreate = true
-      }
-    } else {
-      $('#catalog_nav').find('.catalog-menu__item--arrow').remove()
-      catalogNavBtnCreate = false
-      $('#main-menu2').remove()
-      catalogNavBtnCreate = false
+      } 
+      $('#main-menu2').show()
+      $('#main-menu-btn').css('display','table-cell')
+      $('#main-menu').hide()
+
+      if (!mainMenuMobileCreate) {
+        const mainMenuMobile = `
+        <div id='main-menu-mobile' class="main-menu-mobile">
+          <div class="main-menu-mobile__close">Закрыть</div>
+          <ul id='menu-mobile-list' class="main-menu-mobile__list">
+            
+          </ul>
+        </div>
+        `
+        $('#catalog_nav').after(mainMenuMobile)
+        mainMenuMobileCreate = true
+
+        items.forEach(function (val, index, arr) {
+          const li = `
+          <li class='menu-mobile__item'>
+            <a href="${val.href}">
+              <div class='menu-mobile__item__img'><img src="./assets/icons/menu/${val.img}" alt="${val.title}"></div>
+              <div class='menu-mobile__item__title'>${val.title}</div>
+            </a>
+          </li>
+          `
+          $('#menu-mobile-list').append(li)
+        })
+      } 
+      
+
+      
+    } else {  
+      $('#main-menu2').hide()
+      $('#main-menu-mobile').hide()
+      $('#main-menu-btn').hide()
       $('#main-menu').show()
     }
+    
   }
 
   let closeBtnCreate = false
   function w767() {
-
-    if (screen.width <= 767) {
+    
+    if (document.body.clientWidth <= 767) {
       const closeBtn = `
         <div class="main-menu__close">Закрыть</div>
       `
-
-      if (!closeBtnCreate) {
+      
+      if (!closeBtnCreate){
         setTimeout(function () {
           $('.catalog-nav .catalog-menu .main-menu').prepend(closeBtn)
         }, 1000)
-
+        
         closeBtnCreate = true
       }
     } else {
@@ -210,5 +253,6 @@ $(document).ready(function () {
     w767()
   });
 
-
+  
+  
 })
