@@ -57,11 +57,11 @@ $(document).ready(function () {
               <li class='m-menu-list__item'><a href="tel:+74957999669">+7 495 799-96-69</a></li>
               <li class='m-menu-list__item'><a href="tel:+78002000069">8 800 200-00-69</a></li>
               <li class='m-menu-list__item'><a href="viber://chat?number=79067999669" class="soc-link">
-                        <img width="24px" src="./main_files/icon_viber.svg" alt="">
+                        <img width="24px" src="/toecto/xcom-mobile-mutation/master/main_files/icon_viber.svg" alt="">
                     </a>
                     <noindex>
                         <a href="https://wa.me/79067999669" class="soc-link" target="_blank">
-                            <img width="24px" src="./main_files/icon_whatsapp.svg" alt="">
+                            <img width="24px" src="/toecto/xcom-mobile-mutation/master/main_files/icon_whatsapp.svg" alt="">
                         </a>
                     </noindex>
               </li>
