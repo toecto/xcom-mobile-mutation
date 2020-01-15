@@ -69,8 +69,8 @@ $(document).ready(function () {
               
             </ul>
             <div class='btn-store'>
-                <a class='btn-store__item' href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8"><img src="./assets/icons/appstore.png" alt="Доступно в AppStore" border="0"></a>
-                <a class='btn-store__item' href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop"><img src="./assets/icons/googleplay.png" alt="Доступно в Google play" border="0"></a>
+                <a class='btn-store__item' href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8"><img src="/toecto/xcom-mobile-mutation/master/assets/icons/appstore.png" alt="Доступно в AppStore" border="0"></a>
+                <a class='btn-store__item' href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop"><img src="/toecto/xcom-mobile-mutation/master/assets/icons/googleplay.png" alt="Доступно в Google play" border="0"></a>
 
             </div>
             
