@@ -738,7 +738,7 @@
     line-height: 14px;
   }
   #slidertable {
-    display: none;
+    display: none !important;
   }
   #action_tiles .action_tiles__item {
     -webkit-transform: scale(0.8);
@@ -747,6 +747,7 @@
   }
   #action_tiles .action_tiles__wrap {
     height: 240px;
+    overflow-y: scroll;
   }
   .action_tiles__carousel {
     height: 240px;

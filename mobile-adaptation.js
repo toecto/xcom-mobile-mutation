@@ -1,13 +1,13 @@
 $(document).ready(function () {
   const header = $('.header'),
-        mHeader = $('.m-header'),
-        bonusNum = $('#head_username .green.push').text()
+    mHeader = $('.m-header'),
+    bonusNum = $('#head_username .green.push').text()
 
-  const mHeaderContent = function(){
+  const mHeaderContent = function () {
     return (
       `<div class='m-header'>
         <div class='m-header__leftSide'>
-          <a href="https://www.xcom-shop.ru/" title="На главную">
+          <a href="/" title="На главную">
             <div class='m-logo'></div>
           </a>
           <ul class="m-location">
@@ -45,44 +45,46 @@ $(document).ready(function () {
           <div class='m-menu-block m-scroll'>
             <div class='m-menu-block__close'>Закрыть</div>
             <ul class='m-menu-list'>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/delivery/">Доставка</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/contacts/">Контакты</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/payment/">Оплата</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/warranty/">Гарантия</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/about/">О&nbsp;нас</a></li>
+              <li class='m-menu-list__item'><a href="/pages/delivery/">Доставка</a></li>
+              <li class='m-menu-list__item'><a href="/pages/contacts/">Контакты</a></li>
+              <li class='m-menu-list__item'><a href="/pages/payment/">Оплата</a></li>
+              <li class='m-menu-list__item'><a href="/pages/warranty/">Гарантия</a></li>
+              <li class='m-menu-list__item'><a href="/pages/about/">О&nbsp;нас</a></li>
               <li class='m-menu-list__item'><a href="http://forum.xcom-shop.ru/" target="_blank">Форум</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/sale/">Распродажа</a></li>
+              <li class='m-menu-list__item'><a href="/pages/sale/">Распродажа</a></li>
             </ul>
             <ul class='m-menu-list m-menu-list--phone'>
               <li class='m-menu-list__item'><a href="tel:+74957999669">+7 495 799-96-69</a></li>
               <li class='m-menu-list__item'><a href="tel:+78002000069">8 800 200-00-69</a></li>
-              <li class='m-menu-list__item'><a href="viber://chat?number=79067999669" class="soc-link">
-                        <img width="24px" src="./main_files/icon_viber.svg" alt="">
-                    </a>
-                    <noindex>
-                        <a href="https://wa.me/79067999669" class="soc-link" target="_blank">
-                            <img width="24px" src="./main_files/icon_whatsapp.svg" alt="">
-                        </a>
-                    </noindex>
+              <li class='m-menu-list__item'>
+                <a href="http://telegram.me/xcom_shop" class="soc-link" target="_blank">
+                  <img width="24px" src="/mod/site/images/svg/teleg.svg" alt="">
+                </a>
+                <a href="sms:+79067999669" class="soc-link">
+                  <span class="viber">
+                      <img src="/mod/site/images/svg/comment.svg" alt="">
+                  </span>
+                </a>
+                <a href="viber://chat?number=79067999669" class="soc-link">
+                  <img width="24px" src="/mod/site/images/svg/icon_viber.svg" alt="">
+                </a>
+                <a href="whatsapp://send?phone=79067999669" class="soc-link">
+                  <img width="24px" src="/mod/site/images/svg/icon_whatsapp.svg" alt="">
+                </a>
               </li>
-              
-              
             </ul>
             <div class='btn-store'>
                 <a class='btn-store__item' href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8"><img src="./assets/icons/appstore.png" alt="Доступно в AppStore" border="0"></a>
                 <a class='btn-store__item' href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop"><img src="./assets/icons/googleplay.png" alt="Доступно в Google play" border="0"></a>
-
             </div>
-            
-
             <ul class='m-menu-list'>
               <li class='m-menu-list__item'><a href="mailto:val@xcom.ru" class="black">Прием жалоб и предложений</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/complaint/" class="black">Отдел рекламаций</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/services/" class="black">Наши услуги</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/corporate_department/" class="black">Постоянным покупателям</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/catalog/ytsenennye_tovary/" class="black">Уцененные товары</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/our_games/" class="black">Наши игры</a></li>
-              <li class='m-menu-list__item'><a href="https://www.xcom-shop.ru/pages/customer/" class="black">Уголок покупателя</a></li>
+              <li class='m-menu-list__item'><a href="/complaint/" class="black">Отдел рекламаций</a></li>
+              <li class='m-menu-list__item'><a href="/pages/services/" class="black">Наши услуги</a></li>
+              <li class='m-menu-list__item'><a href="/pages/corporate_department/" class="black">Постоянным покупателям</a></li>
+              <li class='m-menu-list__item'><a href="/catalog/ytsenennye_tovary/" class="black">Уцененные товары</a></li>
+              <li class='m-menu-list__item'><a href="/pages/our_games/" class="black">Наши игры</a></li>
+              <li class='m-menu-list__item'><a href="/pages/customer/" class="black">Уголок покупателя</a></li>
             </ul>
           </div>
         </div>
@@ -92,7 +94,7 @@ $(document).ready(function () {
   }
   header.append(mHeaderContent)
   mHeader.hide()
-  
+
   $(document).on('mouseup', function (e) {
     var div = $('.m-location')
     if (!div.is(e.target) && div.has(e.target).length === 0) {
@@ -121,7 +123,7 @@ $(document).ready(function () {
   $(document).on('click', '.m-menu-block__close', function () {
     $('.m-menu-block').fadeOut(200)
   })
-  
+
   $('#foot').find('table').addClass('footer-info')
   $('#recent_topics').closest('table').addClass('forum-public')
   $('.catalog-nav .search .show-main-menu').attr('id', 'main-menu')
@@ -132,7 +134,7 @@ $(document).ready(function () {
   $(document).on('click', '#main-menu-btn', function () {
     $('#main-menu-mobile').fadeIn(200)
   })
-  
+
   //main-menu
   let items = []
   $('.navbar-catalog .catalog-menu .catalog-menu__item').each(function (i, el) {
@@ -146,7 +148,7 @@ $(document).ready(function () {
     items.push(item)
   })
 
-  
+
 
   // end main-menu
 
@@ -160,17 +162,17 @@ $(document).ready(function () {
       header.find('.right-block').hide()
       mHeader.show()
 
-    } else {  
+    } else {
       header.find('.right-block').show()
       mHeader.hide()
     }
   }
-  
+
   function w999() {
     if (document.body.clientWidth <= 999) {
       console.log('Table');
       let catalog = $('#catalog_nav')
-      
+
       const mainMenuBtn = `
         <div id='main-menu-btn'>
             <span>Каталог</span>
@@ -181,9 +183,9 @@ $(document).ready(function () {
         $('#main-menu').hide()
         $('#search-div').find('form').append(mainMenuBtn)
         mainMenuBtnCreate = true
-      } 
+      }
       $('#main-menu2').show()
-      $('#main-menu-btn').css('display','table-cell')
+      $('#main-menu-btn').css('display', 'table-cell')
       $('#main-menu').hide()
 
       if (!mainMenuMobileCreate) {
@@ -209,32 +211,39 @@ $(document).ready(function () {
           `
           $('#menu-mobile-list').append(li)
         })
-      } 
-      
+      }
 
-      
-    } else {  
+
+      setTimeout(function () {
+        $(".action_tiles__wrap").getNiceScroll().remove()
+        $(".action_tiles__wrap").css('overflow-x', 'auto')
+      }, 1000)
+
+    } else {
       $('#main-menu2').hide()
       $('#main-menu-mobile').hide()
       $('#main-menu-btn').hide()
       $('#main-menu').show()
+      var niceScroll = $(".action_tiles__wrap").niceScroll({
+        cursorcolor: "#0069ab"
+      });
     }
-    
+
   }
 
   let closeBtnCreate = false
   function w767() {
-    
+
     if (document.body.clientWidth <= 767) {
       const closeBtn = `
         <div class="main-menu__close">Закрыть</div>
       `
-      
-      if (!closeBtnCreate){
+
+      if (!closeBtnCreate) {
         setTimeout(function () {
           $('.catalog-nav .catalog-menu .main-menu').prepend(closeBtn)
         }, 1000)
-        
+
         closeBtnCreate = true
       }
     } else {
@@ -253,6 +262,6 @@ $(document).ready(function () {
     w767()
   });
 
-  
-  
+
+
 })
