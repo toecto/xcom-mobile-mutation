@@ -320,27 +320,7 @@
 @media screen and (max-width: 999px)
   #right_column
     display: none
-  // .catalog-nav 
-  //   .catalog-menu
-  //     display: flex
-  //     flex-flow: row wrap
-  //     margin: auto
-  //     height: 100px
-  //     overflow: hidden
-  //     transition: 0.25s
-  //     &.show
-  //       height: auto
-  //       overflow: auto
-  //     &__title
-  //       text-overflow: ellipsis
-  //       white-space: nowrap
-  //       overflow: hidden
-  //     &__item
-  //       width: 80px
-  //       height: 80px
-  //       display: block
-  //       margin: 10px
-  //       box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px 0px
+  
   #content 
     padding-right: 0
     #helpers_below
@@ -350,13 +330,15 @@
     font-size: 12px
     line-height: 14px
   #slidertable
-    display: none
+    display: none !important
+        
   #action_tiles
     .action_tiles__item
       transform: scale(0.8)
       width: 195px
   #action_tiles .action_tiles__wrap
     height: 240px
+    overflow-y: scroll 
   .action_tiles__carousel
     height: 240px
   .nicescroll-cursors
