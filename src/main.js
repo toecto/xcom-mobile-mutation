@@ -1,9 +1,9 @@
 $(document).ready(function () {
   const header = $('.header'),
-    mHeader = $('.m-header'),
-    bonusNum = $('#head_username .green.push').text()
+        mHeader = $('.m-header'),
+        bonusNum = $('#head_username .green.push').text()
 
-  const mHeaderContent = function () {
+  const mHeaderContent = function(){
     return (
       `<div class='m-header'>
         <div class='m-header__leftSide'>
@@ -74,8 +74,8 @@ $(document).ready(function () {
               </li>
             </ul>
             <div class='btn-store'>
-                <a class='btn-store__item' href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8"><img src="/mod/site/images/appstore.png" alt="Доступно в AppStore" border="0"></a>
-                <a class='btn-store__item' href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop"><img src="/mod/site/images/googleplay.png" alt="Доступно в Google play" border="0"></a>
+                <a class='btn-store__item' href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8"><img src="./assets/icons/appstore.png" alt="Доступно в AppStore" border="0"></a>
+                <a class='btn-store__item' href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop"><img src="./assets/icons/googleplay.png" alt="Доступно в Google play" border="0"></a>
             </div>
             <ul class='m-menu-list'>
               <li class='m-menu-list__item'><a href="mailto:val@xcom.ru" class="black">Прием жалоб и предложений</a></li>
@@ -94,7 +94,7 @@ $(document).ready(function () {
   }
   header.append(mHeaderContent)
   mHeader.hide()
-
+  
   $(document).on('mouseup', function (e) {
     var div = $('.m-location')
     if (!div.is(e.target) && div.has(e.target).length === 0) {
@@ -123,7 +123,7 @@ $(document).ready(function () {
   $(document).on('click', '.m-menu-block__close', function () {
     $('.m-menu-block').fadeOut(200)
   })
-
+  
   $('#foot').find('table').addClass('footer-info')
   $('#recent_topics').closest('table').addClass('forum-public')
   $('.catalog-nav .search .show-main-menu').attr('id', 'main-menu')
@@ -134,7 +134,7 @@ $(document).ready(function () {
   $(document).on('click', '#main-menu-btn', function () {
     $('#main-menu-mobile').fadeIn(200)
   })
-
+  
   //main-menu
   let items = []
   $('.navbar-catalog .catalog-menu .catalog-menu__item').each(function (i, el) {
@@ -148,7 +148,7 @@ $(document).ready(function () {
     items.push(item)
   })
 
-
+  
 
   // end main-menu
 
@@ -162,17 +162,17 @@ $(document).ready(function () {
       header.find('.right-block').hide()
       mHeader.show()
 
-    } else {
+    } else {  
       header.find('.right-block').show()
       mHeader.hide()
     }
   }
-
+  
   function w999() {
     if (document.body.clientWidth <= 999) {
       console.log('Table');
       let catalog = $('#catalog_nav')
-
+      
       const mainMenuBtn = `
         <div id='main-menu-btn'>
             <span>Каталог</span>
@@ -183,9 +183,9 @@ $(document).ready(function () {
         $('#main-menu').hide()
         $('#search-div').find('form').append(mainMenuBtn)
         mainMenuBtnCreate = true
-      }
+      } 
       $('#main-menu2').show()
-      $('#main-menu-btn').css('display', 'table-cell')
+      $('#main-menu-btn').css('display','table-cell')
       $('#main-menu').hide()
 
       if (!mainMenuMobileCreate) {
@@ -204,22 +204,22 @@ $(document).ready(function () {
           const li = `
           <li class='menu-mobile__item'>
             <a href="${val.href}">
-              <div class='menu-mobile__item__img'><img src="/toecto/xcom-mobile-mutation/master/assets/icons/menu/${val.img}" alt="${val.title}"></div>
+              <div class='menu-mobile__item__img'><img src="./assets/icons/menu/${val.img}" alt="${val.title}"></div>
               <div class='menu-mobile__item__title'>${val.title}</div>
             </a>
           </li>
           `
           $('#menu-mobile-list').append(li)
         })
-      }
-
+      } 
+      
 
       setTimeout(function () {
         $(".action_tiles__wrap").getNiceScroll().remove()
         $(".action_tiles__wrap").css('overflow-x', 'auto')
       }, 1000)
 
-    } else {
+    } else {  
       $('#main-menu2').hide()
       $('#main-menu-mobile').hide()
       $('#main-menu-btn').hide()
@@ -228,22 +228,22 @@ $(document).ready(function () {
         cursorcolor: "#0069ab"
       });
     }
-
+    
   }
 
   let closeBtnCreate = false
   function w767() {
-
+    
     if (document.body.clientWidth <= 767) {
       const closeBtn = `
         <div class="main-menu__close">Закрыть</div>
       `
-
-      if (!closeBtnCreate) {
+      
+      if (!closeBtnCreate){
         setTimeout(function () {
           $('.catalog-nav .catalog-menu .main-menu').prepend(closeBtn)
         }, 1000)
-
+        
         closeBtnCreate = true
       }
     } else {
@@ -262,6 +262,6 @@ $(document).ready(function () {
     w767()
   });
 
-
-
+  
+  
 })

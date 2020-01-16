@@ -1,0 +1,963 @@
+function basket_widget()
+{
+    var _this = this;
+
+    this.highlight = 0;
+    this.yandex_add_good = 0;
+    this.price_color_class = '';
+
+    this.drawBillBox = function(basket) {
+        var $container = $('#bill_box');
+
+        if (!$container.length) {
+            return;
+        }
+
+
+        _this.price_color_class = '';
+
+        $container.html('<div id="bill_container"><div class="heading"></div><div class="triangle"></div></div>');
+
+        var goods_lines_cnt = objectLength(basket.data);
+        if (goods_lines_cnt == 0) {
+            $('#bill_container .heading').append('<a class="black">Корзина</a><br />');
+            $('#bill_container .heading').append('<span>В корзине нет товаров</span>');
+
+            return;
+        }
+
+        $('#bill_container .heading').append('<a href="/checkout/" class="black">Корзина</a><br />');
+        $('#bill_container .heading').append('<span>В корзине '+goods_lines_cnt+' '+getNamedForm(goods_lines_cnt,'товар','товара','товаров')+'</span>');
+        $('#bill_box #bill_container').addClass('border-gray');
+
+
+        if (bw_closed) {
+            return;
+        }
+
+
+        $('#bill_container').append(_this.formGoodRow(basket.data));
+
+        $('#bill_container').append('<div id="basket_clear"><a href="#" class="js">Очистить корзину</a></div><div class="interline">&nbsp;</div>');
+
+
+        //draw delivery
+        var dlv_selectors = '';
+        if (basket.onsale) {
+            dlv_selectors = '<tr><td>Регион:</td>'+
+                            '<td align="right"><select name="city" id="basket_city_onsale" size="1">'+
+                            '<option value="0">Москва</option>'+
+                            '</select></td></tr>'+
+                            '<tr><td>Доставка:</td>'+
+                            '<td align="right"><select size="1" name="delivery" id="basket_delivery_onsale">'+
+                            '<option value="5">Без доставки. Получение в офисе.</option>'+
+                            '</select></td></tr>'+
+                            '<tr><td>Оплата:</td>'+
+                            '<td align="right"><select size="1" name="payment" id="basket_payment_onsale">'+
+                            '<option value="7">Наличными в офисе</option>'+
+                            '</select></td></tr>';
+        } else {
+            dlv_selectors = '<tr><td>Регион:</td>'+
+                            '<td align="right"><select name="city" id="basket_city" size="1">'+
+                            '<option value="'+basket['dlv']['city']+'">'+basket['dlv']['short_names']['city_name']+'</option>'+
+                            '<option value="none">Загрузка ...</option></select></td></tr>'+
+                            '<tr><td>Доставка:</td>'+
+                            '<td align="right"><select size="1" name="delivery" id="basket_delivery">'+
+                            '<option value="'+basket['dlv']['delivery']+'">'+basket['dlv']['short_names']['delivery_name']+'</option>'+
+                            '<option value="none">Загрузка ...</option></select></td></tr>'+
+                            '<tr><td>Оплата:</td>'+
+                            '<td align="right"><select size="1" name="payment" id="basket_payment">'+
+                            '<option value="'+basket['dlv']['payment']+'">'+basket['dlv']['short_names']['payment_name']+'</option>'+
+                            '<option value="none">Загрузка ...</option></select></td></tr>';
+        }
+
+        $('#bill_container').append('<div id="dlv_gray_pad"><h3>Доставка товаров</h3>'+
+                '<table id="delivery" width="100%" cellspacing=0 cellpadding=0>'+dlv_selectors+'</table><div id="warnings"></div>'+
+                '<table width="100%" id="dlv_cost_line" cellpadding=0 cellspacing=0><tr><td align="left">Стоимость&nbsp;доставки:</td><td align="right" id="dlv_cost_cell"></td></table>'+
+                '</div>');
+
+        var dlv_comment = '';
+        var dlv_cost = '';
+        if (basket.dlv.cost == '-1') {
+            $('#dlv_cost_cell').html('<span class="unknown">Рассчитывается менеджером</span>');
+        } else {
+            $('#dlv_cost_cell').html(number_format(basket.dlv.cost)+' руб.');
+        }
+
+
+        $('#bill_container').append('<table width="100%" cellspacing=0 cellpadding=0 id="total">'+
+            '<tr><td align="left"><h3>Итого:</h3></td>'+
+            '<td align="right"><span id="total_cost" class="'+_this.price_color_class+'">'+number_format(basket.count.total)+' руб.</span></td></tr>'+
+            '</table>');
+
+        if (!disable_points) {
+            $('#dlv_gray_pad').before('<div align="center" class="tx11 green">За&nbsp;данный заказ Вы получите <span id="bonus">'+number_format(Math.ceil(basket.count.total*0.01))+'</span>&nbsp;'+getNamedForm(Math.ceil(basket['count']['total']*0.01),'бонусный балл','бонусных балла','бонусных баллов')+'.</div>');
+        }
+
+
+        $('#bill_container').append('<div id="goto_checkout"><a href="/checkout/" class="button-blue">Оформить заказ</a></div>');
+
+        if (_this.highlight != 0) {
+            _rt('#bl'+_this.highlight).set({style:{opacity:1}}).animate({opacity:0}).animate({opacity:1});
+            _this.highlight = 0;
+        }
+
+
+        $('#bill_container #basket_clear a').click(_this.clear);
+
+
+        if (basket['cisco_off'] == 1) {
+            _rt('#warnings').append('<div id="cisco_highlight"><div class="red">Оформление заказа в&nbsp;данной конфигурации доступно только для юридических лиц.</div></div>');
+
+            _rt('#cisco_highlight').set({style:{backgroundColor:'red'}});
+            _rt('#cisco_highlight div').set({style:{backgroundColor:'#f5f5f5',padding:'6px 10px'}});
+            _rt('#cisco_highlight div').set({style:{opacity:0}}).animate({opacity:1});
+        } else {
+            var cr = _rt('#cisco_row').first()
+            if (cr) {
+                cr.parentNode.removeChild(cr);
+            }
+        }
+
+
+        if (_this.yandex_add_good != 0) {
+            var basket_item = basket.data[ _this.yandex_add_good ];
+
+            _this.yandex_add_good = 0;
+
+            window.dataLayer.push({
+                "ecommerce": {
+                    "currencyCode": "RUB",
+                    "add":       {
+                        "products": [
+                            {
+                                "id":       basket_item.pk_good + '',
+                                "name":     basket_item.model ? basket_item.model : basket_item.part_number,
+                                "brand":    basket_item.vendor,
+                                "price":    parseInt(basket_item.price),
+                                "quantity": parseInt(basket_item.b_amount)
+                            }
+                        ]
+                    }
+                }
+            });
+        }
+
+        $container.trigger('dlv_selectors:redrawn');
+    }
+
+    this.formGoodRow = function(data, fk) {
+        fk = fk || 0;
+        var html = '';  var item_name = ''; var sub_goods = '';
+        var c = 0;
+        var len = objectLength(data);
+
+        var item_id;
+
+        var raw_price, discount_class;
+        for (var i in data) {
+            c++;
+            discount_class = '';
+
+            item_id = data[i]['pk_good'];
+            if (fk != 0) {
+                item_id += 's' + fk;
+            }
+
+            item_name = data[i]['vendor']+' ';
+            if (data[i]['model']!='') {
+                item_name+=data[i]['model'];
+            } else {
+                item_name+=data[i]['part_number'];
+            }
+
+            if (data[i]['discount']) {
+                _this.price_color_class = discount_class = ' discount';
+            } else {
+                data[i]['discount'] = 0;
+            }
+
+            raw_price = is_wholesaler ? data[i]['price_opt'] : data[i]['price'];
+
+            if (fk != 0) {
+                sub_goods = ' sub_goods';
+            }
+
+            html += '<div id="bl'+item_id+'" class="bill_good'+sub_goods+'"><div class="highlighter">';
+
+            if (data[i]['name_url'] != '') {
+                html += '<p class="crop"><a href="/'+data[i]['name_url']+'_'+data[i]['pk_good']+'.html">'+item_name+'</a></p>';
+            } else {
+                html += '<p class="crop">'+item_name+'</p>';
+            }
+
+            html += '<p class="tx11 gray crop">'+data[i]['type_1c']+' '+data[i]['minidesc']+'</p>';
+            html += '<div class="amount left">'+
+                        '<a href="#" class="minus black" onclick="adder(\'ba'+item_id+'\',-1,'+data[i]['amount_order']+');return false;">&minus;</a>'+
+                        '<input class="center" type="text" value="'+data[i]['b_amount']+'" id="ba'+item_id+'" data-price="'+raw_price+'" data-discount="'+data[i]['discount']+'">'+
+                        '<a href="#" class="plus black" onclick="adder(\'ba'+item_id+'\',1,'+data[i]['amount_order']+');return false;">+</a>'+
+                        '</div>'+
+                        '<div class="cost right'+discount_class+'">'+ number_format( raw_price - data[i]['discount'] ) +' руб.</div>'+
+                        '<br class="clear" />'+
+                        '</div></div>';
+            /*if(len != c) */{html +='<div class="interline">&nbsp;</div>';}
+
+            if (data[i]['sub_goods']) {
+                html += _this.formGoodRow(data[i]['sub_goods'], i);
+            }
+        }
+
+        return html;
+    }
+
+    this.add_good = function(pk,a,f,utm) {
+        try {
+            yaCounter.reachGoal('put_in_basket_button');
+        } catch(ee){}
+
+        _this.yandex_add_good = pk;
+
+
+        _this.highlight = pk;
+
+        if (utm) {
+            jsonp({
+                interface:'basket',action:'handler',operation:'add',key:pk,amount:a,from:f,
+                utm_source: utm.utm_source, utm_campaign: utm.utm_campaign, utm_content: utm.utm_content, utm_term: utm.utm_term
+            }, _this.drawBillBox);
+        } else {
+            jsonp({interface:'basket',action:'handler',operation:'add',key:pk,amount:a,from:f},_this.drawBillBox);
+        }
+    }
+
+    this.clear = function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        $.ajax({
+            url: '/ajax_request/',
+            data: {
+                interface: 'basket',
+                action: 'handler',
+                operation: 'clear'
+            },
+            success: _this.drawBillBox,
+            dataType: 'json'
+        });
+    }
+}
+
+
+
+function basket_handler(basket)
+{
+    var _this = this;
+
+    this.basket = basket;
+    this.outlet_map = null;
+    this.outletMapManager = null;
+
+    this.names = {};
+
+    this.dp_requested = false;
+    this.names_requested = false;
+
+
+    this.initHandlers = function() {
+        _this.toggle_outlets();
+
+        $('#bill_box #dlv_gray_pad').one('mouseover', function() {
+            _this.requestNames(true);
+        });
+
+        $('#basket_city').change(_this.city_handler);
+        $('#basket_delivery').change(_this.delivery_handler);
+        $('#basket_payment').change(_this.payment_handler);
+        $('#basket_outlet').change(_this.outlet_handler);
+
+        $('#c_usertype').change(_this.usertype_handler);
+
+        $('#select_outlet input[type="button"]').click(_this.show_outlet_map);
+
+        $('.bill_good a.del').on('click', _this.delete_good);
+        $('.bill_good .amount input').on('keyup', _this.syn_amount);
+
+        $('body').on('click', '.select-outlet-button', function(event) {
+            event.stopPropagation();
+            event.preventDefault();
+
+            $('#basket_outlet').val($(this).data('outletId')).change();
+            $('#closeWindow').click();
+        });
+    }
+
+    this.fixBasketState = function() {
+        if (!$('#basket_city').length) {
+            return;
+        }
+
+        _this.basket.dlv.city = $('#basket_city').val();
+        _this.basket.dlv.delivery = $('#basket_delivery').val();
+        _this.basket.dlv.outlet = $('#basket_outlet').val();
+        _this.basket.dlv.payment = $('#basket_payment').val();
+
+        _this.basket.user_type = $('#c_usertype:checked').length
+
+        _this.updateBasket();
+    }
+
+    this.callbackSendStatus = function() {
+        if (_this.callbackDP) {
+            _this.callbackDP(_this.basket.dlv);
+        }
+
+        if (_this.callbackCalendar) {
+            _this.callbackCalendar();
+        }
+    }
+
+    this.requestNames = function(force) {
+        if (_this.names_requested && force !== true) {
+            return;
+        }
+
+        _this.names_requested = true;
+
+        $.ajax({
+            url: '/ajax_request/',
+            data: {
+                interface:'delivery',
+                action:'getNames'
+            },
+            success: _this.updateNames,
+            dataType: 'json'
+        });
+    }
+
+    this.updateNames = function(data) {
+        if (data) {
+            _this.names = data;
+        }
+
+        _this.render_select_options(
+            $('#basket_city'),
+            _this.basket.dlv.city,
+            _this.names.city,
+            _this.names.city_order
+        );
+
+        if (_this.dp_requested) {
+            _this.dp_filter();
+        } else {
+            _this.updateBasket();
+        }
+    }
+
+    this.city_handler = function() {
+        _rt().cookie('pk_city', _this.basket.dlv.city = $(this).val(), 90);
+        _this.updateBasket();
+    }
+
+    this.delivery_handler = function() {
+        _rt().cookie('pk_delivery', _this.basket.dlv.delivery = $(this).val(), 90);
+        _this.updateBasket();
+    }
+
+    this.payment_handler = function() {
+        _rt().cookie('pk_payment', _this.basket.dlv.payment = $(this).val(), 90);
+        _this.updateBasket();
+    }
+
+    this.outlet_handler = function() {
+        _rt().cookie('pk_outlet', _this.basket.dlv.outlet = $(this).val(), 90);
+        _this.updateBasket();
+    }
+
+    this.usertype_handler = function() {
+        _this.basket.user_type = $('#c_usertype:checked').length;
+        _this.updateBasket();
+    }
+
+    this.toggle_outlets = function() {
+        $('#select_outlet').toggle(_this.basket.dlv.delivery == 5);
+        $('#select_outlet input[type="button"]').toggle(objectLength(_this.basket.dlv.possible_outlet) > 1);
+    }
+
+    this.show_outlet_map = function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        if (_this.outlet_map) {
+            showWindow();
+            return false;
+        } else {
+            destroyWindow();
+        }
+
+        createWindow();
+        $.ajax({
+            url: '/ajax_request/',
+            data: {
+                module: 'order',
+                template: 'short_outlet_map.tpl'
+            },
+            success: function(data) {
+                $('#windowBox').append(data);
+                showWindow();
+
+                var token = 'dd3b30fd-0261-4bbd-96d2-38f4e0887abe';
+
+
+                $('.map_info_container .close_button').click(function(){
+                    $('.map_info_container').hide();
+                });
+
+
+                $.getScript(
+                    'https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=' + token,
+                    function(){
+                        ymaps.ready(function(){
+                            _this.createOutletMap();
+                        });
+                    }
+                );
+            },
+            dataType: 'html'
+        });
+    }
+
+    this.createOutletMap = function() {
+        var activePoint = _this.basket.dlv.outlet;
+
+        _this.outletMapManager = new ymaps.ObjectManager({
+            clusterize: true,
+            clusterDisableClickZoom: false,
+            clusterOpenBalloonOnClick: true,
+            geoObjectOpenBalloonOnClick: false,
+        });
+
+        var city_name = 'Москва';
+        if (_this.basket.dlv.city != 0 && _this.basket.dlv.city != 244) {
+            city_name = $('#basket_city option:selected').text();
+        }
+
+        _this.outlet_map = new ymaps.Map(
+            'outlet_map', {
+                center: [55.745075, 37.620194],
+                zoom: 10,
+                controls: ['zoomControl', 'searchControl']
+            }, {
+                minZoom: 8,
+                maxZoom: 18,
+                searchControlNoPlacemark: true,
+                searchControlPosition: {
+                    right: 10,
+                    top: 10
+                }
+            });
+
+        $.ajax({
+            url: '/ajax_request/',
+            data: {
+                interface: 'order_outlet',
+                action: 'getActive'
+            },
+            success: function(data) {
+                var collection = {
+                    type: "FeatureCollection",
+                    features: []
+                };
+
+                $.each(data, function(i, outlet) {
+                    collection.features.push({
+                        type: 'Feature',
+                        id: parseInt(outlet.pk_outlet),
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [parseFloat(outlet.latitude), parseFloat(outlet.longitude)]
+                        },
+                        options: getPlacemarkOptions(outlet),
+                        properties: getPlacemarkProperties(outlet)
+                    });
+                });
+
+                _this.outletMapManager.add(collection);
+
+                _this.outletMapManager.objects.events
+                    .add('mouseenter', function (e) {
+                        var objectId = e.get('objectId');
+                        if (objectId == activePoint) {
+                            return;
+                        }
+
+                        _this.outletMapManager.objects.setObjectOptions(objectId, {
+                            iconImageHref: _this.outletMapManager.objects.getById(objectId).properties.hoverImage,
+                        });
+                    })
+                    .add('mouseleave', function (e) {
+                        var objectId = e.get('objectId');
+                        if (objectId == activePoint) {
+                            return;
+                        }
+
+                        _this.outletMapManager.objects.setObjectOptions(objectId, {
+                            iconImageHref: _this.outletMapManager.objects.getById(objectId).properties.baseImage,
+                        });
+                    })
+                    .add('click', function(e) {
+                        var objectId = e.get('objectId');
+                        var object = _this.outletMapManager.objects.getById(objectId);
+
+                        _this.outletMapManager.objects.setObjectOptions(activePoint, {
+                            iconImageHref: _this.outletMapManager.objects.getById(activePoint).properties.baseImage
+                        });
+
+                        activePoint = objectId;
+
+                        _this.outletMapManager.objects.setObjectOptions(activePoint, {
+                            iconImageHref: object.properties.activeImage
+                        });
+
+
+                        _this.outletMapManager.getMap().panTo(object.geometry.coordinates);
+                        showOutletInfo(object.properties.outletData);
+                    });
+
+                _this.outletMapManager.clusters.events
+                    .add('balloonopen', function(e) {
+                        $('.map_info_container').hide();
+                    });
+
+                _this.outletMapManager.setFilter(function(item) {
+                    return _this.basket.dlv.possible_outlet.includes(item.id.toString());
+                });
+                _this.outlet_map.geoObjects.add(_this.outletMapManager);
+            },
+            dataType: 'json'
+        });
+    }
+
+    this.dp_filter = function() {
+        _this.render_select_options(
+            $('#basket_delivery'),
+            _this.basket.dlv.delivery,
+            _this.names.delivery,
+            _this.basket.dlv.possible_delivery
+        );
+        _rt().cookie('pk_delivery', _this.basket.dlv.delivery, 90);
+
+
+        selector = $('#basket_outlet');
+        selector.val(_this.basket.dlv.outlet);
+        _rt().cookie('pk_outlet', _this.basket.dlv.outlet, 90);
+        if (_this.basket.dlv.outlet) {
+            $('#select_outlet .outlet-address').text('Адрес: '+_this.basket.dlv.short_names.outlet_data.address);
+            $('#select_outlet .outlet-schedule').text('График работы: '+_this.basket.dlv.short_names.outlet_data.schedule);
+        }
+
+        _this.toggle_outlets();
+
+
+        _this.render_select_options(
+            $('#basket_payment'),
+            _this.basket.dlv.payment,
+            _this.names.payment,
+            _this.basket.dlv.possible_payment
+        );
+        _rt().cookie('pk_payment', _this.basket.dlv.payment, 90);
+
+        _this.callbackSendStatus();
+    }
+
+    this.updateBasket = function() {
+        var data = '';
+        data += 'xc!' + _this.basket.dlv.city;
+        data += 'xd!' + _this.basket.dlv.delivery;
+        data += 'xp!' + _this.basket.dlv.payment;
+        data += 'xo!' + _this.basket.dlv.outlet;
+        data += 'xu!' + _this.basket.user_type;
+        
+        $.ajax({
+            url: '/ajax_request/',
+            data: {
+                interface:'basket',
+                action:'handler',
+                operation:'seta',
+                d:data
+            },
+            success: _this.DP_handler,
+            dataType: 'json'
+        });
+    }
+
+    this.DP_handler = function(data) {
+        _this.dp_requested = true;
+
+        var dp_was_filtered = false;
+        if (_this.basket.dlv.disable_crimea != data.dlv.disable_crimea) {
+            _this.requestNames(true);
+            dp_was_filtered = true;
+        }
+
+
+        if (JSON.stringify(_this.basket.dlv.possible_outlet) !== JSON.stringify(data.dlv.possible_outlet)) {
+            if (_this.outlet_map) {
+                _this.outletMapManager.setFilter(function(item){
+                    return data.dlv.possible_outlet.includes(item.id.toString());
+                });
+            }
+        }
+
+        _this.basket = data;
+        _this.updateNumbers();
+
+        if (!_this.names_requested) {
+            _this.requestNames();
+        } else {
+            if (!dp_was_filtered) {
+                _this.dp_filter();
+            }
+        }
+    }
+
+    this.updateNumbers = function() {
+        var disable_state = (objectLength(_this.basket.block_order) > 0);
+
+        $('#submit_order').prop('disabled', disable_state);
+        $('#submit_order_warning').toggle(disable_state);
+
+        $('#agree_soft').toggle(!!_this.basket.contains_soft);
+
+        var raw_price, amount, discount;
+        for (var k in _this.basket.data) {
+            amount      = _this.basket.data[k].b_amount;
+            discount    = _this.basket.data[k].discount;
+            raw_price   = parseInt($('#ba'+k).attr('data-price'));
+
+            $('#ba'+k)
+                .val(amount)
+                .attr('data-discount', discount);
+
+            $('#cst_old'+k).html(number_format(raw_price * amount) + ' руб.');
+            $('#cst'+k).html(number_format(_this.basket.data[k].subtotal) + ' руб.');
+            $('#cc'+k+' span').html(number_format(raw_price - discount));
+            $('#bl'+k+' .cost').html(number_format(raw_price - discount) + ' руб.');
+
+            if (discount) {
+                $('#cst_old'+k).removeClass('hide');
+                $('#bill_box #bl'+k+' .cost').addClass('discount');
+            } else {
+                $('#cst_old'+k).addClass('hide');
+                $('#bill_box #bl'+k+' .cost').removeClass('discount');
+            }
+        }
+
+        if ($('#bill_box .bill_good .discount').length) {
+            $('#bill_box #total_cost').addClass('discount');
+        } else {
+            $('#bill_box #total_cost').removeClass('discount');
+        }
+
+        $('#sub_total_cost').html(number_format(_this.basket.count.sub_total) + ' руб.');
+        $('#bonus').html(number_format(Math.ceil(_this.basket.count.total * 0.01)));
+
+
+        if (_this.basket.dlv.cost == '-1') {
+            $('#dlv_cost_cell').html('<span class="unknown">Рассчитывается менеджером</span>');
+        } else {
+            $('#dlv_cost_cell').html(number_format(_this.basket.dlv.cost)+' руб.');
+        }
+
+        $('#delivery_fee strong').html(number_format(_this.basket.dlv.fees)).parent().toggle(Boolean(_this.basket.dlv.fees));
+
+
+        if ($('#usepoints').length) {
+            _this.apply_points($('#usepoints').val());
+        } else {
+            $('#total_cost').html(number_format(_this.basket.count.total)+' руб.');
+        }
+
+        $('#total_cleen').html(number_format(_this.basket.count.total)+' руб.');
+
+        $('#total_weight').html(_this.basket.count.weight);
+
+
+        $('#select_manager_row').find('td').show().find('select').prop('disabled', false);
+    }
+
+    this.apply_points = function(input) {
+        if(_this.basket.count.points_use_limit == null) {
+            _this.updateBasket();
+            return false;
+        }
+
+        var use = input;
+        if (use > _this.basket.points) {
+            use = _this.basket.points;
+        }
+
+        if (use > _this.basket.count.points_use_limit) {
+            use = _this.basket.count.points_use_limit;
+        }
+
+        if (use < 0) {
+            use = 0;
+        }
+
+        var t = _this.basket.count.total - use;
+        if (t < 0) {
+            t = 0;
+        }
+
+        $('#total_cost').html(number_format(t)+' руб.');
+    }
+
+
+    this.delete_good = function() {
+        var id = this.id.replace('del_good', '');
+        var is_sub_good = id.indexOf('s') != -1;
+
+        if (!is_sub_good) {
+            $('#good_inner' + id).hide()
+                .find('input')
+                .val(0)
+                .trigger('keyup');
+        }
+
+        $('#ba' + id)
+            .val(0)
+            .trigger('keyup');
+
+        if (!is_sub_good) {
+            $('#good_line' + id).hide();
+        }
+    }
+
+    this.syn_amount = function(event) {
+        var $this = $(this);
+        var amount = $this.val();
+
+        var key = this.id.match(/\d+/g);
+
+        if (!key[1]) {
+            key[1] = 0;
+        }
+
+        if (amount == '') {
+            amount = 0;
+        } else {
+            amount = parseInt(amount);
+            if (isNaN(amount)) {
+                amount = 1;
+            }
+        }
+
+        $this.val(amount = Math.abs(amount));
+
+        if (amount == 0) {
+            $.ajax({
+                url: '/ajax_request/',
+                data: {
+                    'interface': 'catalog_good',
+                    'action':    'get_good_for_basket',
+                    'pk_good':   key[0]
+                },
+                success: function (response) {
+                    if (response.pk_good) {
+                        window.dataLayer.push({
+                            "ecommerce": {
+                                "currencyCode": "RUB",
+                                "remove":       {
+                                    "products": [
+                                        {
+                                            "id":       parseInt(response.pk_good),
+                                            "name":     response.model ? response.model : response.part_number,
+                                            "price":    parseInt(response.price),
+                                            "brand":    response.vendor
+                                        }
+                                    ]
+                                }
+                            }
+                        });
+                    }
+                },
+                dataType: 'json'
+            });
+        }
+
+        $.ajax({
+            url: '/ajax_request/',
+            data: {
+                interface: 'basket',
+                action: 'handler',
+                operation: 'set',
+                key: key[0],
+                amount: amount,
+                fk: key[1]
+            },
+            success: _this.DP_handler,
+            dataType: 'json'
+        });
+    }
+
+    this.render_select_options = function($container, value, dictionary, order) {
+        $container.empty();
+
+        $.each(order, function(i, item) {
+            $('<option>').text(dictionary[item]).val(item).appendTo($container);
+        });
+
+        $container.val(value);
+    }
+}
+
+function checkout_handler(basket_handler)
+{
+    var _this = this;
+    this.basket_handler = basket_handler;
+
+    this.tcompany_messages = {
+        1:  '',
+        4:  '<p>Доставка заказов через ТК&nbsp;&laquo;СПСР&raquo; качественнее и&nbsp;быстрее, но&nbsp;и&nbsp;дороже чем у&nbsp;ТК&nbsp;&laquo;ПЭК&raquo; или EMS.</p>',
+        8:  '<p><a href="https://pecom.ru/contacts/list-filials/" target="_blank">Адреса складов компании</a>.</p>',
+    };
+
+    this.payment_messages = {
+        5: '<p>Карты American Express к оплате не принимаются. Приносим извинения за неудобства.</p>',
+        8: '<p>Карты American Express к оплате не принимаются. Приносим извинения за неудобства.</p>',
+    };
+
+    this.CDP_handler = function() {
+        var status = _this.basket_handler.basket.dlv;
+
+        $('#c_address_line').hide();
+        $('#c_metro_line').hide();
+        $('#necessary_addr').hide();
+        $('#eaist').hide().find('input').prop('disabled',true);
+
+        if (_this.basket_handler.basket.count.total >= 30000 && _this.basket_handler.basket.user_type == 1 && status.city == 0) {
+            $('#eaist').show().find('input').prop('disabled', false);
+        } else {
+            $('#eaist input').prop('checked', false).change();
+        }
+
+
+        if ((status['delivery']+'')[0] != 5) {
+            $('#c_address_line').show();
+            if (status['city'] == 0) {
+                $('#c_metro_line').show();
+            }
+        }
+
+        status['delivery'] = status['delivery'] -0;
+        status['payment'] = status['payment']   -0;
+
+        if ([5,8,25].indexOf(status['delivery'])==-1) {
+            $('#necessary_addr').show();
+        }
+
+        if ([76,77].indexOf(status['delivery'])!=-1) {
+            _rt('.dlv_ems_contract').set({className:'tx11 error dlv_ems_contract'});
+        } else {
+            _rt('.dlv_ems_contract').set({className:'tx11 error dlv_ems_contract hide'});
+        }
+
+        if ([4,21,22,23,24,25,26].indexOf(status['delivery'])!=-1) {
+            _rt('.dlv_spsr_dpd_contract').set({className:'tx11 error dlv_spsr_dpd_contract'});
+        } else {
+            _rt('.dlv_spsr_dpd_contract').set({className:'tx11 error dlv_spsr_dpd_contract hide'});
+        }
+
+        if (status['delivery'] == 87) {
+            _rt('.dlv_russian_post_contract').set({className:'tx11 error dlv_russian_post_contract'});
+        } else {
+            _rt('.dlv_russian_post_contract').set({className:'tx11 error dlv_russian_post_contract hide'});
+        }
+
+        if (_this.tcompany_messages[status['delivery']]) {
+            _rt('#tcompany_message').html(_this.tcompany_messages[status['delivery']]).set({className:''});
+        } else {
+            _rt('#tcompany_message').html('').set({className:'hide'});
+        }
+
+        if (_this.payment_messages[status['payment']]) {
+             _rt('#payment_message').html(_this.payment_messages[status['payment']]).set({className:''});
+        } else {
+            _rt('#payment_message').html('').set({className:'hide'});
+        }
+
+
+        if ( (status['payment']!=1 && status['payment']!=7) || (status['city']!=0) ) {
+            $('#customer_name_right_message').html('Для ускорения оформления заказа укажите ваши полные ФИО и&nbsp;точный адрес с&nbsp;индексом.');
+        } else {
+            $('#customer_name_right_message').empty();
+        }
+    }
+
+    this.initHandlers = function() {
+        _this.basket_handler.callbackDP = _this.CDP_handler;
+
+        $('.amount input').keyup(_this.syn);
+        $('#usepoints').keyup(_this.handle_points);
+        $('#c_usertype').change(function(){
+            _this.CDP_handler();
+        });
+
+        if (user_logged == 0) {
+            _rt('.customer input').add('.customer select').each(function (obj)
+            {
+                _rt(obj).bind('change',function(){ _rt().cookie(obj.id,_rt(obj).value(),90); });
+                _rt(obj).value(_rt().ifCookie(obj.id,''));
+            });
+        }
+
+        $('#checkout_form').on('keyup keypress', function(e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        $('#eaist input').change(function() {
+            if (this.checked) {
+                $('#select_manager_row').hide();
+            } else {
+                $('#select_manager_row').show();
+            }
+        });
+
+        _this.CDP_handler();
+    }
+
+    this.handle_points = function(event) {
+        event = _rt().getEvent(event);
+        var obj = _rt().getTarget(event);
+        var points = parseInt(obj.value,10);
+        if(isNaN(points))points=0;
+        _rt(obj).value(points);
+
+        _this.basket_handler.apply_points(_rt(obj).value());
+    }
+
+    this.syn = function(event) {
+        event = _rt().getEvent(event);
+        var obj = _rt().getTarget(event);
+        var key = obj.id.replace(/[a-zA-Z]+/,'');
+
+        $input = $('#ba'+key);
+        if($input.val() == 1) {
+            $('#cc'+key).addClass('hide');
+        } else {
+            $('#cc'+key).removeClass('hide');
+        }
+
+        var price = parseInt($input.attr('data-price'));
+        var discount = parseInt($input.attr('data-discount'));
+        var total = $input.val() * price;
+        var total_discount = $input.val() * discount;
+
+        $('#cst_old'+key).html(number_format(total)+' руб.');
+        $('#cst'+key).html(number_format(total - total_discount)+' руб.');
+    }
+}

@@ -1,0 +1,41 @@
+(function($) {
+    $(function() {
+        var $soft_offer = $('#agree_soft'),
+            $soft_offer_input = $soft_offer.find('input');
+
+        $("#checkout_form").submit(
+            function(event) {
+                if(!$soft_offer.is(':visible')) {
+                    return true;
+                }
+
+                if (!$soft_offer_input.prop('checked')) {
+                    event.preventDefault();
+
+                    $soft_offer.addClass("error-show");
+                    return false;
+                }
+            }
+        );
+
+        $soft_offer_input.change(
+            function() {
+                $soft_offer.toggleClass('error-show', !$(this).prop("checked"));
+            }
+        );
+
+
+        var $tr = $("#send_type_row");
+        var $labels = $tr.find("label");
+        var id = $tr.find("input:checked").attr("id");
+        if (typeof id != "undefined") {
+            $tr.find('label[for="' + id + '"]').addClass("checked");
+        }
+        $labels.on("click", function() {
+            if (!$(this).hasClass("checked")) {
+                $labels.removeClass("checked");
+                $(this).addClass("checked");
+            }
+        });
+    });
+})(jQuery);

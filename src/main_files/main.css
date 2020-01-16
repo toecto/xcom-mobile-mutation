@@ -1,0 +1,84 @@
+.header .logo .img {
+  background: url(./assets/logo-xmas-small.png);
+}
+
+@media screen and (max-width: 1200px) {
+  #main .header .phones {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin: 0;
+  }
+  .header .logo .img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .header .phone {
+    font-size: 16px;
+    text-align: right;
+  }
+  .header .phone.right {
+    margin-top: 7px;
+  }
+  .header .information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 14px;
+  }
+  .header .information .schedule {
+    padding-left: 0;
+    width: 100%;
+    text-align: right;
+  }
+  .header .information .schedule p {
+    font-size: 12px;
+  }
+  .header .information .recall {
+    width: 100%;
+  }
+  .header .information .recall p {
+    font-size: 12px;
+  }
+  .header .column.column-1 {
+    width: 100%;
+  }
+  .header .column.column-1 .sites-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 5px;
+  }
+  .header .column.column-1 .sites-nav li {
+    white-space: nowrap;
+  }
+  .header .column.column-1 .sites-nav .mobile {
+    display: none;
+  }
+  .header .column.column-2 {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  .header .column.column-3 {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+}
+/*# sourceMappingURL=main.css.map */
