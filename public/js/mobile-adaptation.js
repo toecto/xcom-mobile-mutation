@@ -208,7 +208,7 @@ $(document).ready(function () {
                     const li = `
           <li class='menu-mobile__item'>
             <a href="${val.href}">
-              <div class='menu-mobile__item__img'><img src="./assets/icons/menu/${val.img}" alt="${val.title}"></div>
+              <div class='menu-mobile__item__img'><img src="/toecto/xcom-mobile-mutation/master/public/assets/icons/menu/${val.img}" alt="${val.title}"></div>
               <div class='menu-mobile__item__title'>${val.title}</div>
             </a>
           </li>
