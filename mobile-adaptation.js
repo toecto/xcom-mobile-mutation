@@ -74,8 +74,8 @@ $(document).ready(function () {
               </li>
             </ul>
             <div class='btn-store'>
-                <a class='btn-store__item' href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8"><img src="./assets/icons/appstore.png" alt="Доступно в AppStore" border="0"></a>
-                <a class='btn-store__item' href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop"><img src="./assets/icons/googleplay.png" alt="Доступно в Google play" border="0"></a>
+                <a class='btn-store__item' href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8"><img src="/mod/site/images/appstore.png" alt="Доступно в AppStore" border="0"></a>
+                <a class='btn-store__item' href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop"><img src="/mod/site/images/googleplay.png" alt="Доступно в Google play" border="0"></a>
             </div>
             <ul class='m-menu-list'>
               <li class='m-menu-list__item'><a href="mailto:val@xcom.ru" class="black">Прием жалоб и предложений</a></li>
@@ -204,7 +204,7 @@ $(document).ready(function () {
           const li = `
           <li class='menu-mobile__item'>
             <a href="${val.href}">
-              <div class='menu-mobile__item__img'><img src="./assets/icons/menu/${val.img}" alt="${val.title}"></div>
+              <div class='menu-mobile__item__img'><img src="/toecto/xcom-mobile-mutation/master/assets/icons/menu/${val.img}" alt="${val.title}"></div>
               <div class='menu-mobile__item__title'>${val.title}</div>
             </a>
           </li>
