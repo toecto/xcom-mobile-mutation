@@ -1,9 +1,23 @@
 'use strict';
 $(document).ready(function () {
+    $('#news_block_heading .heading1').append('<a href="https://www.xcom-shop.ru/news/rss/" target="_blank" class="rss"></a>')
     const header = $('.header'),
         mHeader = $('.m-header'),
-        bonusNum = $('#head_username .green.push').text()
+        bonusNum = $('#head_username .green.push').text();
+    
+    let mainPage = false
+    
 
+        
+
+        
+
+
+    if (window.location.pathname == '/') {
+        mainPage = true
+    } else {
+        mainPage = false
+    }
     const mHeaderContent = function () {
         return (
             `<div class='m-header'>
@@ -138,7 +152,7 @@ $(document).ready(function () {
     })
 
     $(document).on('click', '#main-menu-btn', function () {
-        $('#main-menu-mobile').fadeIn(200)
+        $('#main-menu-mobile').slideToggle(200)
     })
 
     //main-menu
@@ -178,10 +192,10 @@ $(document).ready(function () {
             let catalog = $('#catalog_nav')
 
             const mainMenuBtn = `
-        <div id='main-menu-btn'>
-            <span>Каталог</span>
-        </div>
-      `
+                <div id='main-menu-btn'>
+                    <span>Каталог</span>
+                </div>
+            `
 
             if (!mainMenuBtnCreate) {
                 $('#main-menu').hide()
@@ -193,14 +207,14 @@ $(document).ready(function () {
             $('#main-menu').hide()
 
             if (!mainMenuMobileCreate) {
+            //   <div class="main-menu-mobile__close">Закрыть</div>
                 const mainMenuMobile = `
-        <div id='main-menu-mobile' class="main-menu-mobile">
-          <div class="main-menu-mobile__close">Закрыть</div>
-          <ul id='menu-mobile-list' class="main-menu-mobile__list">
-            
-          </ul>
-        </div>
-        `
+                    <div id='main-menu-mobile' class="main-menu-mobile">
+                        <ul id='menu-mobile-list' class="main-menu-mobile__list">
+                            
+                        </ul>
+                    </div>
+                    `
                 $('#catalog_nav').after(mainMenuMobile)
                 mainMenuMobileCreate = true
 
@@ -208,13 +222,17 @@ $(document).ready(function () {
                     const li = `
           <li class='menu-mobile__item'>
             <a href="${val.href}">
-              <div class='menu-mobile__item__img'><img src="/toecto/xcom-mobile-mutation/master/public/assets/icons/menu/${val.img}" alt="${val.title}"></div>
+              <div class='menu-mobile__item__img'><img src="./assets/icons/menu/${val.img}" alt="${val.title}"></div>
               <div class='menu-mobile__item__title'>${val.title}</div>
             </a>
           </li>
           `
                     $('#menu-mobile-list').append(li)
                 })
+            }
+
+            if (mainPage) {
+                $('#main-menu-mobile').show()
             }
 
 
