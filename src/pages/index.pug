@@ -1,0 +1,1933 @@
+extends ../template/layout.pug
+
+block content
+    table(width="100%" cellspacing="0" cellpadding="0")
+        tbody
+            tr
+                td#content
+                    .banner
+                        img(src="./static/ny_2020_shop_2.jpg" style="display: block; width: 100%; margin-bottom: 20px")
+                        style(type="text/css").
+                            .universal .spage {
+                            width: 100%;
+                            max-width: none;
+                            }
+                            .configurators {
+                            box-sizing: border-box;
+                            width: 230px !important;
+                            height: 200px;
+                            border-collapse: collapse;
+                            background: url(/var/files/5d/c4/5da9a4f5dc483357645521) no-repeat;
+                            background-size: cover;
+                            border: none;
+                            }
+                            .configurators tr {
+                            height: 25%;
+                            }
+                            .configurators td {
+                            border: none;
+                            background-color: transparent;
+                            vertical-align: middle;
+                            padding: 2px;
+                            font-size: 13px;
+                            }
+                            .configurators a {
+                            text-decoration: none;
+                            color: white;
+                            }
+                            .configurators a:visited {
+                            color: white;
+                            }
+                            .configurators tr:first-child {
+                            background: url(/var/files/f7/f2/5da97b6f7f2be327746180) no-repeat;
+                            background-size: cover;
+                            }
+                            .configurators tr:first-child td {
+                            padding-top: 4px;
+                            }
+                            .configurators tr:last-child td {
+                            padding-bottom: 4px;
+                            }
+                            .configurators td:nth-child(1) {
+                            width: 50px;
+                            text-align: center;
+                            }
+                        style.
+                            .vertical-helper {
+                            height: 100%;
+                            width: 0;
+                            vertical-align: middle;
+                            display: inline-block;
+                            }
+                            .orange_button {
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 6px 23px;
+                            border-radius: 3px;
+                            background-color: #f5882c;
+                            background-image: linear-gradient(to bottom, #f79620, #f47938);
+                            color: white;
+                            font-size: 11px;
+                            }
+                            #helpers_box:hover .orange_button,
+                            #helpers_below:hover .orange_button {
+                            background-color: #e68c1f;
+                            background-image: linear-gradient(to bottom, #e68c1f, #d46931);
+                            }
+                            #slideshow {
+                            margin: 0 auto;
+                            position: relative;
+                            width: 100%;
+                            }
+                            #slidesContainer {
+                            margin: 0;
+                            padding: 0;
+                            height: 200px;
+                            overflow: hidden;
+                            display: block;
+                            }
+                            #slideInner {
+                            height: 200px;
+                            }
+                            #dotsContainer {
+                            display: block;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 4px;
+                            left: 0px;
+                            text-align: center;
+                            }
+                            .sliderShadow {
+                            position: absolute;
+                            top: 0;
+                            height: 100%;
+                            width: 40px;
+                            background-color: transparent;
+                            cursor: pointer;
+                            transition: all ease 400ms;
+                            }
+                            #slideshow:hover .sliderShadow {
+                            background-color: rgba(0, 0, 0, 0.5);
+                            }
+                            #slideshow:hover .sliderShadow img {
+                            opacity: 1;
+                            }
+                            .sliderShadow.left {
+                            left: 0;
+                            }
+                            .sliderShadow.right {
+                            right: 0;
+                            }
+                            .sliderShadow img {
+                            position: absolute;
+                            top: 80px;
+                            left: 8px;
+                            opacity: 0.3;
+                            transition: all ease 400ms;
+                            }
+                            .slide {
+                            display: inline-block;
+                            margin: 0px;
+                            width: 1290px;
+                            height: 200px;
+                            }
+                            .dot {
+                            display: inline-block;
+                            width: 14px;
+                            height: 14px;
+                            margin: 0 8px;
+                            border-radius: 50%;
+                            -moz-border-radius: 50%;
+                            cursor: pointer;
+                            background-color: #dedede;
+                            opacity: 0.9;
+                            }
+                            .dot:hover {
+                            background-color: #313131;
+                            }
+                            .dot_selected {
+                            background-color: #808080;
+                            }
+                            #slidertable {
+                            border: 0;
+                            width: 100%;
+                            height: 200px;
+                            border-collapse: collapse;
+                            background-color: transparent;
+                            table-layout: fixed;
+                            }
+                            #helpers_td {
+                            width: 230px;
+                            border: none;
+                            padding: 0 20px 0 0;
+                            background-color: white;
+                            }
+                            #slider_td {
+                            border: none;
+                            padding: 0;
+                            background-color: white;
+                            overflow: hidden;
+                            }
+                            @media screen and (max-width: 1366px) {
+                            #helpers_td {
+                            display: none !important;
+                            }
+                            #helpers_below {
+                            display: block !important;
+                            }
+                            }
+                            @media screen and (min-width: 1367px) {
+                            #helpers_below {
+                            display: none !important;
+                            }
+                            }
+                        script.
+                            var slides = [{
+                            "link": "/actions/sverhkompaktnyy_kompyuter_dlya_biznesa_hp_prodesk_405_g4_desktop_mini",
+                            "image": "hp_prodesk_405_g4_dm",
+                            "date_from": "2019-12-16",
+                            "date_to": "2020-01-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/search/?o=n&s=ADATA+AX4U",
+                            "utm": "adata_sale",
+                            "image": "ADATA_2019",
+                            "date_from": "2019-12-16",
+                            "date_to": "2020-01-08"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/pages/new_year_2019/",
+                            "utm": "10_plus_gifts",
+                            "image": "10_plus_gifts_2019",
+                            "date_from": "2019-12-12",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "/actions/aktsiya_kaspersky_lab__vyigrayte_tyr_v_angliyu_vmeste_s_kiberpaylem/",
+                            "utm": "action2079",
+                            "image": "/var/ftp/banners/slider/kaspersky_paul.jpg",
+                            "date_to": "2018-06-09"
+                            }, {
+                            "link": "/actions/aktsiya_skidka_20_na_godovyyu_podpisky_coreldraw/",
+                            "utm": "corel_discount_20",
+                            "image": "/var/ftp/banners/slider/coreldraw_discount.jpg",
+                            "date_to": "2018-04-01"
+                            }, {
+                            "link": "/actions/aktsiya_samsung_galaxy_note8_po_sypertsene__tolko_19_i_20_maya/",
+                            "utm": "galaxy_note8_superprice",
+                            "image": "/var/ftp/banners/slider/samsung_galaxy_note8_super_price_shop.jpg",
+                            "date_to": "2018-05-21"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/hp_care_pack/",
+                            "utm": "hp_care_pack",
+                            "image": "/var/files/55/e1/5d403c155e1f9813997161"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/sovremennye_noytbyki_hp_probook_s_protsessorami_intel_core/",
+                            "utm": "hp_probook",
+                            "image": "/var/files/02/5f/5db691b025fa3722523121",
+                            "date_from": "2019-10-30",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "hidden": true,
+                            "link": "/pages/keenetic/",
+                            "utm": "keenetic",
+                            "image": "keenetic_brand"
+                            }];
+                            var sliderbanners = [{
+                            "link": "https://www.xcom-shop.ru/actions/sverhkompaktnyy_kompyuter_dlya_biznesa_hp_prodesk_405_g4_desktop_mini?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/hp_prodesk_405_g4_dm.jpg",
+                            "date_from": "2019-12-16",
+                            "date_to": "2020-01-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/search/?o=n&s=ADATA+AX4U&utm_source=shop_title&utm_medium=banner&utm_campaign=adata_sale",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/ADATA_2019.jpg",
+                            "date_from": "2019-12-16",
+                            "date_to": "2020-01-08"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/pages/new_year_2019/?utm_source=shop_title&utm_medium=banner&utm_campaign=10_plus_gifts",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/10_plus_gifts_2019.jpg",
+                            "date_from": "2019-12-12",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/pages/hp_probook_400_G6/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_probook",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/HP ProBook G6 400_new.jpg",
+                            "date_from": "2019-12-16",
+                            "date_to": "2020-01-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/bonysy_za_komplekt_kompyutera_s_printerom_ili_mfy/?utm_source=shop_title&utm_medium=banner&utm_campaign=pc_pantum",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/pc_pantum.jpg",
+                            "date_to": "2020-01-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/pages/microsoft_office_365/?utm_source=shop_title&utm_medium=banner&utm_campaign=office_365",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/office_365.jpg"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/smotri_shire_bonysy_za_pokypky_proektorov/?utm_source=shop_title&utm_medium=banner&utm_campaign=projectors_2019",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/projectors_2019.jpg",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/pages/hp_elite_dragonfly/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_dragonfly",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/dragonfly_2.jpg"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/v_12_raz_bolshe_ballov_za_pokypky_usb_nakopiteley_transcend/?utm_source=shop_title&utm_medium=banner&utm_campaign=transcend",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/Transcend_2_1290x200.jpg",
+                            "date_from": "2019-12-09",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/bolshe_mesta_na_diske__bolshe_bonysnyh_ballov_xcom/?utm_source=shop_title&utm_medium=banner&utm_campaign=seagate",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/seagate_2.jpg",
+                            "date_from": "2019-12-06",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/kypi_nabor_mastera_i_polychi_do_30_evro_na_svoy_steam_koshelek/?utm_source=shop_title&utm_medium=banner&utm_campaign=aorus_dec_2019",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/aorus_dec_2019.jpg",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/search/?o=n&s=703711+611310+634696+612669+612668+609417+632969+630147+634697&utm_source=shop_title&utm_medium=banner&utm_campaign=WD",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/WD_dec_banner.png",
+                            "date_from": "2019-12-03",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/novogodnie_rozygryshi_genius/?utm_source=shop_title&utm_medium=banner&utm_campaign=geniys_ny_2019",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/geniys_ny_2019.jpg",
+                            "date_to": "2020-01-24"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/protsessory_intel__zdes_nachinayutsya_sereznye_igry/?utm_source=shop_title&utm_medium=banner&utm_campaign=intel_core",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/intel_core.jpg",
+                            "date_from": "2019-11-25",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/povyshennye_bally_za_kompyutery_lenovo/?utm_source=shop_title&utm_medium=banner&utm_campaign=lenovo_bonus_intel",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/lenovo_bonus_pentium_i3.png",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/do_7_bonysov_xcom_k_tehnike_dahua/?utm_source=shop_title&utm_medium=banner&utm_campaign=dahua_2019",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/dahua_2019.png",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/bonysy_xcom_k_blokam_pitaniya_gigabyte/?utm_source=shop_title&utm_medium=banner&utm_campaign=gigabyte_psu",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/gigabyte_psu_2019_2.jpg",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/ogromnyy_keshbek_za_eaton/?utm_source=shop_title&utm_medium=banner&utm_campaign=eaton",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/eaton_cashback_2019.jpg",
+                            "date_from": "2019-11-08",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/yspey_kypit_ibp_apc_po_starym_tsenam/?utm_source=shop_title&utm_medium=banner&utm_campaign=apc_old_prices",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/apc_old_prices_3.jpg",
+                            "date_from": "2019-09-26",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/gigabyteaorus__ostav_svoy_sled_vo_vselennoy_zvezdnyh_voyn/?utm_source=shop_title&utm_medium=banner&utm_campaign=aorus_jedi",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/aorus_jedi.jpg",
+                            "date_from": "2019-11-01",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/bonysy_k_printeram_i_mfy_epson_serii_fabrika_pechati/?utm_source=shop_title&utm_medium=banner&utm_campaign=epson_xmas19",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/1290x200_x-mas19.jpg",
+                            "date_from": "2019-11-15",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/zaryadis_podarkami_s_delta/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/delta_gifts.jpg",
+                            "date_from": "2019-10-09",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/podarochnye_sertifikaty_k_mfy_hp_laserjet_serii_m430/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_print_430",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/hp_printers_4.png",
+                            "date_from": "2019-12-18",
+                            "date_to": "2020-01-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/tvoy_komfort__tvoya_pobeda_bonysy_k_geymerskim_kreslam/?utm_source=shop_title&utm_medium=banner&utm_campaign=gamechairs",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/gamechairs_1290x200_2.jpg",
+                            "date_from": "2019-08-12"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/pages/xcom_pc/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/XcomPuter_1290x200.jpg"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/beward_sv3210dbz_679910.html?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/Beward_Q3_Q4_2019.jpg",
+                            "date_from": "2019-07-15",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/keshbek_za_pokypky_monoblokov_monitorov_i_noytbykov_hp/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_elite_giftcard",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/hp_elite_1290x200_2.jpg"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/pages/yandex_credit/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/yandex_credit2.jpg",
+                            "date_from": "2018-12-04"
+                            }, {
+                            "link": "/pages/for_gamers/?utm_source=shop_title&utm_medium=banner&utm_campaign=xcomshop_gaming_shop",
+                            "image": "/var/ftp/banners/slider/xcomshop_gaming_shop.jpg"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/apc-legendarnaya_nadezhnost/?utm_source=shop_title&utm_medium=banner&utm_campaign=apc",
+                            "image": "/var/files/8b/af/5c57f808baf00352252396"
+                            }, {
+                            "link": "https://www.xcom.ru/about/25_years/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/25_years_banner_01_1290x200.jpg",
+                            "date_from": "2019-11-21",
+                            "date_to": "2019-11-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/keshbek_za_pokypky_ibp_apc/?utm_source=shop_title&utm_medium=banner&utm_campaign=apc_3_perc",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/apc_1290x200_2.jpg",
+                            "date_to": "2019-11-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/kovrik_dlya_igrovogo_kresla_sharkoon_v_podarok/?utm_source=shop_title&utm_medium=banner&utm_campaign=sharkoon_mat",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/sharkoon_mat.jpg",
+                            "date_from": "2019-10-08",
+                            "date_to": "2019-11-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/zyxel_v_chest_dnya_rozhdeniya_darit_podarki/?utm_source=shop_title&utm_medium=banner&utm_campaign=zyxel_ap_gift",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/zyxel_ap_gift_2.jpg",
+                            "date_to": "2019-11-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/catalog/setevoe_oborydovanie/wi-tek/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/Switch_xcom_1290.jpg",
+                            "date_from": "2019-10-09",
+                            "date_to": "2019-11-15"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/15_bonysov_xcom_na_prodyktsiyu_vention/?utm_source=shop_title&utm_medium=banner&utm_campaign=vention",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/vention_1290x200.png",
+                            "date_from": "2019-10-10",
+                            "date_to": "2019-11-11"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/epson__12500_otpechatkov_hvatit_na_vseh/?utm_source=shop_title&utm_medium=banner&utm_campaign=epson_12500",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/epson_1290x200_2.jpg",
+                            "date_to": "2019-10-15"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/10_bonysnyh_ballov_k_originalnym_kartridzham_hp/?utm_source=shop_title&utm_medium=banner&utm_campaign=hpink_10_perc",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/hpink_10_perc.jpg",
+                            "date_from": "2019-09-23",
+                            "date_to": "2019-10-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/1000_bonysov_za_komplekt_materinskaya_plata__blok_pitaniya_gigabyte/?utm_source=shop_title&utm_medium=banner&utm_campaign=gigabyte_psu_discount",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/gigabyte_psu_discount2.jpg",
+                            "date_to": "2019-10-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/seagate_ironwolf__pravilnyy_nakopitel_dlya_setevyh_hranilisch/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/IronWolf_1290x200.jpg",
+                            "date_from": "2019-09-17",
+                            "date_to": "2019-10-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/seagate_exos__nadezhnye_i_i_proizvoditelnye_zhestkie_diski_dlya_serverov_i_data-tsentrov/?utm_source=shop_title&utm_medium=banner&utm_campaign=seagate_exos",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/Exos_1290x200.jpg",
+                            "date_from": "2019-09-17",
+                            "date_to": "2019-10-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/ostav_otzyv_o_videokartah_gigabyte_radeon_rx5700_i_rx5700xt_i_polychi_20_na_steam-koshelek/?utm_source=shop_title&utm_medium=banner&utm_campaign=gigabyte_radeon_review",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/gigabyte_radeon_review.jpg",
+                            "date_from": "2019-09-26",
+                            "date_to": "2019-10-22"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/povyshennye_bally_za_pokypky_nakopiteley_transcend/?utm_source=shop_title&utm_medium=banner&utm_campaign=transcend_bonus",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/transcend_10_perc.jpg",
+                            "date_from": "2019-09-23",
+                            "date_to": "2019-10-04"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/modyli_pamyati_kingston_kvr__v_10_raz_bolshe_bonysov/?utm_source=shop_title&utm_medium=banner&utm_campaign=kingston_kvr",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/new_kingston_1290x200_2.jpg",
+                            "date_to": "2019-09-09"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/1_sentyabrya_vmeste_s_xcom-shop/?utm_source=shop_title&utm_medium=banner&utm_campaign=1st_september_2019",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/1st_september_2019.jpg",
+                            "date_to": "2019-09-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/mini-pk_intel_nuc/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/intel_NUC_a1290x200.jpg",
+                            "date_from": "2019-06-06",
+                            "date_to": "2019-09-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/moschnye_bonysy_za_moschnyy_kompyuter_x-home/?utm_source=shop_title&utm_medium=banner&utm_campaign=xhome_bonus",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/xcom_home.jpg",
+                            "date_to": "2019-08-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/aktsiya_pri_pokypke_kompyuterov_x-com_gamer_karta_steam_v_podarok/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/xcom_GAMERSa.jpg",
+                            "date_from": "2019-06-25",
+                            "date_to": "2019-08-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/povyshennye_bally_za_pokypky_operativnoy_pamyati_patriot/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/patriot_10_perc.jpg",
+                            "date_from": "2019-07-09",
+                            "date_to": "2019-08-01"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/kassovye_terminaly_hp/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/HP_kassa_1290x200_1.jpg",
+                            "date_from": "2019-06-25",
+                            "date_to": "2019-07-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/aktsiya_pri_pokypke_rabochih_stantsiy_hp_workstation_karta_darit_legko_v_podarok/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/HP workstations_1290x200.jpg",
+                            "date_from": "2019-06-20",
+                            "date_to": "2019-07-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/byd_energichen_s_eaton_3_bonysnyh_ballov_xcom-shop_v_podarok/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/EATON_main_1290x200.png",
+                            "date_from": "2019-06-04",
+                            "date_to": "2019-07-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/bolshe_ballov_pri_pokypke_ssd_kingston/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/kingston_SSD_10perc_bonus_slider_new.jpg",
+                            "date_from": "2019-06-20",
+                            "date_to": "2019-07-11"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/keshbek_pri_pokypke_mfy_hp_laserjet_serii_m430/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_430_cachbak",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/hp_printers_4.png",
+                            "date_to": "2019-06-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/gigabyte_mama_ya_na_more/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/Gigabyte_Z390_main.jpg",
+                            "date_from": "2019-06-04",
+                            "date_to": "2019-06-30"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/10_bonysov_xcom-shop_za_pokypky_usb_nakopiteley_transcend/?utm_source=shop_title&utm_medium=banner&utm_campaign=transcend_10perc_bonus",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/transcend_10perc_bonus_slider2.jpg",
+                            "date_to": "2019-06-14"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/10_bonysov_xcom-shop_za_pokypky_modyley_pamyati_kingston_serii_kvr/?utm_source=shop_title&utm_medium=banner&utm_campaign=kingston_10perc",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/kingston_10perc_bonus_slider2.jpg",
+                            "date_from": "2019-05-27",
+                            "date_to": "2019-06-10"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/do_10_bonysnyh_ballov_za_pokypky_mfy_i_printerov_xerox/?utm_source=shop_title&utm_medium=banner&utm_campaign=xerox_10_perc_bonus",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/xerox_10_perc_bonus.jpg",
+                            "date_to": "2019-05-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/gigabyte__vse_dlya_tvoey_pobedy/?utm_source=shop_title&utm_medium=banner&utm_campaign=gigabyte_rtx_gifts",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/gigabyte_rtx_gifts.jpg",
+                            "date_from": "2019-04-24",
+                            "date_to": "2019-05-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/litsenziya_na_zyxel_secureporter_v_podarok_k_marshrytizatoram/?utm_source=shop_title&utm_medium=banner&utm_campaign=secureporter",
+                            "image": "https://www.xcom-shop.ru/var/files/89/1d/5c9dc97891de9140462587",
+                            "date_to": "2019-04-25"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/search/kabel_interfeysnyy/?o=n&s=cablexpert&type=56&utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/USB_Silver_Gold_Platinum.jpg",
+                            "date_from": "2019-02-07",
+                            "date_to": "2019-05-07"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/msi__prokachay_svoe_oryzhie_i_polychi_bonys/?utm_source=shop_title&utm_medium=banner&utm_campaign=msi_weapon",
+                            "image": "/var/files/4a/99/5c778f64a9987743367364",
+                            "date_to": "2019-03-21"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/catalog/periferiya/klaviatyry_manipylyatory/myshi_kovriki/myshi/gembird/?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/files/72/1c/5c7d3f0721c1f063392147",
+                            "date_to": "2019-03-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/dopolnitelnye_bonysy_k_mfy_i_printeram_hp/?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/files/22/6a/5c656e0226aeb526824936",
+                            "date_from": "2019-02-14",
+                            "date_to": "2019-03-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/podarok_ot_cablexpert_i_printbarru/?utm_source=shop_title&utm_medium=banner&utm_campaign=cablexpert",
+                            "image": "/var/files/00/f3/5c6e85e00f336084330667",
+                            "date_to": "2019-03-31"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/8_podarkov_k_8_marta/?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/files/ca/c7/5c7fe43cac771101467645",
+                            "date_from": "2019-03-07",
+                            "date_to": "2019-03-10"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/search/?o=n&s=Cablexpert+%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B+661911+601521+601522+601523&utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/Cablexpert_Instruments_1290x200.jpg",
+                            "date_from": "2019-02-15",
+                            "date_to": "2019-02-28"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/catalog/periferiya/microsoft/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/Microsoft_NY_mouse_main.jpg",
+                            "date_from": "2018-12-21",
+                            "date_to": "2019-01-08"
+                            }, {
+                            "link": "https://www.xcom-shop.ru/actions/zimnyaya_rasprodazha_obogrevateley/?utm_source=shop_title&utm_medium=banner&utm_campaign=sale_climate_equipment",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/sale_climate_equipment.jpg",
+                            "date_to": "2018-12-31"
+                            }, {
+                            "link": "/actions/aktsiya_gigabyte_aorus_z390_i_rtx__podelis_opytom_i_polychi_20__na_steam_koshelek/?utm_source=shop_title&utm_medium=banner&utm_campaign=aorus_comments",
+                            "image": "/var/ftp/banners/slider/aorus_comments_promo.jpg",
+                            "date_to": "2018-12-31"
+                            }, {
+                            "link": "/search/?o=n&s=Acer+Aspire+C24&utm_source=shop_title&utm_medium=banner&utm_campaign=acer_aspire_c24",
+                            "image": "/var/ftp/banners/slider/acer_aspire_c24.jpg",
+                            "date_from": "2018-11-15",
+                            "date_to": "2018-12-16"
+                            }, {
+                            "link": "/actions/aktsiya_oki__tri_kartridzha_v_podarok_k_mfy/?utm_source=shop_title&utm_medium=banner&utm_campaign=oki_gift_3toner",
+                            "image": "/var/ftp/banners/slider/oki_gift_3toner.jpg",
+                            "date_to": "2018-09-30"
+                            }, {
+                            "link": "/actions/aktsiya_podarki_k_myshkam_i_garnityram_gembird/?utm_source=shop_title&utm_medium=banner&utm_campaign=klavtorg",
+                            "image": "/var/ftp/banners/slider/klavtorg.jpg",
+                            "date_to": "2018-09-30"
+                            }, {
+                            "link": "/actions/aktsiya_epson__spetsialnoe_predlozhenie_na_termoprintery_labelworks/?utm_source=shop_title&utm_medium=banner&utm_campaign=epson_termal_printers",
+                            "image": "/var/ftp/banners/slider/epson_termal_printers_slider.jpg",
+                            "date_to": "2018-10-01"
+                            }, {
+                            "link": "/actions/aktsiya_v_sentyabre_darit_legko_vmeste_s_hp_probook_430_g5_i_440_g5/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_easygift_probook_430_g5_440_g5",
+                            "image": "/var/ftp/banners/slider/hp_easygift_probook_430_g5_440_g5.jpg",
+                            "date_from": "2018-09-01",
+                            "date_to": "2018-09-30"
+                            }, {
+                            "link": "/beward_ds06m_572828.html?utm_source=shop_title&utm_medium=banner&utm_campaign=beward_domofon",
+                            "image": "/var/ftp/banners/slider/beward_domofon.jpg",
+                            "date_to": "2018-10-01"
+                            }, {
+                            "link": "/actions/aktsiya_skidka_10_na_godovyyu_podpisky_na_graphisoft_archicad_22/?utm_source=shop_title&utm_medium=banner&utm_campaign=archicad_22_bim",
+                            "image": "/var/ftp/banners/slider/archicad_22_bim.jpg",
+                            "date_from": "2018-08-02",
+                            "date_to": "2018-09-15"
+                            }, {
+                            "link": "/actions/aktsiya_samsung_gear_iconx_i_godovaya_podpiska_na_yandeksmyzyky_pri_pokypke_samsung_galaxy_s9_i_s9/?utm_source=shop_title&utm_medium=banner&utm_campaign=samsung_galaxy_s9_gear_iconx",
+                            "image": "/var/ftp/banners/slider/samsung_galaxy_s9_gear_iconx.jpg",
+                            "date_to": "2018-09-09"
+                            }, {
+                            "link": "/actions/aktsiya_10_bonysov_pri_pokypke_poe_kommytatorov_i_wi-fi_tochek_dostypa_tp-link/?utm_source=shop_title&utm_medium=banner&utm_campaign=tp_link_10p_bonus",
+                            "image": "/var/ftp/banners/slider/tp-link_10x_bonus.jpg",
+                            "date_to": "2018-09-01"
+                            }, {
+                            "link": "/catalog/periferiya_i_orgtehnika/sistemy_zaschity_pitaniya/istochniki_bespereboynogo_pitaniya/eaton/ellipse_pro/?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/ftp/banners/slider/EATON_shop_main_1290x200_130618_020818.jpg",
+                            "date_to": "2018-08-31"
+                            }, {
+                            "link": "/actions/aktsiya_byd_vsegda_v_horoshey_forme_vmeste_s_kobra/?utm_source=shop_title&utm_medium=banner&utm_campaign=kobra_sportmaster",
+                            "image": "/var/ftp/banners/slider/kobra_sportmaster_shop.jpg",
+                            "date_to": "2018-09-01"
+                            }, {
+                            "link": "/actions/aktsiya_gigabyte_aorus__klaviatyra_v_podarok_k_materinskim_platam_s_nakopitelyami_intel_optane/?utm_source=shop_title&utm_medium=banner&utm_campaign=aorus_optane_gift_keyboard",
+                            "image": "/var/ftp/banners/slider/aorus_optane_gift_keyboard.jpg",
+                            "date_to": "2018-08-09"
+                            }, {
+                            "link": "/actions/aktsiya_kreativnoe_leto_v_xcom-shop__plavim_tseny_na_adobe_creative_cloud/?utm_source=shop_title&utm_medium=banner&utm_campaign=aorus_farcry5_2",
+                            "image": "/var/ftp/banners/slider/adobe_cc_discount.jpg",
+                            "date_to": "2018-08-01"
+                            }, {
+                            "link": "/actions/aktsiya_aorus__doveryay_pochitay_povinyysya_igray_2/?utm_source=shop_title&utm_medium=banner&utm_campaign=aorus_farcry5_2",
+                            "image": "/var/ftp/banners/slider/aorus_farcry5_2.jpg",
+                            "date_to": "2018-08-01"
+                            }, {
+                            "link": "/search/kontroller_dlya_rs_setevyh_hranilisch_i_serverov/?o=n&s=adaptec&type=21&utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/ftp/banners/slider/MICROSEMI_shop_main.png",
+                            "date_to": "2018-07-20"
+                            }, {
+                            "link": "/actions/aktsiya_msi__igrat_bez_kompromissov_podarki_pri_pokypke_materinskih_plat_i_kompyuterov/?utm_source=shop_title&utm_medium=banner&utm_campaign=msi_no_compromise",
+                            "image": "/var/ftp/banners/slider/msi_no_compromise_shop.jpg",
+                            "date_to": "2018-07-01"
+                            }, {
+                            "link": "/actions/aktsiya_msi__igray_bez_granits_kypi_videkarty_i_polychi_krytoy_bonys_na_steam-koshelek/?utm_source=shop_title&utm_medium=banner&utm_campaign=msi_no_limits",
+                            "image": "/var/ftp/banners/slider/msi_no_limits_shop.jpg",
+                            "date_to": "2018-07-01"
+                            }, {
+                            "link": "/actions/aktsiya_sertifikat_na_zameny_ekrana_pri_pokypke_samsung_galaxy_s9_i_s9/?utm_source=shop_title&utm_medium=banner&utm_campaign=s9_screen_replace",
+                            "image": "/var/ftp/banners/slider/samsung_s9_screen_replace_shop.jpg",
+                            "date_to": "2018-06-16"
+                            }, {
+                            "link": "/actions/aktsiya_v_desyat_raz_bolshe_bonysnyh_ballov_pri_pokypke_monitorov_philips/?utm_source=shop_title&utm_medium=banner&utm_campaign=action2143",
+                            "image": "/var/ftp/banners/slider/philips_bonus_monitors.jpg",
+                            "date_to": "2018-05-31"
+                            }, {
+                            "link": "/actions/aktsiya_hp_karta_darit_legko_nominalom_3000_rybley_za_pokypky_noytbyka/?utm_source=shop_title&utm_medium=banner&utm_campaign=action2122",
+                            "image": "/var/ftp/banners/slider/hp_elitebook.jpg",
+                            "date_to": "2018-05-31"
+                            }, {
+                            "link": "/actions/aktsiya_obnovlenie_do_archicad_21_so_skidkoy_30/?utm_source=shop_title&utm_medium=banner&utm_campaign=action2126",
+                            "image": "/var/ftp/banners/slider/archicad_21_upgrade_shop.jpg",
+                            "date_to": "2018-05-15"
+                            }, {
+                            "link": "/gembird_kb-g300l_612977.html?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/ftp/banners/slider/Keyboards_Gembird.jpg",
+                            "date_to": "2018-05-15"
+                            }, {
+                            "link": "/actions/aktsiya_netgear__toplivnaya_karta_v_podarok_k_poe_kommytatory/?utm_source=shop_title&utm_medium=banner&utm_campaign=action2125",
+                            "image": "/var/ftp/banners/slider/netgear_poe.jpg",
+                            "date_to": "2018-06-01"
+                            }, {
+                            "link": "/actions/aktsiya_aorus__doveryay_pochitay_povinyysya_igray/?utm_source=shop_title&utm_medium=banner&utm_campaign=action2121",
+                            "image": "/var/ftp/banners/slider/aorus_farcry5.jpg",
+                            "date_to": "2018-05-01"
+                            }, {
+                            "link": "/actions/aktsiya_vesennyy_rozygrysh_prizov_ot_genius/?utm_source=shop_title&utm_medium=banner&utm_campaign=action2104",
+                            "image": "/var/ftp/banners/slider/genius_prize_spring_2018.jpg",
+                            "date_to": "2018-07-01"
+                            }, {
+                            "link": "/actions/aktsiya_kaspersky_lab__vyigrayte_tyr_v_angliyu_vmeste_s_kiberpaylem/?utm_source=shop_title&utm_medium=banner&utm_campaign=action2079",
+                            "image": "/var/ftp/banners/slider/kaspersky_paul.jpg",
+                            "date_to": "2018-06-09"
+                            }, {
+                            "link": "/actions/aktsiya_skidka_20_na_godovyyu_podpisky_coreldraw/?utm_source=shop_title&utm_medium=banner&utm_campaign=corel_discount_20",
+                            "image": "/var/ftp/banners/slider/coreldraw_discount.jpg",
+                            "date_to": "2018-04-01"
+                            }, {
+                            "link": "/actions/aktsiya_samsung_galaxy_note8_po_sypertsene__tolko_19_i_20_maya/?utm_source=shop_title&utm_medium=banner&utm_campaign=galaxy_note8_superprice",
+                            "image": "/var/ftp/banners/slider/samsung_galaxy_note8_super_price_shop.jpg",
+                            "date_to": "2018-05-21"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/hp_care_pack/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_care_pack",
+                            "image": "/var/files/55/e1/5d403c155e1f9813997161"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/sovremennye_noytbyki_hp_probook_s_protsessorami_intel_core/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_probook",
+                            "image": "/var/files/02/5f/5db691b025fa3722523121",
+                            "date_from": "2019-10-30",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "hidden": true,
+                            "link": "/pages/keenetic/?utm_source=shop_title&utm_medium=banner&utm_campaign=keenetic",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/keenetic_brand.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/pages/hp/?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/HP_carepack_01_1290x200.jpg",
+                            "date_from": "2019-07-23",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/20_bonysnyh_ballov_xcom_k_tehnike_xerox/?utm_source=shop_title&utm_medium=banner&utm_campaign=xerox_20_perc",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/xerox_02_1290.jpg",
+                            "date_from": "2019-10-14",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/god_podpiski_na_megogo_v_podarok_k_smart-proektoram_lg/?utm_source=shop_title&utm_medium=banner&utm_campaign=lg_megogo",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/lg_megogo_slider.png",
+                            "date_to": "2019-12-31"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/catalog/periferiya/klaviatyry_manipylyatory/myshi_kovriki/myshi/gembird/?utm_source=shop_title&utm_medium=banner&utm_campaign=gembird_litnet",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/litnet_1290_200_2.jpg",
+                            "date_to": "2019-09-30"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_dxracer__dopolnitelnye_bonysnye_bally_k_kazhdomy_kresly/?utm_source=shop_title&utm_medium=banner&utm_campaign=dxracer_bonus",
+                            "image": "/var/ftp/banners/slider/dxracer2.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/rozygrysh_prizov_ot_cisco/?utm_source=shop_title&utm_medium=banner&utm_campaign=cisco_prizes",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/cisco_prizes_07_2019.jpg",
+                            "date_to": "2019-08-31"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/povyshennye_bally_k_rashodnym_materialam_xerox/?utm_source=shop_title&utm_medium=banner&utm_campaign=xerox_cartridges",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/xerox_1290x200.jpg",
+                            "date_to": "2019-08-31"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/beward_sv3210dm_661101.html?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/Beward_Q1_2019_2.jpg",
+                            "date_from": "2019-01-28"
+                            }, {
+                            "hidden": true,
+                            "link": "/catalog/kompyutery_i_noytbyki/kompyutery/x-com/?prop_6250%5B29314%5D%5Bvalue%5D=29314&utm_source=shop_title&utm_medium=banner&utm_campaign=xcom_workstations",
+                            "image": "/var/ftp/banners/slider/xcom_workstations_shop.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/mesyats_office_365_besplatno_pri_pokypke_kompyuterov_x-com/?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/files/d4/de/5c91db2d4de3c951920052",
+                            "date_from": "2019-03-20",
+                            "date_to": "2019-07-03"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/10_bonysnyh_ballov_k_ssd_crucial/?utm_source=shop_title&utm_medium=banner&utm_campaign=crucial",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/crucial_slider.jpg",
+                            "date_to": "2019-05-14"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_do_5000_bonysnyh_ballov_za_pokypky_setevogo_oborydovaniya_zyxel/?utm_source=shop_title&utm_medium=banner&utm_campaign=zyxel_nebula_action",
+                            "image": "/var/ftp/banners/slider/zyxel_nebula_action.jpg",
+                            "date_to": "2019-05-14"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/gigabyte__podelis_opytom/?utm_source=shop_title&utm_medium=banner&utm_campaign=gigabyte_aorus_expirience_2019",
+                            "image": "/var/files/90/18/5c9dc90901893493223704"
+                            }, {
+                            "hidden": true,
+                            "link": "/beward_bd4685dvz_643762.html?utm_source=shop_title&utm_medium=banner&utm_campaign=beward_bd4685dvz",
+                            "image": "/var/ftp/banners/slider/beward_bd4685dvz.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/hp__podarochnaya_karta_za_pokypky_noytbykov_i_printerov/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_laptops_pcs",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/hp_laptops_pcs.jpg",
+                            "date_to": "2019-01-31"
+                            }, {
+                            "hidden": true,
+                            "link": "https://www.xcom-shop.ru/actions/neon-night__gotovye_komplekty_dlya_vnytrennego_i_vneshnego_ykrasheniya_doma/?utm_source=shop_title&utm_medium=banner&utm_campaign=neon_night",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/neon_night.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "?utm_source=shop_title&utm_medium=banner",
+                            "image": "https://www.xcom-shop.ru/var/ftp/banners/slider/NY_xcom-shop_2019.jpg",
+                            "date_from": "2018-12-21",
+                            "date_to": "2019-01-08"
+                            }, {
+                            "hidden": true,
+                            "link": "/pages/aorus_rtx_20/?utm_source=shop_title&utm_medium=banner&utm_campaign=aorus_rtx",
+                            "image": "/var/ftp/banners/slider/aorus_rtx.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/pages/polycom/?utm_source=shop_title&utm_medium=banner&utm_campaign=polycom",
+                            "image": "/var/ftp/banners/slider/polycom_slider.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/pages/bonus_points/?utm_source=shop_title&utm_medium=banner&utm_campaign=bonus_points",
+                            "image": "/var/ftp/banners/slider/bonus_wide.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/pages/payment/?utm_source=shop_title&utm_medium=banner&utm_campaign=mir_card",
+                            "image": "/var/ftp/banners/slider/mir_banner_wide2.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/search/chistyaschee_sredstvo_dlya_orgtehniki/?o=n&s=konoos&type=191&utm_source=shop_title&utm_medium=banner&utm_campaign=konoos_clean",
+                            "image": "/var/ftp/banners/slider/konoos_clean.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/catalog/periferiya/monitory/aksessyary/kabeli_i_perehodniki/konoos/?utm_source=shop_title&utm_medium=banner&utm_campaign=konoos_cables",
+                            "image": "/var/ftp/banners/slider/konoos_cables.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_tverdotelnyy_nakopitel_120_gb_v_podarok_k_videokartam_gigabyte_aorus/?utm_source=shop_title&utm_medium=banner&utm_campaign=aorus_ssd",
+                            "image": "/var/ftp/banners/slider/aorus_ssd.jpg",
+                            "date_to": "2018-12-23"
+                            }, {
+                            "hidden": true,
+                            "link": "/pages/zyxel_nebula/?utm_source=shop_title&utm_medium=banner&utm_campaign=zyxel_nebula",
+                            "image": "/var/ftp/banners/slider/zyxel_nebula.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_gigabyte_aorus__do_40_evro_na_steam_koshelek_pri_pokypke_materinskih_plat_x470_x370_i_b450/?utm_source=shop_title&utm_medium=banner&utm_campaign=gigabyte_back_to_school_2018",
+                            "image": "/var/ftp/banners/slider/gigabyte_back_to_school_2018.jpg",
+                            "date_to": "2018-10-31"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_osenniy_kaskad_prizov_ot_genius/?utm_source=shop_title&utm_medium=banner&utm_campaign=genius_autumn_2018",
+                            "image": "/var/ftp/banners/slider/genius_autumn_2018.jpg",
+                            "date_from": "2018-09-19",
+                            "date_to": "2018-11-19"
+                            }, {
+                            "hidden": true,
+                            "link": "/pages/hp_easygift/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_easygift",
+                            "image": "/var/ftp/banners/slider/hp_easygift.jpg",
+                            "date_to": "2018-08-16"
+                            }, {
+                            "hidden": true,
+                            "link": "/search/?o=n&s=lg+v30%2B&utm_source=shop_title&utm_medium=banner&utm_campaign=lg_v30",
+                            "image": "/var/ftp/banners/slider/lg_v30.jpg",
+                            "date_to": "2018-07-07"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_microsoft__keshbek_do_30_za_pokypky_aksessyarov/?utm_source=shop_title&utm_medium=banner&utm_campaign=action2102",
+                            "image": "/var/ftp/banners/slider/microsoft_cashback.jpg",
+                            "date_to": "2018-04-23"
+                            }, {
+                            "hidden": true,
+                            "link": "/lenovo_thinkcentre_tiny_m700_605705.html?utm_source=shop_title&utm_medium=banner&utm_campaign=lenovo_tiny_m700",
+                            "image": "/var/ftp/banners/slider/lenovo_tiny_m700_wide.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_msi__revolyutsiya_potom_keshbek_yzhe_seychas/?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/ftp/banners/slider/msi_cashbak_long.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_podarok_pri_pokypke_litsenzii_na_corel_coreldraw_graphics_suite_2017/?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/ftp/banners/slider/corel_gift_wide.jpg"
+                            }, {
+                            "hidden": true,
+                            "link": "/actions/aktsiya_gigabyte__winner_winner_aorus_dinner/?utm_source=shop_title&utm_medium=banner",
+                            "image": "/var/ftp/banners/slider/gigabyte_aorus3.jpg"
+                            }];
+                            var curPos = 0;
+                            var newPos = 0;
+                            var sBannerWidth = 1290;
+                            var sBannerHeight = 200;
+                            var slider_change_time = 5000;
+                            var numSlides = 0;
+                            var dotWidth = 30;
+                            var sliderTimer = false;
+                            var sliderDrawDots = false;
+                            function animate_slide() {
+                            if (newPos == curPos) {
+                            return
+                            }
+                            stop_slider_timer();
+                            if (sliderDrawDots) $('#dot' + curPos).removeClass('dot_selected');
+                            $('#slideInner').stop(true);
+                            if ((curPos == numSlides - 1) && (newPos == 0)) {
+                            $('#slideInner').animate({
+                            'marginLeft': -sBannerWidth * (numSlides + 1)
+                            }, {
+                            duration: 400,
+                            complete: function () {
+                            $('#slideInner').css('margin-left', -sBannerWidth + 'px');
+                            reset_slider_timer();
+                            }
+                            });
+                            } else if ((curPos == 0) && (newPos == numSlides - 1)) {
+                            $('#slideInner').animate({
+                            'marginLeft': 0
+                            }, {
+                            duration: 400,
+                            complete: function () {
+                            $('#slideInner').css('margin-left', -sBannerWidth * numSlides + 'px');
+                            reset_slider_timer();
+                            }
+                            });
+                            } else {
+                            if (Math.abs(newPos - curPos) > 1) {
+                            $('#slideInner').animate({
+                            'marginLeft': -sBannerWidth * (newPos + 1)
+                            }, {
+                            duration: 400 + Math.abs(newPos - curPos) * 100,
+                            complete: reset_slider_timer
+                            });
+                            } else {
+                            $('#slideInner').animate({
+                            'marginLeft': -1 * sBannerWidth * (newPos + 1)
+                            }, {
+                            duration: 400,
+                            complete: reset_slider_timer
+                            });
+                            }
+                            }
+                            curPos = newPos;
+                            if (sliderDrawDots) $('#dot' + curPos).addClass('dot_selected');
+                            }
+                            function next_slide() {
+                            if (curPos == numSlides - 1) {
+                            newPos = 0
+                            } else {
+                            newPos = curPos + 1
+                            }
+                            animate_slide();
+                            }
+                            function prev_slide() {
+                            if (curPos == 0) {
+                            newPos = numSlides - 1
+                            } else {
+                            newPos = curPos - 1
+                            }
+                            animate_slide();
+                            }
+                            function reset_slider_timer() {
+                            stop_slider_timer();
+                            start_slider_timer();
+                            }
+                            function stop_slider_timer() {
+                            clearTimeout(sliderTimer);
+                            sliderTimer = false;
+                            }
+                            function start_slider_timer() {
+                            if (sliderTimer === false) {
+                            sliderTimer = setTimeout(next_slide, slider_change_time);
+                            }
+                            }
+                            function create_slide(slide, n) {
+                            return '<div class="slide" id="slide' + n + '" style="background-color: transparent"><a href="' + slide
+                            .link +
+                            '"><img src="' + slide.image + '"></a></div>'
+                            }
+                            function create_slide_dot(n) {
+                            return '<div class="dot" id="dot' + n + '" data-num="' + n + '"></div>'
+                            }
+                            function parse_date(date_s) {
+                            var date_c = date_s.split('-');
+                            return new Date(date_c[0], date_c[1] - 1, date_c[2]);
+                            }
+                            function create_slides() {
+                            sliderbanners = sliderbanners.filter(function (slide) {
+                            if (slide.hidden) return false;
+                            if (slide.expire) slide.date_to = slide.expire;
+                            if (slide.date_from)
+                            if (Date.now() < parse_date(slide.date_from).getTime()) return false;
+                            if (slide.date_to)
+                            if (Date.now() > parse_date(slide.date_to).getTime() + 86400000) return false;
+                            return true;
+                            });
+                            numSlides = sliderbanners.length;
+                            $('#slideInner').append(create_slide(sliderbanners[sliderbanners.length - 1], 999991));
+                            $.each(sliderbanners, function (i, slide) {
+                            $('#slideInner').append(create_slide(slide, i));
+                            if (sliderDrawDots) $('#dotsContainer').append(create_slide_dot(i));
+                            });
+                            $('#slideInner').append(create_slide(sliderbanners[0], 999992));
+                            $('#slideInner').css('margin-left', -sBannerWidth + 'px');
+                            if (sliderDrawDots) $('#dot0').addClass('dot_selected');
+                            $('#slideInner').css('width', ((numSlides + 2) * sBannerWidth) + 'px');
+                            }
+                            $(document).ready(function () {
+                            create_slides();
+                            if (sliderDrawDots) $('.dot').bind('click', function (e) {
+                            e.stopPropagation();
+                            newPos = parseInt($(this).data('num'));
+                            animate_slide();
+                            });
+                            $('.sliderShadow.left').bind('click', function (e) {
+                            e.stopPropagation();
+                            prev_slide();
+                            });
+                            $('.sliderShadow.right').bind('click', function (e) {
+                            e.stopPropagation();
+                            next_slide();
+                            });
+                            $('#slidesContainer').hover(function (e) {
+                            e.stopPropagation();
+                            stop_slider_timer();
+                            }, function (e) {
+                            e.stopPropagation();
+                            start_slider_timer();
+                            });
+                            $('.dot').hover(function (e) {
+                            e.stopPropagation();
+                            stop_slider_timer();
+                            }, function (e) {
+                            e.stopPropagation();
+                            start_slider_timer();
+                            });
+                            $('.sliderShadow').hover(function (e) {
+                            e.stopPropagation();
+                            stop_slider_timer();
+                            }, function (e) {
+                            e.stopPropagation();
+                            start_slider_timer();
+                            });
+                            start_slider_timer();
+                            });
+                        table#slidertable
+                            tbody
+                                tr
+                                    td#helpers_td
+                                        table.configurators
+                                            tbody
+                                                tr
+                                                    td
+                                                        a(href="https://www.xcom-shop.ru/pc-configurator/")
+                                                            img(src="./static/5dad7da3e1993374206181")
+                                                    td
+                                                        a(href="https://www.xcom-shop.ru/pc-configurator/")
+                                                            b Конфигуратор ПК
+                                                tr
+                                                    td
+                                                        a(href="https://www.xcom-shop.ru/pages/battery-selection/")
+                                                            img(src="./static/5dad7db40a264454675596")
+                                                    td
+                                                        a(href="https://www.xcom-shop.ru/pages/battery-selection/")
+                                                            | Подбор батарей
+                                                            | для ИБП
+                                                tr
+                                                    td
+                                                        a(href="https://www.xcom-shop.ru/compatible/")
+                                                            img(src="./static/5dad7dce1dbcf564366807")
+                                                    td
+                                                        a(href="https://www.xcom-shop.ru/compatible/") Подбор расходных материалов
+                                                tr
+                                                    td
+                                                        a(href="https://www.xcom-shop.ru/pages/helpers/")
+                                                            img(src="./static/5dad7ddbafc14138860630")
+                                                    td
+                                                        a(href="https://www.xcom-shop.ru/pages/helpers/") Другие конфигураторы
+                                    td#slider_td
+                                        #slideshow
+                                            #slidesContainer
+                                                #slideInner(style="margin-left: -16770px; width: 19350px;")
+                                                    #slide999991.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/apc-legendarnaya_nadezhnost/?utm_source=shop_title&utm_medium=banner&utm_campaign=apc")
+                                                            img(src="./static/5c57f808baf00352252396")
+                                                    #slide0.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/sverhkompaktnyy_kompyuter_dlya_biznesa_hp_prodesk_405_g4_desktop_mini?utm_source=shop_title&utm_medium=banner")
+                                                            img(src="./static/hp_prodesk_405_g4_dm.jpg")
+                                                    #slide1.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/pages/hp_probook_400_G6/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_probook")
+                                                            img(src="./static/HP ProBook G6 400_new.jpg")
+                                                    #slide2.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/bonysy_za_komplekt_kompyutera_s_printerom_ili_mfy/?utm_source=shop_title&utm_medium=banner&utm_campaign=pc_pantum")
+                                                            img(src="./static/pc_pantum.jpg")
+                                                    #slide3.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/pages/microsoft_office_365/?utm_source=shop_title&utm_medium=banner&utm_campaign=office_365")
+                                                            img(src="./static/office_365.jpg")
+                                                    #slide4.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/pages/hp_elite_dragonfly/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_dragonfly")
+                                                            img(src="./static/dragonfly_2.jpg")
+                                                    #slide5.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/novogodnie_rozygryshi_genius/?utm_source=shop_title&utm_medium=banner&utm_campaign=geniys_ny_2019")
+                                                            img(src="./static/geniys_ny_2019.jpg")
+                                                    #slide6.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/podarochnye_sertifikaty_k_mfy_hp_laserjet_serii_m430/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_print_430")
+                                                            img(src="./static/hp_printers_4.png")
+                                                    #slide7.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/tvoy_komfort__tvoya_pobeda_bonysy_k_geymerskim_kreslam/?utm_source=shop_title&utm_medium=banner&utm_campaign=gamechairs")
+                                                            img(src="./static/gamechairs_1290x200_2.jpg")
+                                                    #slide8.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/pages/xcom_pc/?utm_source=shop_title&utm_medium=banner")
+                                                            img(src="./static/XcomPuter_1290x200.jpg")
+                                                    #slide9.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/keshbek_za_pokypky_monoblokov_monitorov_i_noytbykov_hp/?utm_source=shop_title&utm_medium=banner&utm_campaign=hp_elite_giftcard")
+                                                            img(src="./static/hp_elite_1290x200_2.jpg")
+                                                    #slide10.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/pages/yandex_credit/?utm_source=shop_title&utm_medium=banner")
+                                                            img(src="./static/yandex_credit2.jpg")
+                                                    #slide11.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/pages/for_gamers/?utm_source=shop_title&utm_medium=banner&utm_campaign=xcomshop_gaming_shop")
+                                                            img(src="./static/xcomshop_gaming_shop.jpg")
+                                                    #slide12.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/apc-legendarnaya_nadezhnost/?utm_source=shop_title&utm_medium=banner&utm_campaign=apc")
+                                                            img(src="./static/5c57f808baf00352252396")
+                                                    #slide999992.slide(style="background-color: transparent")
+                                                        a(href="https://www.xcom-shop.ru/actions/sverhkompaktnyy_kompyuter_dlya_biznesa_hp_prodesk_405_g4_desktop_mini?utm_source=shop_title&utm_medium=banner")
+                                                            img(src="./static/hp_prodesk_405_g4_dm.jpg")
+                                            #dotsContainer
+                                            .sliderShadow.left
+                                                img(src="./static/5b59a87605434058547125")
+                                            .sliderShadow.right
+                                                img(src="./static/5b59a87b302fc672920718")
+                        a#helpers_below(style="display: block; margin: 10px 0; width: 100%; background: url(/var/files/f0/7b/5beebf1f07b61713801048) center center no-repeat; background-size: cover; text-align: center; height: 55px;" href="https://www.xcom-shop.ru/pages/helpers/")
+                            .vertical-helper
+                            img(src="./static/5beebf2652e28780501756")
+                            div(style="display: inline-block; vertical-align: middle; color: white; margin: 0 20px; font-size: 16px")
+                                | Подберите необходимое оборудование
+                            .orange_button Открыть конфигураторы
+                    .block-universal.border-gray.announcement
+                        center
+                            b
+                                p
+                                    | Уважаемые покупатели, внимание!
+                                    br
+                                    | 10 января 2020 года — офис и служба доставки не работают. Осуществляется приём
+                                    |                   заказов через сайт магазина.
+                                    br
+                                    | 11 января 2020 года не работает отдел приёма рекламаций.
+                            br
+                            p
+                                | В нашем интернет-магазине Вы можете приобрести товар в кредит с сервисом 
+                                a(href="https://www.xcom-shop.ru/pages/p_p11/" target="_blank")
+                                    | Яндекс.Касса «Заплатить
+                                    | по частям»
+                                | .
+                    link(href="./static/style(2).css" rel="stylesheet" type="text/css")
+                    script(src="./static/script.js.Без названия")
+                    #action_tiles.active_right
+                        .action_tiles-left(style="opacity: 0;")
+                        .action_tiles-right
+                        .action_tiles__wrap(style="overflow: hidden; outline: none;" tabindex="1")
+                            .action_tiles__carousel
+                                .action_tiles__item
+                                    .wrap
+                                        .item.none
+                                            span.item__img
+                                                img(src="./img/1.png")
+                                            a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ/videos?utm_source=xcom&utm_medium=tiles&utm_campaign=none" target="_blank")
+                                                .tile-logo
+                                .action_tiles__item
+                                    .wrap
+                                        .item.special-offer
+                                            span.item__img
+                                                img(src="./img/2.png")
+                                            a(href="https://www.xcom-shop.ru/pages/season-winter-2019/?utm_source=xcom&utm_medium=tiles&utm_campaign=special-offer")
+                                                .tile-logo
+                                .action_tiles__item
+                                    .wrap
+                                        .item.none
+                                            span.item__img
+                                                img(src="./img/3.png")
+                                            a(href="https://www.xcom-shop.ru/catalog/televizory_i_proektory/resiver_protsessor/type=338?utm_source=xcom&utm_medium=tiles&utm_campaign=none")
+                                                .tile-logo
+                                .action_tiles__item
+                                    .wrap
+                                        .item.none
+                                            span.item__img
+                                                img(src="./img/4.jpg")
+                                            a(href="https://www.xcom-shop.ru/catalog/sistemy_bezopasnosti/ymnyy_dom/?utm_source=xcom&utm_medium=tiles&utm_campaign=none")
+                                                .tile-logo
+                                .action_tiles__item
+                                    .wrap
+                                        .item.special-offer
+                                            span.item__img
+                                                img(src="./img/5.png")
+                                            a(href="http://www.xcom-shop.ru/pages/spasibo_guide/?utm_source=xcom&utm_medium=tiles&utm_campaign=special-offer")
+                                                .tile-logo
+                                .action_tiles__item
+                                    .wrap
+                                        .item.xpert
+                                            span.item__img
+                                                img(src="./img/6.jpg")
+                                            p.line-0 Модуль памяти
+                                            p.line-1 HP 3TK85AA
+                                            p.line-2 2 517 руб
+                                            p.line-3
+                                            a(href="https://www.xcom-shop.ru/hp_3tk85aa_671003.html?utm_source=xcom&utm_medium=tiles&utm_campaign=xpert&utm_content=671003")
+                                                .tile-logo
+                                .action_tiles__item
+                                    .wrap
+                                        .item.new
+                                            span.item__img
+                                                img(src="./img/7.jpg")
+                                            p.line-0 Проводной IP-телефон
+                                            p.line-1 Panasonic KX-NT630RU
+                                            p.line-2 11 879 руб
+                                            a(href="https://www.xcom-shop.ru/panasonic_kx-nt630ru_750176.html?utm_source=xcom&utm_medium=tiles&utm_campaign=new&utm_content=750176")
+                                                .tile-logo
+                                .action_tiles__item
+                                    .wrap
+                                        .item.price
+                                            span.item__img
+                                                img(src="./img/8.jpg")
+                                            p.line-0 Право на использование OEM
+                                            p.line-1 Microsoft Windows 10 Professional 64Bit Russian 1pk DSP OEI DVD
+                                            p.line-2 8 883 руб
+                                            p.line-3 8 475 руб
+                                            a(href="https://www.xcom-shop.ru/microsoft_windows_10_professional_64bit_russian_1pk_dsp_oei_dvd_465570.html?utm_source=xcom&utm_medium=tiles&utm_campaign=price&utm_content=465570")
+                                                .tile-logo
+                                .action_tiles__item
+                                    .wrap
+                                        .item.leader
+                                            span.item__img
+                                                img(src="./img/9.jpg")
+                                            p.line-0 Батарея для ИБП
+                                            p.line-1 Sven SV1290
+                                            p.line-2 1 207 руб
+                                            a(href="https://www.xcom-shop.ru/sven_sv1290_595571.html?utm_source=xcom&utm_medium=tiles&utm_campaign=leader&utm_content=595571")
+                                                .tile-logo
+                        br.clear
+                        p(align="center")
+                            a(href="/actions/") Все предложения
+                        br
+                    h1#index_h1 Интернет-магазин компьютеров и компьютерных комплектующих
+                    .block-universal.block-news.bg-gray
+                        #news_block_heading.heading
+                            .heading1
+                                a.black(href="https://www.xcom-shop.ru/news/") Новости
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/konica_minolta_bizhub_4020i_i_bizhub_5020i_mfy_formata_a4_dlya_ofisa/" title="Konica Minolta bizhub 4020i и bizhub 5020i: МФУ формата A4 для офиса")
+                                    img(src="./static/5e175b505d8b9013958397_120.jpg" alt="Konica Minolta bizhub 4020i и bizhub 5020i: МФУ формата A4 для офиса")
+                            .text
+                                span.gray 9 января
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/konica_minolta_bizhub_4020i_i_bizhub_5020i_mfy_formata_a4_dlya_ofisa/" title="Konica Minolta bizhub 4020i и bizhub 5020i: МФУ формата A4 для офиса")
+                                            | Konica
+                                            | Minolta bizhub 4020i и bizhub 5020i: МФУ формата A4 для офиса
+                                |                 Высокоскоростные лазерные МФУ 
+                                a(href="https://www.xcom-shop.ru/konica_minolta_bizhub_4020i_734630.html")
+                                    | Konica Minolta bizhub
+                                    | 4020i
+                                |  и 
+                                a(href="https://www.xcom-shop.ru/konica_minolta_bizhub_5020i_734631.html")
+                                    | Konica
+                                    | Minolta bizhub 5020i
+                                |  способны печатать со скоростью до 40 и 50 страниц
+                                |                 в минуту. Они поддерживают мобильную печать и отвечают передовым стандартам
+                                |                 безопасности.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/konica_minolta_bizhub_4020i_i_bizhub_5020i_mfy_formata_a4_dlya_ofisa/" title="Konica Minolta bizhub 4020i и bizhub 5020i: МФУ формата A4 для офиса") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Konica%20Minolta/")
+                                        | Konica
+                                        | Minolta
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BF%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%8B/") принтеры
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%9C%D0%A4%D0%A3/") МФУ
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/apple_pro_display_xdr_dorogoy_6k-monitor_dlya_professionalov/" title="Apple Pro Display XDR: дорогой 6K-монитор для профессионалов")
+                                    img(src="./static/5e175a00b4f2f495749688_120.jpg" alt="Apple Pro Display XDR: дорогой 6K-монитор для профессионалов")
+                            .text
+                                span.gray 9 января
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/apple_pro_display_xdr_dorogoy_6k-monitor_dlya_professionalov/" title="Apple Pro Display XDR: дорогой 6K-монитор для профессионалов")
+                                            | Apple Pro
+                                            | Display XDR: дорогой 6K-монитор для профессионалов
+                                a(href="https://www.xcom-shop.ru/search/?o=n&s=Apple+Pro+Display+XDR") Apple Pro Display XDR
+                                |                 создан специально для профессионалов. С учетом сверхвысокого разрешения, экстремального
+                                |                 динамического диапазона и расширенного цветового охвата он позволит видеоредакторам
+                                |                 и фотографам осуществлять взаимодействие с HDR-изображениями и видеоматериалами
+                                |                 с максимально возможной точностью.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/apple_pro_display_xdr_dorogoy_6k-monitor_dlya_professionalov/" title="Apple Pro Display XDR: дорогой 6K-монитор для профессионалов") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Apple/") Apple
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%B4%D0%B8%D1%81%D0%BB%D0%B5%D0%B8/") дислеи
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D1%8B/") мониторы
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/servernye_protsessory_amd_epyc_vtorogo_pokoleniya/" title="Серверные процессоры AMD EPYC второго поколения")
+                                    img(src="./static/5e0a3c729f19f512485546_120.jpg" alt="Серверные процессоры AMD EPYC второго поколения")
+                            .text
+                                span.gray 30 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/servernye_protsessory_amd_epyc_vtorogo_pokoleniya/" title="Серверные процессоры AMD EPYC второго поколения")
+                                            | Серверные процессоры AMD
+                                            | EPYC второго поколения
+                                |                 Второе поколение серверных чипов AMD EPYC перешло на техпроцессор 7 нм, получило поддержку PCI
+                                |                 Express 4.0 и прочие улучшения, которые позволяют повысить уровень производительности
+                                |                 и снизить энергопотребление. В магазине XCOM-SHOP уже доступны модели 
+                                a(href="https://www.xcom-shop.ru/amd_epyc_7402p_749738.html") EPYC 7402P
+                                | , 
+                                a(href="https://www.xcom-shop.ru/amd_epyc_7402_749740.html") EPYC 7402
+                                | , 
+                                a(href="https://www.xcom-shop.ru/amd_epyc_7502p_749739.html") EPYC 7502P
+                                | , 
+                                a(href="https://www.xcom-shop.ru/amd_epyc_7702p_749741.html") EPYC 7702P
+                                | , 
+                                a(href="https://www.xcom-shop.ru/amd_epyc_7702_749747.html") EPYC 7702
+                                | .
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/servernye_protsessory_amd_epyc_vtorogo_pokoleniya/" title="Серверные процессоры AMD EPYC второго поколения") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/AMD/") AMD
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D1%8B/") процессоры
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B/") серверы
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/dell_alienware_aw3420dw_34_izognytyh_dyuyma_s_chastotoy_120_gts/" title="Dell Alienware AW3420DW: 34 изогнутых дюйма с частотой 120 Гц")
+                                    img(src="./static/5e063a7b1f474593046622_120.jpg" alt="Dell Alienware AW3420DW: 34 изогнутых дюйма с частотой 120 Гц")
+                            .text
+                                span.gray 27 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/dell_alienware_aw3420dw_34_izognytyh_dyuyma_s_chastotoy_120_gts/" title="Dell Alienware AW3420DW: 34 изогнутых дюйма с частотой 120 Гц")
+                                            | Dell
+                                            | Alienware AW3420DW: 34 изогнутых дюйма с частотой 120 Гц
+                                |                 Игровой монитор 
+                                a(href="https://www.xcom-shop.ru/dell_aw3420dw_750119.html")
+                                    | Dell Alienware
+                                    | AW3420DW
+                                |  оснащен 34-дюймовым экраном с разрешением 3440 х 1440, частотой обновления 120 Гц
+                                |                 и временем отклика 2 мс. А тонко настроенная IPS-матрица с охватом 98 % DCI-P3
+                                |                 позволяет ему показать себя во всей красе не только в играх, но и
+                                |                 при просмотре фильмов.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/dell_alienware_aw3420dw_34_izognytyh_dyuyma_s_chastotoy_120_gts/" title="Dell Alienware AW3420DW: 34 изогнутых дюйма с частотой 120 Гц") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Dell/") Dell
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Alienware/") Alienware
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D1%8B/") мониторы
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D0%B8/") дисплеи
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/micron_9300_korporativnye_nakopiteli_dlya_data-tsentrov_i_oblachnyh_platform/" title="Micron 9300: корпоративные накопители для дата-центров и облачных платформ")
+                                    img(src="./static/5e04f0b69a29c985486740_120.jpg" alt="Micron 9300: корпоративные накопители для дата-центров и облачных платформ")
+                            .text
+                                span.gray 27 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/micron_9300_korporativnye_nakopiteli_dlya_data-tsentrov_i_oblachnyh_platform/" title="Micron 9300: корпоративные накопители для дата-центров и облачных платформ")
+                                            | Micron 9300: корпоративные накопители для дата-центров и облачных
+                                            | платформ
+                                |                 Новые твердотельные накопители Micron 9300 созданы для интенсивной работы в составе облачной
+                                |                 инфраструктуры и дата-центров. Линейка Micron 9300 PRO ориентирована на высокую
+                                |                 интенсивность чтения информации, Micron 9300 MAX — на смешанную нагрузку.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/micron_9300_korporativnye_nakopiteli_dlya_data-tsentrov_i_oblachnyh_platform/" title="Micron 9300: корпоративные накопители для дата-центров и облачных платформ") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Crucial/") Crucial
+                                    | ,
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Micron/") Micron
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D1%82%D0%B2%D0%B5%D1%80%D0%BE%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BD%D0%B0%D0%BA%D0%BE%D0%BF%D0%B8%D1%82%D0%B5%D0%BB%D0%B8/") тверотельные накопители
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/SSD/") SSD
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/hp_z6_g4_novoe_pokolenie_rabochih_stantsiy_s_intel_xeon_scalable_i_nvidia_quadro_rtx/" title="HP Z6 G4: новое поколение рабочих станций с Intel Xeon Scalable и NVIDIA Quadro RTX")
+                                    img(src="./static/5e063c8e3f775551763934_120.jpg" alt="HP Z6 G4: новое поколение рабочих станций с Intel Xeon Scalable и NVIDIA Quadro RTX")
+                            .text
+                                span.gray 26 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/hp_z6_g4_novoe_pokolenie_rabochih_stantsiy_s_intel_xeon_scalable_i_nvidia_quadro_rtx/" title="HP Z6 G4: новое поколение рабочих станций с Intel Xeon Scalable и NVIDIA Quadro RTX")
+                                            | HP Z6 G4: новое поколение рабочих станций с Intel Xeon Scalable и NVIDIA
+                                            | Quadro RTX
+                                |                 Четвертое поколение рабочих станций HP Z6 в зависимости от комплектации оснащается одним
+                                |                 или двумя процессорами Intel Xeon Scalable, видеокартой NVIDIA Quadro RTX и до 384 ГБ
+                                |                 оперативной памяти. 
+                                a(href="https://www.xcom-shop.ru/search/?o=n&s=HP+Z6+G4") HP Z6 G4
+                                |                 оптимизирована для работы с графикой, визуальными эффектами, инженерными расчетами
+                                |                 и прочими ресурсоемкими задачами.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/hp_z6_g4_novoe_pokolenie_rabochih_stantsiy_s_intel_xeon_scalable_i_nvidia_quadro_rtx/" title="HP Z6 G4: новое поколение рабочих станций с Intel Xeon Scalable и NVIDIA Quadro RTX") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/HP/") HP
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B5%20%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8/") рабочие станции
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D1%8B/") компьютеры
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%9F%D0%9A/") ПК
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF%D1%8B/") десктопы
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/hp_color_laserjet_enterprise_m776dn_samoe_zaschischennoe_mfy_formata_a3/" title="HP Color LaserJet Enterprise M776dn: самое защищенное МФУ формата A3")
+                                    img(src="./static/5e039c0bd8fff958238599_120.jpg" alt="HP Color LaserJet Enterprise M776dn: самое защищенное МФУ формата A3")
+                            .text
+                                span.gray 25 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/hp_color_laserjet_enterprise_m776dn_samoe_zaschischennoe_mfy_formata_a3/" title="HP Color LaserJet Enterprise M776dn: самое защищенное МФУ формата A3")
+                                            | HP
+                                            | Color LaserJet Enterprise M776dn: самое защищенное МФУ формата A3
+                                |                 Обновленная линейка корпоративных МФУ HP Color LaserJet Enterprise формата A3 пополнилась моделями,
+                                |                 которые обеспечивают точную цветопередачу и высокий уровень безопасность. Усовершенствованные
+                                |                 функции упрощают управление парком оборудования. Одним из первенцев серии стало МФУ 
+                                a(href="https://www.xcom-shop.ru/hp_color_laserjet_enterprise_mfp_m776dn_747503.html")
+                                    | HP Color
+                                    | LaserJet Enterprise M776dn
+                                | .
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/hp_color_laserjet_enterprise_m776dn_samoe_zaschischennoe_mfy_formata_a3/" title="HP Color LaserJet Enterprise M776dn: самое защищенное МФУ формата A3") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/HP/") HP
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BF%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%8B/") принтеры
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%9C%D0%A4%D0%A3/") МФУ
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/gigaset_maxwell_basic_i_maxwell_3_nedorogie_nemetskie_sip-telefony/" title="Gigaset Maxwell Basic и Maxwell 3: недорогие немецкие SIP-телефоны")
+                                    img(src="./static/5e024d387d546167516309_120.jpg" alt="Gigaset Maxwell Basic и Maxwell 3: недорогие немецкие SIP-телефоны")
+                            .text
+                                span.gray 24 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/gigaset_maxwell_basic_i_maxwell_3_nedorogie_nemetskie_sip-telefony/" title="Gigaset Maxwell Basic и Maxwell 3: недорогие немецкие SIP-телефоны")
+                                            | Gigaset
+                                            | Maxwell Basic и Maxwell 3: недорогие немецкие SIP-телефоны
+                                |                 SIP-телефоны 
+                                a(href="https://www.xcom-shop.ru/gigaset_maxwell_basic_712496.html")
+                                    | Gigaset Maxwell
+                                    | Basic
+                                |  и 
+                                a(href="https://www.xcom-shop.ru/gigaset_maxwell_3_712495.html")
+                                    | Gigaset Maxwell
+                                    | 3
+                                |  поддерживают использование до четырех учетных записей SIP и трехстороннюю
+                                |                 конференц-связь. Старшая модель Maxwell 3 выделяется наличием цветного экрана и возможностью
+                                |                 использования беспроводных гарнитур.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/gigaset_maxwell_basic_i_maxwell_3_nedorogie_nemetskie_sip-telefony/" title="Gigaset Maxwell Basic и Maxwell 3: недорогие немецкие SIP-телефоны") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Gigaset/") Gigaset
+                                    | ,
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/SIP-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D1%8B/") SIP-телефоны
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/SIP-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B8%D1%8F/") SIP-телефония
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/apc_smart-ups_srt_mladshie_ibp_v_stoechnom_ispolnenii/" title="APC Smart-UPS SRT: младшие ИБП в стоечном исполнении")
+                                    img(src="./static/5e00ff273798a609616940_120.jpg" alt="APC Smart-UPS SRT: младшие ИБП в стоечном исполнении")
+                            .text
+                                span.gray 23 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/apc_smart-ups_srt_mladshie_ibp_v_stoechnom_ispolnenii/" title="APC Smart-UPS SRT: младшие ИБП в стоечном исполнении")
+                                            | APC Smart-UPS SRT:
+                                            | младшие ИБП в стоечном исполнении
+                                |                 Компактные ИБП APC Smart-UPS SRT ориентированы на использование в офисах и серверных
+                                |                 комнатах. В серию вошли четыре модели: 
+                                a(href="https://www.xcom-shop.ru/apc_srt1000rmxli_714202.html") SRT1000RMXLI
+                                | , 
+                                a(href="https://www.xcom-shop.ru/apc_srt1000rmxli-nc_714205.html") SRT1000RMXLI-NC
+                                | , 
+                                a(href="https://www.xcom-shop.ru/apc_srt1500rmxli_714204.html") SRT1500RMXLI
+                                | , 
+                                a(href="https://www.xcom-shop.ru/apc_srt1500rmxli-nc_714206.html") SRT1500RMXLI-NC
+                                | . Можно выбрать
+                                |                 ИБП как со встроенной сетевой картой, так и без.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/apc_smart-ups_srt_mladshie_ibp_v_stoechnom_ispolnenii/" title="APC Smart-UPS SRT: младшие ИБП в стоечном исполнении") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/APC/") APC
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D0%B9%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/") источники бесперебойного питания
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%98%D0%91%D0%9F/") ИБП
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/obzor_konfigyratora_xcom-shop/" title="Обзор конфигуратора XCOM-SHOP")
+                                    img(src="./static/5e00fd976f68b502118237_120.jpg" alt="Обзор конфигуратора XCOM-SHOP")
+                            .text
+                                span.gray 23 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/obzor_konfigyratora_xcom-shop/" title="Обзор конфигуратора XCOM-SHOP") Обзор конфигуратора XCOM-SHOP
+                                |                 У XCOM-SHOP появился 
+                                a(href="https://www.xcom-shop.ru/pc-configurator/") конфигуратор
+                                | ,
+                                |                 который поможет собрать компьютер. Изучим его возможности на примере реальных сборок.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/obzor_konfigyratora_xcom-shop/" title="Обзор конфигуратора XCOM-SHOP") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%82%D0%BE%D1%80/") Конфигуратор
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/lenovo_ideacentre_aio_a540_bezramochnye_monobloki_s_vosmiyadernymi_protsessorami/" title="Lenovo IdeaCentre AIO A540: безрамочные моноблоки с восьмиядерными процессорами")
+                                    img(src="./static/5dfd02522d406578114788_120.jpg" alt="Lenovo IdeaCentre AIO A540: безрамочные моноблоки с восьмиядерными процессорами")
+                            .text
+                                span.gray 20 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/lenovo_ideacentre_aio_a540_bezramochnye_monobloki_s_vosmiyadernymi_protsessorami/" title="Lenovo IdeaCentre AIO A540: безрамочные моноблоки с восьмиядерными процессорами")
+                                            | Lenovo IdeaCentre AIO A540: безрамочные моноблоки с восьмиядерными
+                                            | процессорами
+                                |                 Новым моноблокам 
+                                a(href="https://www.xcom-shop.ru/search/?o=n&s=Lenovo+IdeaCentre+AIO+A540")
+                                    | Lenovo
+                                    | IdeaCentre AIO
+                                    | A540
+                                |  удается сочетать элегантность безрамочного дизайна с мощностью восьмиядерных
+                                |                 процессоров Intel Core i7 в топовых версиях.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/lenovo_ideacentre_aio_a540_bezramochnye_monobloki_s_vosmiyadernymi_protsessorami/" title="Lenovo IdeaCentre AIO A540: безрамочные моноблоки с восьмиядерными процессорами") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Lenovo/") Lenovo
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BC%D0%BE%D0%BD%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8/") моноблоки
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D1%8B/") компьютеры
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%9F%D0%9A/") ПК
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/beward_predstavlyaet_novyyu_versiyu_prilozheniya_intercom_234_dlya_windows/" title="Beward представляет новую версию приложения Intercom 2.3.4 для Windows")
+                                    img(src="./static/5e024bceea72f867158127_120.jpg" alt="Beward представляет новую версию приложения Intercom 2.3.4 для Windows")
+                            .text
+                                span.gray 19 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/beward_predstavlyaet_novyyu_versiyu_prilozheniya_intercom_234_dlya_windows/" title="Beward представляет новую версию приложения Intercom 2.3.4 для Windows")
+                                            | Beward представляет новую версию приложения Intercom 2.3.4
+                                            | для Windows
+                                |                 Beward обновила фирменное приложение Intercom для домофонов и прочих совместимых устройств.
+                                |                 Оно позволяет принимать звонки с вызывной IP-панели или аналогового домофона, делать снимки
+                                |                 и видеоролики гостей, управлять замком открытия двери и другими исполнительными
+                                |                 устройствами.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/beward_predstavlyaet_novyyu_versiyu_prilozheniya_intercom_234_dlya_windows/" title="Beward представляет новую версию приложения Intercom 2.3.4 для Windows") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Beward/") Beward
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/") приложения
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/obnovlennaya_lineyka_ibp_apc_back_pro_br/" title="Обновленная линейка ИБП APC Back PRO BR")
+                                    img(src="./static/5dfbb6a5aafc0219604177_120.jpg" alt="Обновленная линейка ИБП APC Back PRO BR")
+                            .text
+                                span.gray 19 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/obnovlennaya_lineyka_ibp_apc_back_pro_br/" title="Обновленная линейка ИБП APC Back PRO BR")
+                                            | Обновленная линейка ИБП APC Back
+                                            | PRO BR
+                                |                 В обновленную серию ИБП APC Back PRO BR вошли модели 
+                                a(href="https://www.xcom-shop.ru/apc_br650mi_727178.html") BR650MI
+                                | , 
+                                a(href="https://www.xcom-shop.ru/apc_br900mi_727179.html") BR900MI
+                                | , 
+                                a(href="https://www.xcom-shop.ru/apc_br1300mi_727176.html") BR1300MI
+                                |  и 
+                                a(href="https://www.xcom-shop.ru/apc_br1600mi_727177.html") BR1600MI
+                                | . В них предусмотрено
+                                |                 по шесть компьютерных розеток IEC 320 C13, а в двух старших устройствах
+                                |                 в дополнение к этому установлена еще пара розеток, обеспечивающих защиту от всплесков
+                                |                 напряжения.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/obnovlennaya_lineyka_ibp_apc_back_pro_br/" title="Обновленная линейка ИБП APC Back PRO BR") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/APC/") APC
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D0%B9%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/") источники бесперебойного питания
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%98%D0%91%D0%9F/") ИБП
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/asus_rog_swift_pg65uq_gigantskiy_monitor_formata_bfgd/" title="ASUS ROG Swift PG65UQ: гигантский монитор формата BFGD")
+                                    img(src="./static/5dfa5b03f0f89974086757_120.jpg" alt="ASUS ROG Swift PG65UQ: гигантский монитор формата BFGD")
+                            .text
+                                span.gray 18 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/asus_rog_swift_pg65uq_gigantskiy_monitor_formata_bfgd/" title="ASUS ROG Swift PG65UQ: гигантский монитор формата BFGD")
+                                            | ASUS ROG Swift
+                                            | PG65UQ: гигантский монитор формата BFGD
+                                |                 Диагональ 65 дюймов является огромной даже для телевизоров. Но теперь в таком размере
+                                |                 выпущен игровой монитор 
+                                a(href="https://www.xcom-shop.ru/asus_pg65uq_749424.html")
+                                    | ASUS ROG Swift
+                                    | PG65UQ
+                                | . Его можно использовать в паре не только с ПК, но и консолями.
+                                |                 Новинка поддерживает частоту обновления до 144 Гц, DisplayHDR 1000 и UHD Premium.
+                                |                 Незабываемый игровой опыт гарантирован.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/asus_rog_swift_pg65uq_gigantskiy_monitor_formata_bfgd/" title="ASUS ROG Swift PG65UQ: гигантский монитор формата BFGD") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/ASUS/") ASUS
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D1%8B/") мониторы
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D0%B8/") дисплеи
+                        .hr
+                        .news-item
+                            .left.image
+                                a(href="https://www.xcom-shop.ru/news/huion_h1161_nedorogoy_graficheskiy_planshet_s_shirokimi_vozmozhnostyami/" title="Huion H1161: недорогой графический планшет с широкими возможностями")
+                                    img(src="./static/5dfa598945f18920061937_120.jpg" alt="Huion H1161: недорогой графический планшет с широкими возможностями")
+                            .text
+                                span.gray 18 декабря
+                                p
+                                    span.bold
+                                        a.black(href="https://www.xcom-shop.ru/news/huion_h1161_nedorogoy_graficheskiy_planshet_s_shirokimi_vozmozhnostyami/" title="Huion H1161: недорогой графический планшет с широкими возможностями")
+                                            | Huion
+                                            | H1161: недорогой графический планшет с широкими возможностями
+                                |                 Новый недорогой графический планшет 
+                                a(href="https://www.xcom-shop.ru/huion_h1161_734636.html")
+                                    | Huion
+                                    | H1161
+                                |  способен работать как с компьютером, так и с мобильным устройством. Он
+                                |                 получил много настраиваемых кнопок и удобное беспроводное перо с возможностью распознавания
+                                |                 8192 уровней нажатия.
+                                br
+                                p
+                                    a(href="https://www.xcom-shop.ru/news/huion_h1161_nedorogoy_graficheskiy_planshet_s_shirokimi_vozmozhnostyami/" title="Huion H1161: недорогой графический планшет с широкими возможностями") Далее…
+                                p.tags.tx10
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/Huion/") Huion
+                                    | , 
+                                    a.gray(href="https://www.xcom-shop.ru/news/tags/%D0%BF%D0%BB%D0%B0%D0%BD%D1%88%D0%B5%D1%82%D1%8B/") планшеты
+                    table(width="100%" cellspacing="0" cellpadding="0")
+                        tbody
+                            tr
+                                td.bg-gray(width="350px")
+                                    #recent_topics.block-universal
+                                        #forum_block_heading.heading.heading1
+                                            a.black(href="http://forum.xcom-shop.ru/") Форум
+                                        .item
+                                            p
+                                                a(target="_blank" href="http://forum.xcom-shop.ru/index.php?/topic/3629-%d1%81%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b1%d0%be%d0%bd%d1%83%d1%81%d0%bd%d1%8b%d1%85-%d0%b1%d0%b0%d0%bb%d0%bb%d0%be%d0%b2/")
+                                                    | Списание
+                                                    | бонусных баллов
+                                            p.gray.tx10
+                                                a.gray(target="_blank" href="http://forum.xcom-shop.ru/index.php?/user/2419-xcom-shop/") XCOM-SHOP
+                                                | ,
+                                                |                         Сегодня, 13:06
+                                            p.crop
+                                                | Добрый день!
+                                                | Бонусная программа существует много лет, ранее по правилам баллы сгорали в случае, если не
+                                                | были использованы в течение 5 лет и более с момента начисления.
+                                                | Новые правила были введены не а летом 2019 года, срок использования баллов стал равен 3 годам,
+                                                | что летом же и было отражено в условиях продажи товаров и услуг, с которыми Вы соглашаетесь
+                                                | нажимая кнопку "Подтвердить заказ", и непосредственно на странице с правилами использования
+                                                | баллов.
+                                                | клиенты были предупреждены о списании баллов в нашей еженедельной новостной рассылке. Если у
+                                                | Вас стоят какие-либо ограничения по получению подобных рассылок, Вы могли не получить этого
+                                                | уведомления.
+                                                | Списание производилось в ночь с на поэтому дата транзакции -
+                                                | К сожалению, вернуть баллы невозможно, но есть несколько способов, которые помогут Вам быстрее
+                                                | накопить новые баллы:
+                                                | 1. Участие в Играх разума. С условиями и правилами можно ознакомиться здесь.
+                                                | 2. Покупка акционного товара. В нашем магазине есть товары, за покупку которых можно получить
+                                                | либо больший процент баллов, либо фиксированную сумму баллов.
+                                                | 3. Покупки через мобильное приложение. При осуществлении покупки через мобильное приложение на
+                                                | Ваш аккаунт баллами xcom возвращается 2% от суммы заказа.
+                                                | Обратите, пожалуйста, внимание, что правила вновь были скорректированы - обозначены даты
+                                                | списания баллов. Согласно этим корректировкам новое списание будет произведено
+                                        .item
+                                            p
+                                                a(target="_blank" href="http://forum.xcom-shop.ru/index.php?/topic/3553-%d1%85%d0%be%d1%87%d1%83-%d1%83%d0%b4%d0%b0%d0%bb%d0%b8%d1%82%d1%8c-%d0%b0%d0%ba%d0%ba%d0%b0%d1%83%d0%bd%d1%82/")
+                                                    | Хочу
+                                                    | удалить аккаунт
+                                            p.gray.tx10
+                                                a.gray(target="_blank" href="http://forum.xcom-shop.ru/index.php?/user/2419-xcom-shop/") XCOM-SHOP
+                                                | ,
+                                                |                         Вчера, 11:07
+                                            p.crop
+                                                | Добрый день!
+                                                | Для удаление аккаунта нам необходимо получить подтверждение с Вашей почты. Письмо направлено,
+                                                | спасибо!
+                                        .item
+                                            p
+                                                a(target="_blank" href="http://forum.xcom-shop.ru/index.php?/topic/3664-%d0%bd%d0%b0%d0%b7%d0%bd%d0%b0%d1%87%d0%b8%d1%82%d1%8c-%d0%b2%d1%80%d0%b5%d0%bc%d1%8f-%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b8/")
+                                                    | Назначить
+                                                    | время доставки
+                                            p.gray.tx10
+                                                a.gray(target="_blank" href="http://forum.xcom-shop.ru/index.php?/user/2419-xcom-shop/") XCOM-SHOP
+                                                | ,
+                                                |                         Вчера, 10:42
+                                            p.crop
+                                                | Добрый день, Сергей!
+                                                | Доставку в регионы наш магазин осуществляет через ТК ПЭК, ДПД и ЕМС. Выбрать определенную дату
+                                                | прибытия товара в регион не предоставляется возможным, т. к. мы не можем дать гарантию по
+                                                | срокам доставки заказа транспортной компанией. Мы можем только предложить дату передачи товара
+                                                | в транспортную компанию. Сроки доставки необходимо будет тогда уточнять у самой транспортной
+                                                | компании.
+                                td(width="20px")
+                                td.bg-gray(width="350px")
+                                    #publications_block.block-universal
+                                        #publications_block_heading.heading
+                                            .heading1
+                                                a.black(href="https://www.xcom-shop.ru/publications/") Публикации
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/vot_ona__pervaya_diskretnaya_videokarta_intel_xe_no_eto_vse_zhe_ne_seriynyy_obrazets/")
+                                                    | Вот
+                                                    | она — первая дискретная видеокарта Intel Xe. Но это всё же
+                                                    | не серийный образец
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/sk_hynix_pokazala_operativnyyu_pamyat_ddr5/")
+                                                    | SK
+                                                    | Hynix показала оперативную память DDR5
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/msi_dobavlyaet_v_lineyky_tomahawk_sistemnyyu_platy_na_chipsete_amd_x570/")
+                                                    | MSI
+                                                    | добавляет в линейку Tomahawk системную плату на чипсете AMD X570
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/chastota_obnovleniya_igrovyh_monitorov_gigabyte_dostigaet_165_gts/")
+                                                    | Частота
+                                                    | обновления игровых мониторов GIGABYTE достигает 165 Гц
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/msi_creator_400_korpys_dlya_tihoy_rabochey_stantsii/")
+                                                    | MSI
+                                                    | Creator 400: корпус для тихой рабочей станции
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/yskoritel_asus_geforce_rtx_2070_dual_mini_rasschitan_na_kompaktnye_pk/")
+                                                    | Ускоритель
+                                                    | ASUS GeForce RTX 2070 Dual Mini рассчитан на компактные ПК
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/bloki_pitaniya_be_quiet_straight_power_11_platinum_imeyut_moschnost_do_1200_vt/")
+                                                    | Блоки
+                                                    | питания be quiet! Straight Power 11 Platinum имеют мощность до 1200 Вт
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/nettop_asus_mini_pc_pn62_polychil_chip_intel_comet_lake_i_adapter_wi-fi_6/")
+                                                    | Неттоп
+                                                    | ASUS Mini PC PN62 получил чип Intel Comet Lake и адаптер Wi-Fi 6
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/thermaltake_anonsirovala_yniversalnyyu_sistemy_zhidkostnogo_ohlazhdeniya_dlya_tsp_i_ozy/")
+                                                    | Thermaltake
+                                                    | анонсировала универсальную систему жидкостного охлаждения для ЦП и ОЗУ
+                                                br
+                                                span.tx11.gray 09.01.2020
+                                        .item
+                                            p
+                                                a(href="https://www.xcom-shop.ru/publications/ssd-nakopitel_adata_xpg_sage_s_pcie_40_podderzhivaet_skorost_chteniya_bolee_7000_mbayts/")
+                                                    | SSD-накопитель
+                                                    | Adata XPG Sage с PCIe 4.0 поддерживает скорость чтения более 7000 Мбайт/с
+                                                br
+                                                span.tx11.gray 09.01.2020
+                    br
+                td#right_column(width="240px")
+                    #slide_fixed
+                        #bill_box
+                            #bill_container
+                                .heading
+                                    a.black Корзина
+                                    br
+                                    span В корзине нет товаров
+                                .triangle
+                        #pay_icons(align="center")
+                            img(src="./static/visa.gif")
+                            img(src="./static/mc.gif")
+                            img(src="./static/mir.gif")
+                            img(src="./static/wm.gif")
+                            br
+                            img(src="./static/ym.gif")
+                            img(src="./static/sber.gif")
+                            img(src="./static/thx.gif")
+                            img(src="./static/pp.gif")
+                            img(src="./static/credit.png")
+                        .block-right.buttons
+                            div
+                                a(href="https://www.xcom-shop.ru/pages/sale/")
+                                    img(src="./static/button_sale.png")
+                            div
+                                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
+                                    img(src="./static/button_youtube.png")
+                            div
+                                a(href="https://www.xcom-shop.ru/actions/")
+                                    img(src="./static/buttons_actions.png")
+                            div
+                                a(href="https://www.xcom-shop.ru/pages/brands/")
+                                    img(src="./static/button_brands.png")
+                        .block-right.buttons.center
+                            a(href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8")
+                                img(src="./static/appstore.png" alt="Доступно в AppStore" border="0")
+                            a(href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop")
+                                img(src="./static/googleplay.png" alt="Доступно в Google play" border="0")
+                        .block-right
+                            ul
+                                li
+                                    img(src="./static/mail.png")
+                                    a.black(href="mailto:val@xcom.ru")
+                                        | Прием жалоб
+                                        br
+                                        | и предложений
+                                li
+                                    img(src="./static/complaint.png")
+                                    a.black(href="https://www.xcom-shop.ru/complaint/")
+                                        | Отдел
+                                        br
+                                        | рекламаций
+                                li
+                                    img(src="./static/tech-support.png")
+                                    a.black(href="https://www.xcom-shop.ru/pages/services/")
+                                        | Наши услуги
+                                li
+                                    img(src="./static/b2b.png")
+                                    a.black(href="https://www.xcom-shop.ru/pages/corporate_department/")
+                                        | Постоянным
+                                        br
+                                        | покупателям
+                                li
+                                    img(src="./static/onsale.png")
+                                    a.black(href="https://www.xcom-shop.ru/catalog/ytsenennye_tovary/")
+                                        | Уцененные товары
+                                li
+                                    img(src="./static/games.png")
+                                    a.black(href="https://www.xcom-shop.ru/pages/our_games/")
+                                        | Наши игры
+                                li
+                                    img(src="./static/customers.png")
+                                    a.black(href="https://www.xcom-shop.ru/pages/customer/")
+                                        | Уголок покупателя
+                        #ya_market.block-right
+                            a.black(href="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=2508/*https://grade.market.yandex.ru/?id=704&action=link")
+                                span
+                                    | Отзывы
+                                    | о нас
+                        #right_column_counter.block-universal.border-gray.bg-gray
+                            .heading.heading1 Откуда все берется
+                            .content
+                                .item
+                                    .name Товаров на сайте
+                                    .count 92 690
+                                    br.clear
+                                .item
+                                    .name Из них товаров на складе
+                                    .count 67 230
+                                    br.clear
+                                .item
+                                    .name
+                                        | Доставок принято на завтра
+                                        .tx11.gray (11.01.2020)
+                                    .count 231
+                                    br.clear
+                                .item
+                                    .name Из них в регионы России
+                                    .count 0
+                                    br.clear
+                                .item
+                                    .name Покупателей на сайте сейчас
+                                    .count 770
+                                    br.clear
+                        .block-right.banner.center
+                            a(href="https://www.xcom-hobby.ru/quiz/")
+                                img(src="./static/games.jpg")
+                        #right_social_icons.quiz
+                            div
+                                a(href="https://vk.com/xcom_shop" target="_blank")
+                                    img(src="./static/vk.gif")
+                                a(href="https://www.facebook.com/XComShop/" target="_blank")
+                                    img(src="./static/fb.gif")
+                                a(href="https://ok.ru/xcomshop" target="_blank")
+                                    img(src="./static/ok.gif")
+                                a(href="https://www.instagram.com/xcomshop/" target="_blank")
+                                    img(src="./static/instagram.gif")
+                                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
+                                    img(src="./static/youtube.png")
+                        #events.block-right.border-orange.universal(style="display: none;")
+    .block-universal.border-gray.bg-light
+        | Интернет-магазин XCOM-SHOP как нельзя лучше подходит для быстрой и выгодной покупки современной
+        | техники и электроники. 
+        br
+        |     На полках нашего 
+        strong интернет-магазина
+        |  всегда можно обнаружить широкий выбор
+        |     товаров, от 
+        strong
+            a(href="https://www.xcom-shop.ru/catalog/periferiya/vneshnie_nakopiteli_dannyh/nakopiteli_usb/") USB-флешки
+        |     и 
+        strong
+            a(href="http://www.xcom-shop.ru/catalog/noytbyki/") ноутбука
+        |  до 
+        strong
+            a(href="https://www.xcom-shop.ru/catalog/servery_shd_sistemy_konditsionirovaniya/servery/") серверов
+        |     и 
+        strong
+            a(href="https://www.xcom-shop.ru/catalog/torgovoe_oborydovanie/")
+                | торгового
+                | оборудования
+        | . Возможна 
+        strong
+            a(href="http://xcom-shop.ru/catalog/kompyuternye_komplektyyuschie/")
+                | продажа компьютерных
+                | комплектующих
+        |  оптом.
+        |     Для обсуждения индивидуальных условий следует обратиться к менеджерам по продажам наиболее удобным
+        |     способом: по телефону, с помощью электронной почты, ICQ или Skype. 
+        br
+        |     Чтобы купить товар, можно зарегистрироваться и отобрать позиции в электронном каталоге
+        |     или обратиться
+        |     напрямую к менеджерам по продажам. Оплата производится любым удобным способом: наличными
+        |     или банковской картой при получении, банковской картой на сайте, банковским переводом
+        |     или электронными деньгами, наложенным платежом, бонусами «Спасибо» от Сбербанка. Возможна покупка товара
+        |     в кредит с сервисом 
+        a(href="https://www.xcom-shop.ru/pages/yandex_credit/") Яндекс.Касса
+        | .
+        |     Для получения товаров необходимо обратиться в один из 
+        a(href="https://www.xcom-shop.ru/pages/delivery/") пунктов выдачи
+        |     в Москве, либо оформить доставку.

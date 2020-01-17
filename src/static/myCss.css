@@ -1,0 +1,24 @@
+.header .logo .img {
+  background: url(../assets/logo-main.png);
+  background-repeat: no-repeat;
+}
+
+.xpert .tile-logo {
+  background: url(./img/xpert.png) no-repeat 0 157px !important;
+}
+
+.new .tile-logo {
+  background: url(./img/new.png) no-repeat 0 157px !important;
+}
+
+.special-offer .tile-logo {
+  background: url(./img/special.png) no-repeat 0 177px !important;
+}
+
+.price .tile-logo {
+  background: url(./img/price.png) no-repeat 0 157px !important;
+}
+
+.leader .tile-logo {
+  background: url(./img/leader.png) no-repeat 0 157px !important;
+}
