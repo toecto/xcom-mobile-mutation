@@ -1,471 +1,758 @@
 extends ../template/layout.pug
 
 block content
-    table(width="100%" cellspacing="0" cellpadding="0")
-        tbody
-            tr
-                td#content
-                    p#path.gray(itemscope="" itemtype="https://schema.org/BreadcrumbList")
-                        a(href="https://www.xcom-shop.ru/" rel="nofollow")
-                            img(src="./static/x-sm.gif")
-                        | 			→
-                        span(itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem")
-                            a.gray(href="https://www.xcom-shop.ru/catalog/sks/" itemtype="https://schema.org/Thing" itemprop="item")
-                                span(itemprop="name") СКС
-                                meta(itemprop="position" content="1")
-                        | 				→
-                        span(itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem")
-                            a.gray(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/" itemtype="https://schema.org/Thing" itemprop="item")
-                                span(itemprop="name") Маркировка и крепеж
-                                meta(itemprop="position" content="2")
-                        | 				→
-                        span(itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem")
-                            a.gray(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/" itemtype="https://schema.org/Thing" itemprop="item")
-                                span(itemprop="name") Монтажные материалы
-                                meta(itemprop="position" content="3")
-                        | 				→
-                        span(itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem")
-                            a.gray(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/ploschadki/" itemtype="https://schema.org/Thing" itemprop="item")
-                                span(itemprop="name") Площадки
-                                meta(itemprop="position" content="4")
-                        | → 
-                        span Площадка 5bites CTM2020-100BK
-                    #card.catalog.cart(itemscope="" itemtype="http://data-vocabulary.org/Product")
-                        h1
-                            | Площадка 
-                            span(itemprop="brand") 5bites
-                            span(itemprop="name") CTM2020-100BK
-                        .sku.left(itemprop="identifier" content="sku:664830") Код товара: 664830
-                        br.clear
-                        .left.gray.description
-                            p(itemprop="description") (самокл.) 20мм/100шт
-                            p.left.clear-left
-                                | Гарантия 3 мес.
-                                img(src="./static/rst.gif")
-                                | 			В сервисном центре компании X-Com
-                                br
-                                | При предъявлении документа о покупке
-                            p#compare_664830.compare-line.right(align="right" from="xcom-shop.ru")
-                                a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#" onclick="return false;") Добавить к сравнению
-                                span    
-                        br.clear
-                        table#card_table(width="100%" cellspacing="0" cellpadding="0")
-                            tbody
-                                tr
-                                    td.card__image
-                                        #main_image.center.border-gray
-                                            img.card-image(itemprop="image" src="./static/5c110975015ec720558427_750.jpg" alt="5bites CTM2020-100BK" title="5bites CTM2020-100BK")
-                                        script(type="text/javascript").
-                                            $('.card-image').click(showImage);
-                                    td.card__info
-                                        table#offer_details(width="100%" cellspacing="0" cellpadding="0" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer")
-                                            tbody
-                                                tr
-                                                    td.vertical-middle.price.center(width="190px")
-                                                        meta(itemprop="currency" content="RUR")
-                                                        meta(itemprop="seller" content="www.xcom-shop.ru")
-                                                        meta(itemprop="price" content="80")
-                                                        p.tx14
-                                                            | Старая цена: 
-                                                            s
-                                                                | 87 
-                                                                span.tx12 руб.
-                                                        p.price
-                                                            | 80 
-                                                            span руб.
-                                                    td(width="20px")
-                                                    td.vertical-middle(width="170px")
-                                                        .block-universal.border-gray.bg-gray.gray.right.center
-                                                            | За покупку данного товара вы получите бонусные 
-                                                            a(href="https://www.xcom-shop.ru/pages/bonus_points/") баллы
-                                                            |  в размере одного процента от стоимости заказа.
-                                                tr
-                                                    td.vertical-middle(width="190px")
-                                                        meta(property="ya:interaction" content="BUTTON")
-                                                        meta(property="ya:interaction:type" content="BuyAction")
-                                                        meta(property="ya:interaction:url" content="https://www.xcom-shop.ru/quick_buy/664830/")
-                                                        meta(property="ya:interaction:paid_service" content="true")
-                                                        form(action="https://www.xcom-shop.ru/checkout/handler/add/" method="GET")
-                                                            input#l_am664830(name="amount" type="hidden" value="1")
-                                                            input(name="key" type="hidden" value="664830")
-                                                            input.button-orange.button.buy-button(type="submit" value=" В корзину " onclick="bw_obj.add_good(664830,_rt('#l_am664830').value(),'xcom-shop.ru');return false;")
-                                                        br
-                                                        noindex
-                                                            a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#" onclick="showRecall(664830);return false;") Быстрый заказ
-                                                    td(width="20px")
-                                                    td(width="170px")
-                                                
-                                        .eaist_comp-finder
-                                            .eaist
-                                                span.icon
-                                                p.text
-                                                    a(href="https://www.xcom-shop.ru/pages/instryction_eaist/") Мы работаем с ЕАИСТ
-                                        .extra-links-row
-                                            .ya-credit
-                                                span.icon
-                                                p.text
-                                                    a(href="https://www.xcom-shop.ru/pages/p_p11/" target="_blank") Можно купить в кредит
-                                        #gifts.block-universal.border-gray(style="display:none;")
-                                            .heading.blue-badge.center.tx16.white
-                                                img(src="./static/gift_blue.gif")
-                                                |  Подарок
-                                        #gift_of.block-universal.border-gray(style="display:none;")
-                                            .heading.blue-badge.center.tx16.white
-                                                img(src="./static/gift_blue.gif")
-                                                |  Идет подарком с:
-                        br
-                        .hr
-                        br
-                        .cart__prop
-                            #box_linked.toggle-box.right
-                                nobr.toggle
-                                    a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#ancor-review") Отзывы
-                                    span  ↓
-                            #box_showhide_fulldesc.toggle-box.right(style="display: none;")
-                                nobr.toggle.act
-                                    a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#") Краткое описание
-                                nobr.toggle
-                                    a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#") Все характеристики
+  table(width="100%" cellspacing="0" cellpadding="0")
+    tbody
+      tr
+        td#content
+          p#path.gray(itemscope="" itemtype="https://schema.org/BreadcrumbList")
+            a(href="https://www.xcom-shop.ru/" rel="nofollow")
+              img(src="./static/x-sm.gif")
+            | 			→
+            span(itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem")
+              a.gray(href="https://www.xcom-shop.ru/catalog/sks/" itemtype="https://schema.org/Thing" itemprop="item")
+                span(itemprop="name") СКС
+                meta(itemprop="position" content="1")
+            | 				→
+            span(itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem")
+              a.gray(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/" itemtype="https://schema.org/Thing" itemprop="item")
+                span(itemprop="name") Маркировка и крепеж
+                meta(itemprop="position" content="2")
+            | 				→
+            span(itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem")
+              a.gray(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/" itemtype="https://schema.org/Thing" itemprop="item")
+                span(itemprop="name") Монтажные материалы
+                meta(itemprop="position" content="3")
+            | 				→
+            span(itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem")
+              a.gray(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/ploschadki/" itemtype="https://schema.org/Thing" itemprop="item")
+                span(itemprop="name") Площадки
+                meta(itemprop="position" content="4")
+            | → 
+            span Площадка 5bites CTM2020-100BK
+          #card.catalog.cart(itemscope="" itemtype="http://data-vocabulary.org/Product")
+            h1
+              | Площадка 
+              span(itemprop="brand") 5bites
+              span(itemprop="name") CTM2020-100BK
+            .sku.left(itemprop="identifier" content="sku:664830") Код товара: 664830
+            br.clear
+            .left.gray.description
+              p(itemprop="description") (самокл.) 20мм/100шт
+              p.left.clear-left
+                | Гарантия 3 мес.
+                img(src="./static/rst.gif")
+                | 			В сервисном центре компании X-Com
+                br
+                | При предъявлении документа о покупке
+              p#compare_664830.compare-line.right(align="right" from="xcom-shop.ru")
+                a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#" onclick="return false;") Добавить к сравнению
+                span    
+            br.clear
+            table#card_table(width="100%" cellspacing="0" cellpadding="0")
+              tbody
+                tr
+                  td.card__image
+                    #main_image.center.border-gray
+                      img.card-image(itemprop="image" src="./static/5c110975015ec720558427_750.jpg" alt="5bites CTM2020-100BK" title="5bites CTM2020-100BK")
+                    script(type="text/javascript").
+                      $('.card-image').click(showImage);
+                  td.card__info
+                    table#offer_details(width="100%" cellspacing="0" cellpadding="0" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer")
+                      tbody
+                        tr
+                          td.vertical-middle.price.center(width="190px")
+                            meta(itemprop="currency" content="RUR")
+                            meta(itemprop="seller" content="www.xcom-shop.ru")
+                            meta(itemprop="price" content="80")
+                            p.tx14
+                              | Старая цена: 
+                              s
+                                | 87 
+                                span.tx12 руб.
+                            p.price
+                              | 80 
+                              span руб.
+                          td(width="20px")
+                          td.vertical-middle(width="170px")
+                            .block-universal.border-gray.bg-gray.gray.right.center
+                              | За покупку данного товара вы получите бонусные 
+                              a(href="https://www.xcom-shop.ru/pages/bonus_points/") баллы
+                              |  в размере одного процента от стоимости заказа.
+                        tr
+                          td.vertical-middle(width="190px")
+                            meta(property="ya:interaction" content="BUTTON")
+                            meta(property="ya:interaction:type" content="BuyAction")
+                            meta(property="ya:interaction:url" content="https://www.xcom-shop.ru/quick_buy/664830/")
+                            meta(property="ya:interaction:paid_service" content="true")
+                            form(action="https://www.xcom-shop.ru/checkout/handler/add/" method="GET")
+                              input#l_am664830(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="664830")
+                              input.button-orange.button.buy-button(type="submit" value=" В корзину " onclick="bw_obj.add_good(664830,_rt('#l_am664830').value(),'xcom-shop.ru');return false;")
                             br
-                            script(type="text/javascript" src="./static/desc_columns.js.Без названия")
-                            h2 Характеристики
-                            #card_prop
-                                .ca_desc_html.prop-line.prop-line-wide
-                                    .prop-value Самоклеющиеся площадки для крепления стяжек.
-                                    br.clear
-                                #prop-columns.clear
-                                    .prop-column.left
-                                        .short_desc.prop-line.delimiter
-                                            h3 Основные характеристики
-                                        .short_desc.prop-line
-                                            .call Длина
-                                            .prop-value 20 мм
-                                            br.clear
-                                        .short_desc.prop-line
-                                            .call Ширина
-                                            .prop-value 20 мм
-                                            br.clear
-                                        .short_desc.prop-line
-                                            .call Количество в упаковке
-                                            .prop-value 100 шт
-                                            br.clear
-                                    .prop-column.right
-                                        .short_desc.prop-line.delimiter
-                                            h3 Дополнительные характеристики
-                                        .short_desc.prop-line
-                                            .call Цвет
-                                            .prop-value Черный
-                                            br.clear
-                                        .short_desc.prop-line
-                                            .call Вес брутто
-                                            .prop-value 65 г
-                                            br.clear
-                                    .clear
-                                b#total_props_shown.hide (5)
-                        br.clear
-                        .hr
-                        br
-                    script(src="./static/saved_resource(1)")
-                    script.
-                        var card_delivery_content = card_available_content = '';
-                        card_available_content = '<table width="100%" cellspacing=0 cellpadding=0><tr><td align="left">&laquo;<a href="/pages/contacts/#dopsklad" target="_blank">Водный&nbsp;стадион</a>&raquo;</td><td align="right">0&nbsp;шт;</td></tr><tr><td align="left">&laquo;<a href="/pages/contacts/#dopsklad" target="_blank">Химки</a>&raquo;</td><td align="right">&gt;&nbsp;5&nbsp;шт.</td></tr></table>';
-                        card_delivery_content += '<ul class="fake-list">';
-                        card_delivery_content += '<li><span><b>Самовывоз</b>&nbsp;&mdash;&nbsp;21.01.2020</span></li>';
-                        card_delivery_content += '<li><span><b>Москва и МО</b>&nbsp;&mdash;&nbsp;21.01.2020</span></li>';
-                        card_delivery_content += '<li><span><b>Россия</b>&nbsp;&mdash;&nbsp;21.01.2020</span></li>';
-                        card_delivery_content += '</ul>';
-                        $('#offer_details').append('<tr class="no_padding_bottom"><td><b>Доставка:</b></td><td></td><td><b class="green">В&nbsp;наличии:</b></td></tr>');
-                        if( card_available_content == '' ) {
-                        $('#offer_details').append('<tr class="card_content"><td colspan=3>'+card_delivery_content+'</td></tr>');
-                        } else {
-                        $('#offer_details').append('<tr class="card_content"><td>'+card_delivery_content+'</td><td></td><td>'+card_available_content+'</td></tr>');
-                        }
-                    script(src="./static/card_linked.js.Без названия")
-                    script(type="text/javascript").
-                        new desc_compare('compare_664830');
-                    #comments.clear
-                        a(name="ancor-review")
-                        h2.left
-                            span#xcom_comments_switch Отзывы покупателей Икс-Ком
-                        #xcom_comments.clear
-                            a.js.right.comments_add(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#") Добавить свой отзыв
-                            p.clear О данном товаре пока нет отзывов.
-                            #reply_block_0.reply.off
-                            form#comment_form.hide(action="https://www.xcom-shop.ru/add_comment/" method="post")
-                    script(type="text/javascript" src="./static/comments.js.Без названия")
-                    script.
-                        new comments_handler(664830);
-                    script(type="text/javascript").
-                        function draw_comments_moderation(i,ip)
-                        {
-                        _rt('#comment_'+i).after(''+
-                        '<br class="clear" />'+
-                        '<div class="moderation right green-badge green">'+
-                        '<a href="/cp/catalog_desc_comment/ban/?pk_comment='+i+'" class="admin">[Бан]</a>&nbsp;'+
-                        '<a href="/cp/catalog_desc_comment/delete_multiple/?pk_comment='+i+'" class="admin">[Удалить по IP/Автору]</a>&nbsp;'+
-                        '<a href="javascript:if(confirm(\\'Вы уверены?\')) document.location=\'/cp/catalog_desc_comment/delete/?pk_comment='+i+'\'" class="admin">[&times;]</a>&nbsp;'+
-                        '<a href="javascript:if(confirm(\\'Удалить насовсем!? Вы уверены? оО\')) document.location=\'/cp/catalog_desc_comment/delete_permanent/?pk_comment='+i+'\'" class="admin black">[&times;!]</a>&nbsp;[ip:&nbsp;'+ip+']'+
-                        '</div>'+
-                        '');
-                        }
+                            noindex
+                              a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#" onclick="showRecall(664830);return false;") Быстрый заказ
+                          td(width="20px")
+                          td(width="170px")
+
+                    .eaist_comp-finder
+                      .eaist
+                        span.icon
+                        p.text
+                          a(href="https://www.xcom-shop.ru/pages/instryction_eaist/") Мы работаем с ЕАИСТ
+                    .extra-links-row
+                      .ya-credit
+                        span.icon
+                        p.text
+                          a(href="https://www.xcom-shop.ru/pages/p_p11/" target="_blank") Можно купить в кредит
+                    #gifts.block-universal.border-gray(style="display:none;")
+                      .heading.blue-badge.center.tx16.white
+                        img(src="./static/gift_blue.gif")
+                        |  Подарок
+                    #gift_of.block-universal.border-gray(style="display:none;")
+                      .heading.blue-badge.center.tx16.white
+                        img(src="./static/gift_blue.gif")
+                        |  Идет подарком с:
+            br
+            .hr
+            br
+            .cart__prop
+              #box_linked.toggle-box.right
+                nobr.toggle
+                  a.js(href="#ancor-review") Отзывы
+                  span  ↓
+                  a.js(href="#ancor-similar") Похожие товары
+                  span  ↓
+              #box_showhide_fulldesc.toggle-box.right
+                nobr.toggle.act
+                  a.js(href="#") Краткое описание
+                nobr.toggle
+                  a.js(href="#") Все характеристики
+              br
+              script(type="text/javascript" src="./static/desc_columns.js?2785")
+              h2 Характеристики
+              #card_prop
+                .ca_desc_html.prop-line.prop-line-wide
+                  .prop-value
+                    | Оперативная память произведена с учетом требований современных компьютерных систем, что гарантирует ее универсальность и надежность. Модуль относится к классу DDR4, обладает емкостью 16 ГБ и 288-контактным модулем DIMM. Предельная частота работы устройства достигает 2400 МГц, а пропускная способность – 19200 Мб/с.
+                  br.clear
+                #prop-columns.clear
+                  .prop-column.left
+                    .short_desc.prop-line
+                      .call Артикул производителя (Part Number)
+                      .prop-value 370-ACNU-1 
+                      br.clear
+                    .short_desc.prop-line.delimiter
+                      h3 Основные характеристики
+                    .short_desc.prop-line
+                      .call Стандарт
+                      .prop-value DDR4
+                      br.clear
+                    .short_desc.prop-line
+                      .call Форм-фактор
+                      .prop-value DIMM
+                      br.clear
+                    .short_desc.prop-line
+                      .call Объем одного модуля
+                      .prop-value 16 ГБ
+                      br.clear
+                    .short_desc.prop-line
+                      .call Количество модулей в комплекте
+                      .prop-value 1 шт
+                      br.clear
+                    .short_desc.prop-line
+                      .call Суммарный объем
+                      .prop-value 16 ГБ
+                      br.clear
+                    .short_desc.prop-line
+                      .call Эффективная частота
+                      .prop-value 2400 МГц
+                      br.clear
+                    .short_desc.prop-line
+                      .call Пропускная способность
+                      .prop-value 19200 Мб/с
+                      br.clear
+                    .short_desc.prop-line
+                      .call Поддержка ECC
+                      .prop-value Есть
+                      br.clear
+                    .short_desc.prop-line
+                      .call Буферизованная (регистровая)
+                      .prop-value Есть
+                      br.clear
+                    .short_desc.prop-line
+                      .call Низкопрофильная
+                      .prop-value Нет
+                      br.clear
+                    .full_desc.prop-line.hide
+                      .call Количество чипов на модуле
+                      .prop-value 16 шт
+                      br.clear
+                    .short_desc.prop-line
+                      .call Количество контактов
+                      .prop-value 288
+                      br.clear
+                    .full_desc.prop-line.hide
+                      .call Количество ранков
+                      .prop-value 2
+                      br.clear
+                  .prop-column.right
+                    .short_desc.prop-line.delimiter
+                      h3 Тайминги
+                    .short_desc.prop-line
+                      .call CAS Latency (CL)
+                      .prop-value 17
+                      br.clear
+                    .full_desc.prop-line.hide
+                      .call RAS to CAS Delay (tRCD)
+                      .prop-value 17
+                      br.clear
+                    .full_desc.prop-line.hide
+                      .call Row Precharge Delay (tRP)
+                      .prop-value 17
+                      br.clear
+                    .short_desc.prop-line.delimiter
+                      h3 Дополнительные характеристики
+                    .short_desc.prop-line
+                      .call Напряжение питания
+                      .prop-value 1.2 В
+                      br.clear
+                    .short_desc.prop-line
+                      .call Нормальная операционная температура (Tcase)
+                      .prop-value 85 °C
+                      br.clear
+                    .full_desc.prop-line.hide
+                      .call Расширенная операционная температура (Tcase)
+                      .prop-value 95 °C
+                      br.clear
+                    .short_desc.prop-line
+                      .call Радиатор
+                      .prop-value Нет
+                      br.clear
+                    .full_desc.prop-line.hide
+                      .call Совместимость
+                      .prop-value
+                        | POWEREDGE C4130, POWEREDGE C6320, POWEREDGE FC430, POWEREDGE FC630, POWEREDGE FC830, POWEREDGE M630, POWEREDGE M830, POWEREDGE R430, POWEREDGE R530, POWEREDGE R630, POWEREDGE R730, POWEREDGE R730XD, POWEREDGE R830, POWEREDGE R930, POWEREDGE T430, POWEREDGE T630, PRECISION WORKSTATIONS R7910, PRECISION WORKSTATIONS T5810, PRECISION WORKSTATIONS T7810, PRECISION WORKSTATIONS T7910
+                      br.clear
+                    .full_desc.prop-line.hide
+                      .call Вид поставки
+                      .prop-value Kit
+                      br.clear
+                    .short_desc.prop-line
+                      .call Вес брутто
+                      .prop-value 36 г
+                      br.clear
+                  .clear
+                b#total_props_shown.hide (30)
+
+            br.clear
+            .hr
+            br
+          script(src="./static/saved_resource(1)")
+
+
+
+          .catalog.catalog-goods.linked
+            a(name="ancor-similar")
+            
+            h2
+              | Похожие товары 
+              span.gray (7)
+            a.js.black.full.showhide(href="#") Показать все
+            span  ↓
+            #similar.catalog-tiles.one-line
+              .wrap
+                .item.border-gray.type_7(data-vendor="HPE")
+                  .image
+                    .image-vertical-helper
+                    a(href="/hpe_862976-b21_586467.html?utm_source=xcom&utm_campaign=similar&utm_content=586467&utm_term=628933" title="HPE (862976-B21)")
+                      img(src="https://img.xcomdb.ru/83/84/598af57838489509888908_120.jpg" alt="HPE (862976-B21)")
+                  .type Модуль памяти DDR4 16GB
+                  .name
+                    a(href="/hpe_862976-b21_586467.html?utm_source=xcom&utm_campaign=similar&utm_content=586467&utm_term=628933" alt="HPE (862976-B21)" title="HPE (862976-B21)") HPE (862976-B21)
+                  .description
+                    .spec-type-shortcut.hide(data-name="Модуль памяти" data-key="586467")
+                    p.tx11
+                      | 16GB (1x16GB) 2Rx8 PC4-2400T-E-17 Unbuffered Standard Memory Kit for DL20/ML30 Gen9
+                  .key Код товара: 586467
+                  .partnumber Артикул: 862976-B21
+                  .warranty.tx11
+                  .available.tx11
+                    p.green
+                      | В наличии
+                      span.black , склад «Химки»
+                  .wrap-buy
+                    .price
+                      .new
+                        | 17 917 
+                        span руб.
+                    .buy
+                      form(action="/checkout/handler/add/?utm_source=xcom&utm_campaign=similar&utm_content=586467&utm_term=628933" method="GET")
+                        input#l_am586467(name="amount" type="hidden" value="1")
+                        input(name="key" type="hidden" value="586467")
+                        input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(586467,_rt("#l_am586467").value(),"",{"utm_source":"xcom","utm_campaign":"similar","utm_content":"586467","utm_term":"628933"});return false;')
+                  #compare_586467.compare.compare-line(from="")
+                    a.js(href="#" onclick="return false;") Добавить к сравнению
+                    span    
+              .wrap
+                .item.border-gray.type_7(data-vendor="HPE")
+                  .image
+                    .image-vertical-helper
+                    a(href="/hpe_836220r-b21_743018.html?utm_source=xcom&utm_campaign=similar&utm_content=743018&utm_term=628933" title="HPE 836220R-B21")
+                      img(src="https://img.xcomdb.ru/2f/18/5dea3572f18dc917038241_120.jpg" alt="HPE 836220R-B21")
+                  .type Модуль памяти
+                  .name
+                    a(href="/hpe_836220r-b21_743018.html?utm_source=xcom&utm_campaign=similar&utm_content=743018&utm_term=628933" alt="HPE 836220R-B21" title="HPE 836220R-B21") HPE 836220R-B21
+                  .description
+                    .spec-type-shortcut.hide(data-name="Модуль памяти" data-key="743018")
+                    p.tx11
+                      | 16GB (1x16GB) 2Rx4 PC4-2400T-R DDR4 Registered Memory Kit for only E5-2600v4 Gen9, Reman
+                  .key Код товара: 743018
+                  .partnumber
+                  .warranty.tx11
+                  .available.tx11
+                    p.green
+                      | В наличии
+                      span.black , склад «Химки»
+                  .wrap-buy
+                    .price
+                      .new
+                        | 18 307 
+                        span руб.
+                    .buy
+                      form(action="/checkout/handler/add/?utm_source=xcom&utm_campaign=similar&utm_content=743018&utm_term=628933" method="GET")
+                        input#l_am743018(name="amount" type="hidden" value="1")
+                        input(name="key" type="hidden" value="743018")
+                        input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(743018,_rt("#l_am743018").value(),"",{"utm_source":"xcom","utm_campaign":"similar","utm_content":"743018","utm_term":"628933"});return false;')
+                  #compare_743018.compare.compare-line(from="")
+                    a.js(href="#" onclick="return false;") Добавить к сравнению
+                    span    
+              .wrap
+                .item.border-gray.type_7(data-vendor="HP")
+                  .image
+                    .image-vertical-helper
+                    a(href="/hp_805347-b21_513148.html?utm_source=xcom&utm_campaign=similar&utm_content=513148&utm_term=628933" title="HP 805347-B21")
+                      img(src="https://img.xcomdb.ru/72/ba/572d73f72ba4f055504122_120.jpg" alt="HP 805347-B21")
+                  .type Модуль памяти DDR4 8GB
+                  .name
+                    a(href="/hp_805347-b21_513148.html?utm_source=xcom&utm_campaign=similar&utm_content=513148&utm_term=628933" alt="HP 805347-B21" title="HP 805347-B21") HP 805347-B21
+                  .description
+                    .spec-type-shortcut.hide(data-name="Модуль памяти" data-key="513148")
+                    p.tx11 DIMM ECC Reg PC4-2400T-R
+                  .key Код товара: 513148
+                  .partnumber
+                  .warranty.tx11
+                  .available.tx11
+                    p.green
+                      | В наличии
+                      span.black , склад «Химки»
+                  .wrap-buy
+                    .price
+                      .new
+                        | 17 528 
+                        span руб.
+                    .buy
+                      form(action="/checkout/handler/add/?utm_source=xcom&utm_campaign=similar&utm_content=513148&utm_term=628933" method="GET")
+                        input#l_am513148(name="amount" type="hidden" value="1")
+                        input(name="key" type="hidden" value="513148")
+                        input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(513148,_rt("#l_am513148").value(),"",{"utm_source":"xcom","utm_campaign":"similar","utm_content":"513148","utm_term":"628933"});return false;')
+                  #compare_513148.compare.compare-line(from="")
+                    a.js(href="#" onclick="return false;") Добавить к сравнению
+                    span    
+              .wrap
+                .item.border-gray.type_7(data-vendor="Kingston")
+                  .image
+                    .image-vertical-helper
+                    a(href="/kingston_ktl-ts42432g_547029.html?utm_source=xcom&utm_campaign=similar&utm_content=547029&utm_term=628933" title="Kingston KTL-TS424/32G")
+                      img(src="https://img.xcomdb.ru/8d/2b/5813d8b8d2bf9866000258_120.jpg" alt="Kingston KTL-TS424/32G")
+                  .type Модуль памяти
+                  .name
+                    a(href="/kingston_ktl-ts42432g_547029.html?utm_source=xcom&utm_campaign=similar&utm_content=547029&utm_term=628933" alt="Kingston KTL-TS424/32G" title="Kingston KTL-TS424/32G") Kingston KTL-TS424/32G
+                  .description
+                    .spec-type-shortcut.hide(data-name="Модуль памяти" data-key="547029")
+                    p.tx11
+                      | for Lenovo (46W0832 46W0833 4X70G88320) DDR4 DIMM 32GB (PC4-19200) 2400MHz ECC Registered Module
+                  .key Код товара: 547029
+                  .partnumber
+                  .warranty.tx11
+                  .available.tx11
+                    p.green
+                      | В наличии
+                      span.black , склад «Химки»
+                  .wrap-buy
+                    .price
+                      .new
+                        | 14 076 
+                        span руб.
+                    .buy
+                      form(action="/checkout/handler/add/?utm_source=xcom&utm_campaign=similar&utm_content=547029&utm_term=628933" method="GET")
+                        input#l_am547029(name="amount" type="hidden" value="1")
+                        input(name="key" type="hidden" value="547029")
+                        input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(547029,_rt("#l_am547029").value(),"",{"utm_source":"xcom","utm_campaign":"similar","utm_content":"547029","utm_term":"628933"});return false;')
+                  #compare_547029.compare.compare-line(from="")
+                    a.js(href="#" onclick="return false;") Добавить к сравнению
+                    span    
+              .wrap
+                .item.border-gray.type_7(data-vendor="Infortrend")
+                  .image
+                    .image-vertical-helper
+                    a(href="/infortrend_ddr4recmf-0010_708511.html?utm_source=xcom&utm_campaign=similar&utm_content=708511&utm_term=628933" title="Infortrend DDR4RECMF-0010")
+                      img(src="https://img.xcomdb.ru/2e/00/5d0368c2e00d4521262732_120.jpg" alt="Infortrend DDR4RECMF-0010")
+                  .type Модуль памяти
+                  .name
+                    a(href="/infortrend_ddr4recmf-0010_708511.html?utm_source=xcom&utm_campaign=similar&utm_content=708511&utm_term=628933" alt="Infortrend DDR4RECMF-0010" title="Infortrend DDR4RECMF-0010") Infortrend DDR4RECMF-0010
+                  .description
+                    .spec-type-shortcut.hide(data-name="Модуль памяти" data-key="708511")
+                    p.tx11 16GB DDR4
+                  .key Код товара: 708511
+                  .partnumber
+                  .warranty.tx11
+                  .available.tx11
+                    p.green
+                      | В наличии
+                      span.black , склад «Химки»
+                  .wrap-buy
+                    .price
+                      .new
+                        | 15 874 
+                        span руб.
+                    .buy
+                      form(action="/checkout/handler/add/?utm_source=xcom&utm_campaign=similar&utm_content=708511&utm_term=628933" method="GET")
+                        input#l_am708511(name="amount" type="hidden" value="1")
+                        input(name="key" type="hidden" value="708511")
+                        input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(708511,_rt("#l_am708511").value(),"",{"utm_source":"xcom","utm_campaign":"similar","utm_content":"708511","utm_term":"628933"});return false;')
+                  #compare_708511.compare.compare-line(from="")
+                    a.js(href="#" onclick="return false;") Добавить к сравнению
+                    span    
+              .wrap
+                .item.border-gray.type_7(data-vendor="Huawei")
+                  .image
+                    .image-vertical-helper
+                    a(href="/huawei_n24ddr402_555480.html?utm_source=xcom&utm_campaign=similar&utm_content=555480&utm_term=628933" title="Huawei N24DDR402")
+                      img(src="https://img.xcomdb.ru/a6/a9/586caeda6a9a9286935509_120.jpg" alt="Huawei N24DDR402")
+                  .type Модуль памяти
+                  .name
+                    a(href="/huawei_n24ddr402_555480.html?utm_source=xcom&utm_campaign=similar&utm_content=555480&utm_term=628933" alt="Huawei N24DDR402" title="Huawei N24DDR402") Huawei N24DDR402
+                  .description
+                    .spec-type-shortcut.hide(data-name="Модуль памяти" data-key="555480")
+                    p.tx11 DDR4 RDIMM Memory,16GB,2400MT/s,2Rank(1G*8bit),1.2V,ECC
+                  .key Код товара: 555480
+                  .partnumber Артикул: 06200213
+                  .warranty.tx11
+                  .available.tx11
+                    p.green
+                      | В наличии
+                      span.black , склад «Химки»
+                  .wrap-buy
+                    .price
+                      .new
+                        | 15 906 
+                        span руб.
+                    .buy
+                      form(action="/checkout/handler/add/?utm_source=xcom&utm_campaign=similar&utm_content=555480&utm_term=628933" method="GET")
+                        input#l_am555480(name="amount" type="hidden" value="1")
+                        input(name="key" type="hidden" value="555480")
+                        input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(555480,_rt("#l_am555480").value(),"",{"utm_source":"xcom","utm_campaign":"similar","utm_content":"555480","utm_term":"628933"});return false;')
+                  #compare_555480.compare.compare-line(from="")
+                    a.js(href="#" onclick="return false;") Добавить к сравнению
+                    span    
+              .wrap
+                .item.border-gray.type_7(data-vendor="HPE")
+                  .image
+                    .image-vertical-helper
+                    a(href="/hpe_8gb_1x8gb_1rx8_pc4-2400t-r_ddr4_registered_stand_525385.html?utm_source=xcom&utm_campaign=similar&utm_content=525385&utm_term=628933" title="HPE 8GB (1x8GB) 1Rx8 PC4-2400T-R DDR4 Registered Stand")
+                      img(src="https://img.xcomdb.ru/72/63/57f4aeb72639d332088220_120.jpg" alt="HPE 8GB (1x8GB) 1Rx8 PC4-2400T-R DDR4 Registered Stand")
+                  .type Модуль памяти
+                  .name
+                    a(href="/hpe_8gb_1x8gb_1rx8_pc4-2400t-r_ddr4_registered_stand_525385.html?utm_source=xcom&utm_campaign=similar&utm_content=525385&utm_term=628933" alt="HPE 8GB (1x8GB) 1Rx8 PC4-2400T-R DDR4 Registered Stand" title="HPE 8GB (1x8GB) 1Rx8 PC4-2400T-R DDR4 Registered Stand") HPE 8GB (1x8GB) 1Rx8 PC4-2400T-R DDR4 Registered Stand
+                  .description
+                    .spec-type-shortcut.hide(data-name="Модуль памяти" data-key="525385")
+                    p.tx11 for only E5-2600v4 DL60/80/120/160/180 & ML 110/150 Gen9
+                  .key Код товара: 525385
+                  .partnumber Артикул: 851353-B21
+                  .warranty.tx11
+                  .available.tx11
+                    p.green
+                      | В наличии
+                      span.black , склад «Химки»
+                  .wrap-buy
+                    .price
+                      .new
+                        | 15 580 
+                        span руб.
+                    .buy
+                      form(action="/checkout/handler/add/?utm_source=xcom&utm_campaign=similar&utm_content=525385&utm_term=628933" method="GET")
+                        input#l_am525385(name="amount" type="hidden" value="1")
+                        input(name="key" type="hidden" value="525385")
+                        input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(525385,_rt("#l_am525385").value(),"",{"utm_source":"xcom","utm_campaign":"similar","utm_content":"525385","utm_term":"628933"});return false;')
+                  #compare_525385.compare.compare-line(from="")
+                    a.js(href="#" onclick="return false;") Добавить к сравнению
+                    span    
+            br.clear
+            .hr
+            br
+
+          script.
+            var card_delivery_content = card_available_content = '';
+            card_available_content = '<table width="100%" cellspacing=0 cellpadding=0><tr><td align="left">&laquo;<a href="/pages/contacts/#dopsklad" target="_blank">Водный&nbsp;стадион</a>&raquo;</td><td align="right">0&nbsp;шт;</td></tr><tr><td align="left">&laquo;<a href="/pages/contacts/#dopsklad" target="_blank">Химки</a>&raquo;</td><td align="right">&gt;&nbsp;5&nbsp;шт.</td></tr></table>';
+            card_delivery_content += '<ul class="fake-list">';
+            card_delivery_content += '<li><span><b>Самовывоз</b>&nbsp;&mdash;&nbsp;21.01.2020</span></li>';
+            card_delivery_content += '<li><span><b>Москва и МО</b>&nbsp;&mdash;&nbsp;21.01.2020</span></li>';
+            card_delivery_content += '<li><span><b>Россия</b>&nbsp;&mdash;&nbsp;21.01.2020</span></li>';
+            card_delivery_content += '</ul>';
+            $('#offer_details').append('<tr class="no_padding_bottom"><td><b>Доставка:</b></td><td></td><td><b class="green">В&nbsp;наличии:</b></td></tr>');
+            if( card_available_content == '' ) {
+            $('#offer_details').append('<tr class="card_content"><td colspan=3>'+card_delivery_content+'</td></tr>');
+            } else {
+            $('#offer_details').append('<tr class="card_content"><td>'+card_delivery_content+'</td><td></td><td>'+card_available_content+'</td></tr>');
+            }
+          script(src="./static/card_linked.js.Без названия")
+          script(type="text/javascript").
+            new desc_compare('compare_664830');
+          #comments.clear
+            a(name="ancor-review")
+            h2.left
+              span#xcom_comments_switch Отзывы покупателей Икс-Ком
+            #xcom_comments.clear
+              a.js.right.comments_add(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#") Добавить свой отзыв
+              p.clear О данном товаре пока нет отзывов.
+              #reply_block_0.reply.off
+              form#comment_form.hide(action="https://www.xcom-shop.ru/add_comment/" method="post")
+          script(type="text/javascript" src="./static/comments.js.Без названия")
+
+          br
+          .hr
+          br
+          .block-universal
+            table(width="100%" cellspacing="0" cellpadding="0")
+              tbody
+                tr
+                  td(width="50%")
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/dyubel_homyt/") Дюбель хомут
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/klipsy_skoby/") Клипсы для скс
+                    p.fake-list
+                      span — 
+                      | 				Площадки для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/rylon_lipychki/") Рулон липучки для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/spiralnyy_rykav/") Спиральные рукава для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_dlya_ylitsy_pogodostoykie/") Стяжки для улицы, погодостойкие для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_metallicheskie/") Стяжки металлические для скс
+                  td(width="50%")
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_neylonovye_otkryvayuschiesya/") Стяжки нейлоновые открывающиеся для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_neylonovye_pod_vint/") Стяжки нейлоновые под винт для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_neylonovye_pod_marker/") Стяжки нейлоновые под маркер для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_neotkryvayuschiesya/") Стяжки неоткрывающиеся для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_s_dvoynoy_petley/") Стяжки с двойной петлей для скс
+                    p.fake-list
+                      span — 
+                      a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/homyty-lipychki/") Хомуты-липучки для скс
+          .block-universal.border-gray.bg-light
+            b 5bites CTM2020-100BK
+            |  сертифицирован для продажи в России.
+            // noindex
+            | Изображения товара, включая цвет, могут отличаться от реального внешнего вида.
+            | Комплектация также может быть изменена производителем без предварительного уведомления.
+            | Данное описание не является публичной офертой.
+            // /noindex
+            br
+            br
+            | Площадка 5bites CTM2020-100BK – фото, технические характеристики, условия доставки по Москве и России. Для того, чтобы купить площадка 5bites CTM2020-100BK в интернет-магазине Xcom-shop.ru, достаточно заполнить форму онлайн заказа или позвонить по телефонам: +7 (495) 799-96-69, +7 (800) 200-00-69.
+
+        td#right_column(width="240px")
+          #slide_fixed(style="margin-top: 0px; position: static;")
+            #bill_box
+              #bill_container.border-gray
+                .heading
+                  a.black(href="https://www.xcom-shop.ru/checkout/") Корзина
+                  br
+                  span В корзине 1 товар
+                .triangle
+                #bl691800.bill_good
+                  .highlighter
+                    p.crop
+                      a(href="https://www.xcom-shop.ru/3cott_3cott-450-evo2_691800.html") 3Cott 3COTT-450-EVO2
+                    p.tx11.gray.crop Блок питания ATX v2.3, 450W, P.PFC, вентилятор 120мм, фиксатор кабеля, OEM
+                    .amount.left
+                      a.minus.black(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#" onclick="adder('ba691800',-1,0);return false;") −
+                      input#ba691800.center(type="text" value="1" data-price="1376" data-discount="0")
+                      a.plus.black(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#" onclick="adder('ba691800',1,0);return false;") +
+                    .cost.right 1 376 руб.
+                    br.clear
+                .interline  
+                #basket_clear
+                  a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#") Очистить корзину
+                .interline  
+                .tx11.green(align="center")
+                  | За данный заказ Вы получите 
+                  span#bonus 18
+                  |  бонусных баллов.
+                #dlv_gray_pad
+                  h3 Доставка товаров
+                  table#delivery(width="100%" cellspacing="0" cellpadding="0")
+                    tbody
+                      tr
+                        td Регион:
+                        td(align="right")
+                          select#basket_city(name="city" size="1")
+                            option(value="0") Москва и Моск.обл. до А107
+                            option(value="none") Загрузка ...
+                      tr
+                        td Доставка:
+                        td(align="right")
+                          select#basket_delivery(size="1" name="delivery")
+                            option(value="1") Курьером лично в руки
+                            option(value="none") Загрузка ...
+                      tr
+                        td Оплата:
+                        td(align="right")
+                          select#basket_payment(size="1" name="payment")
+                            option(value="1") Наличными курьеру
+                            option(value="none") Загрузка ...
+                  #warnings
+                  table#dlv_cost_line(width="100%" cellpadding="0" cellspacing="0")
+                    tbody
+                      tr
+                        td(align="left") Стоимость доставки:
+                        td#dlv_cost_cell(align="right") 390 руб.
+                table#total(width="100%" cellspacing="0" cellpadding="0")
+                  tbody
+                    tr
+                      td(align="left")
+                        h3 Итого:
+                      td(align="right")
+                        span#total_cost 1 766 руб.
+                #goto_checkout
+                  a.button-blue(href="https://www.xcom-shop.ru/checkout/") Оформить заказ
+            #pay_icons(align="center")
+              img(src="./static/visa.gif")
+              img(src="./static/mc.gif")
+              img(src="./static/mir.gif")
+              img(src="./static/wm.gif")
+              br
+              img(src="./static/ym.gif")
+              img(src="./static/sber.gif")
+              img(src="./static/thx.gif")
+              img(src="./static/pp.gif")
+              img(src="./static/credit.png")
+            .block-right.buttons
+              div
+                a(href="https://www.xcom-shop.ru/pages/sale/")
+                  img(src="./static/button_sale.png")
+              div
+                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
+                  img(src="./static/button_youtube.png")
+              div
+                a(href="https://www.xcom-shop.ru/actions/")
+                  img(src="./static/buttons_actions.png")
+              div
+                a(href="https://www.xcom-shop.ru/pages/brands/")
+                  img(src="./static/button_brands.png")
+            .block-right.buttons.center
+              a(href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8")
+                img(src="./static/appstore.png" alt="Доступно в AppStore" border="0")
+              a(href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop")
+                img(src="./static/googleplay.png" alt="Доступно в Google play" border="0")
+            .block-right
+              ul
+                li
+                  img(src="./static/mail.png")
+                  a.black(href="mailto:val@xcom.ru")
+                    | Прием жалоб
                     br
-                    .hr
+                    | и предложений
+                li
+                  img(src="./static/complaint.png")
+                  a.black(href="https://www.xcom-shop.ru/complaint/")
+                    | Отдел
                     br
-                    .block-universal
-                        table(width="100%" cellspacing="0" cellpadding="0")
-                            tbody
-                                tr
-                                    td(width="50%")
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/dyubel_homyt/") Дюбель хомут
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/klipsy_skoby/") Клипсы для скс
-                                        p.fake-list
-                                            span — 
-                                            | 				Площадки для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/rylon_lipychki/") Рулон липучки для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/spiralnyy_rykav/") Спиральные рукава для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_dlya_ylitsy_pogodostoykie/") Стяжки для улицы, погодостойкие для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_metallicheskie/") Стяжки металлические для скс
-                                    td(width="50%")
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_neylonovye_otkryvayuschiesya/") Стяжки нейлоновые открывающиеся для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_neylonovye_pod_vint/") Стяжки нейлоновые под винт для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_neylonovye_pod_marker/") Стяжки нейлоновые под маркер для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_neotkryvayuschiesya/") Стяжки неоткрывающиеся для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/styazhki_s_dvoynoy_petley/") Стяжки с двойной петлей для скс
-                                        p.fake-list
-                                            span — 
-                                            a(href="https://www.xcom-shop.ru/catalog/sks/markirovka_i_krepezh/montazhnye_materialy/homyty-lipychki/") Хомуты-липучки для скс
-                    .block-universal.border-gray.bg-light
-                        b 5bites CTM2020-100BK
-                        |  сертифицирован для продажи в России.
-                        // noindex
-                        | Изображения товара, включая цвет, могут отличаться от реального внешнего вида.
-                        | Комплектация также может быть изменена производителем без предварительного уведомления.
-                        | Данное описание не является публичной офертой.
-                        // /noindex
-                        br
-                        br
-                        | Площадка 5bites CTM2020-100BK – фото, технические характеристики, условия доставки по Москве и России. Для того, чтобы купить площадка 5bites CTM2020-100BK в интернет-магазине Xcom-shop.ru, достаточно заполнить форму онлайн заказа или позвонить по телефонам: +7 (495) 799-96-69, +7 (800) 200-00-69.
-                    script(type="text/javascript").
-                        (function() {
-                        var d = document, w = window;
-                        w.MgSensorData = {cid:97649, lng:"ru", nosafari:true, eid:664830, partner:107061};
-                        var n = d.getElementsByTagName("script")[0];
-                        var s = d.createElement("script");
-                        s.type = "text/javascript";
-                        s.async = true;
-                        var dt = !Date.now?new Date().valueOf():Date.now();
-                        s.src = "//a.marketgid.com/mgsensor.js?d=" + dt;
-                        n.parentNode.insertBefore(s, n);
-                        })();
-                        window.dataLayer.push({
-                        "ecommerce": {
-                        "currencyCode": "RUB",
-                        "detail": {
-                        "products": [
-                        {
-                        "id":    "664830",
-                        "name" : "CTM2020-100BK",
-                        "brand": "5bites",
-                        "price": 80                    }
-                        ]
-                        }
-                        }
-                        });
-                td#right_column(width="240px")
-                    #slide_fixed(style="margin-top: 0px; position: static;")
-                        #bill_box
-                            #bill_container.border-gray
-                                .heading
-                                    a.black(href="https://www.xcom-shop.ru/checkout/") Корзина
-                                    br
-                                    span В корзине 1 товар
-                                .triangle
-                                #bl691800.bill_good
-                                    .highlighter
-                                        p.crop
-                                            a(href="https://www.xcom-shop.ru/3cott_3cott-450-evo2_691800.html") 3Cott 3COTT-450-EVO2
-                                        p.tx11.gray.crop Блок питания ATX v2.3, 450W, P.PFC, вентилятор 120мм, фиксатор кабеля, OEM
-                                        .amount.left
-                                            a.minus.black(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#" onclick="adder('ba691800',-1,0);return false;") −
-                                            input#ba691800.center(type="text" value="1" data-price="1376" data-discount="0")
-                                            a.plus.black(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#" onclick="adder('ba691800',1,0);return false;") +
-                                        .cost.right 1 376 руб.
-                                        br.clear
-                                .interline  
-                                #basket_clear
-                                    a.js(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#") Очистить корзину
-                                .interline  
-                                .tx11.green(align="center")
-                                    | За данный заказ Вы получите 
-                                    span#bonus 18
-                                    |  бонусных баллов.
-                                #dlv_gray_pad
-                                    h3 Доставка товаров
-                                    table#delivery(width="100%" cellspacing="0" cellpadding="0")
-                                        tbody
-                                            tr
-                                                td Регион:
-                                                td(align="right")
-                                                    select#basket_city(name="city" size="1")
-                                                        option(value="0") Москва и Моск.обл. до А107
-                                                        option(value="none") Загрузка ...
-                                            tr
-                                                td Доставка:
-                                                td(align="right")
-                                                    select#basket_delivery(size="1" name="delivery")
-                                                        option(value="1") Курьером лично в руки
-                                                        option(value="none") Загрузка ...
-                                            tr
-                                                td Оплата:
-                                                td(align="right")
-                                                    select#basket_payment(size="1" name="payment")
-                                                        option(value="1") Наличными курьеру
-                                                        option(value="none") Загрузка ...
-                                    #warnings
-                                    table#dlv_cost_line(width="100%" cellpadding="0" cellspacing="0")
-                                        tbody
-                                            tr
-                                                td(align="left") Стоимость доставки:
-                                                td#dlv_cost_cell(align="right") 390 руб.
-                                table#total(width="100%" cellspacing="0" cellpadding="0")
-                                    tbody
-                                        tr
-                                            td(align="left")
-                                                h3 Итого:
-                                            td(align="right")
-                                                span#total_cost 1 766 руб.
-                                #goto_checkout
-                                    a.button-blue(href="https://www.xcom-shop.ru/checkout/") Оформить заказ
-                        #pay_icons(align="center")
-                            img(src="./static/visa.gif")
-                            img(src="./static/mc.gif")
-                            img(src="./static/mir.gif")
-                            img(src="./static/wm.gif")
-                            br
-                            img(src="./static/ym.gif")
-                            img(src="./static/sber.gif")
-                            img(src="./static/thx.gif")
-                            img(src="./static/pp.gif")
-                            img(src="./static/credit.png")
-                        .block-right.buttons
-                            div
-                                a(href="https://www.xcom-shop.ru/pages/sale/")
-                                    img(src="./static/button_sale.png")
-                            div
-                                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
-                                    img(src="./static/button_youtube.png")
-                            div
-                                a(href="https://www.xcom-shop.ru/actions/")
-                                    img(src="./static/buttons_actions.png")
-                            div
-                                a(href="https://www.xcom-shop.ru/pages/brands/")
-                                    img(src="./static/button_brands.png")
-                        .block-right.buttons.center
-                            a(href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8")
-                                img(src="./static/appstore.png" alt="Доступно в AppStore" border="0")
-                            a(href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop")
-                                img(src="./static/googleplay.png" alt="Доступно в Google play" border="0")
-                        .block-right
-                            ul
-                                li
-                                    img(src="./static/mail.png")
-                                    a.black(href="mailto:val@xcom.ru")
-                                        | Прием жалоб
-                                        br
-                                        | и предложений
-                                li
-                                    img(src="./static/complaint.png")
-                                    a.black(href="https://www.xcom-shop.ru/complaint/")
-                                        | Отдел
-                                        br
-                                        | рекламаций
-                                li
-                                    img(src="./static/tech-support.png")
-                                    a.black(href="https://www.xcom-shop.ru/pages/services/")
-                                        | Наши услуги
-                                li
-                                    img(src="./static/b2b.png")
-                                    a.black(href="https://www.xcom-shop.ru/pages/corporate_department/")
-                                        | Постоянным
-                                        br
-                                        | покупателям
-                                li
-                                    img(src="./static/onsale.png")
-                                    a.black(href="https://www.xcom-shop.ru/catalog/ytsenennye_tovary/")
-                                        | Уцененные товары
-                                li
-                                    img(src="./static/games.png")
-                                    a.black(href="https://www.xcom-shop.ru/pages/our_games/")
-                                        | Наши игры
-                                li
-                                    img(src="./static/customers.png")
-                                    a.black(href="https://www.xcom-shop.ru/pages/customer/")
-                                        | Уголок покупателя
-                        #ya_market.block-right
-                            a.black(href="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=2508/*https://grade.market.yandex.ru/?id=704&action=link")
-                                span Отзывы о нас
-                        #right_column_counter.block-universal.border-gray.bg-gray
-                            .heading.heading1 Откуда все берется
-                            .content
-                                .item
-                                    .name Товаров на сайте
-                                    .count 92 267
-                                    br.clear
-                                .item
-                                    .name Из них товаров на складе
-                                    .count 69 552
-                                    br.clear
-                                .item
-                                    .name
-                                        | Доставок принято на завтра
-                                        .tx11.gray (17.01.2020)
-                                    .count 3 405
-                                    br.clear
-                                .item
-                                    .name Из них в регионы России
-                                    .count 1 572
-                                    br.clear
-                                .item
-                                    .name Покупателей на сайте сейчас
-                                    .count 300
-                                    br.clear
-                        .block-right.banner.center
-                            a(href="https://www.xcom-hobby.ru/quiz/")
-                                img(src="./static/games.jpg")
-                        #right_social_icons.quiz
-                            div
-                                a(href="https://vk.com/xcom_shop" target="_blank")
-                                    img(src="./static/vk.gif")
-                                a(href="https://www.facebook.com/XComShop/" target="_blank")
-                                    img(src="./static/fb.gif")
-                                a(href="https://ok.ru/xcomshop" target="_blank")
-                                    img(src="./static/ok.gif")
-                                a(href="https://www.instagram.com/xcomshop/" target="_blank")
-                                    img(src="./static/instagram.gif")
-                                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
-                                    img(src="./static/youtube.png")
+                    | рекламаций
+                li
+                  img(src="./static/tech-support.png")
+                  a.black(href="https://www.xcom-shop.ru/pages/services/")
+                    | Наши услуги
+                li
+                  img(src="./static/b2b.png")
+                  a.black(href="https://www.xcom-shop.ru/pages/corporate_department/")
+                    | Постоянным
+                    br
+                    | покупателям
+                li
+                  img(src="./static/onsale.png")
+                  a.black(href="https://www.xcom-shop.ru/catalog/ytsenennye_tovary/")
+                    | Уцененные товары
+                li
+                  img(src="./static/games.png")
+                  a.black(href="https://www.xcom-shop.ru/pages/our_games/")
+                    | Наши игры
+                li
+                  img(src="./static/customers.png")
+                  a.black(href="https://www.xcom-shop.ru/pages/customer/")
+                    | Уголок покупателя
+            #ya_market.block-right
+              a.black(href="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=2508/*https://grade.market.yandex.ru/?id=704&action=link")
+                span Отзывы о нас
+            #right_column_counter.block-universal.border-gray.bg-gray
+              .heading.heading1 Откуда все берется
+              .content
+                .item
+                  .name Товаров на сайте
+                  .count 92 267
+                  br.clear
+                .item
+                  .name Из них товаров на складе
+                  .count 69 552
+                  br.clear
+                .item
+                  .name
+                    | Доставок принято на завтра
+                    .tx11.gray (17.01.2020)
+                  .count 3 405
+                  br.clear
+                .item
+                  .name Из них в регионы России
+                  .count 1 572
+                  br.clear
+                .item
+                  .name Покупателей на сайте сейчас
+                  .count 300
+                  br.clear
+            .block-right.banner.center
+              a(href="https://www.xcom-hobby.ru/quiz/")
+                img(src="./static/games.jpg")
+            #right_social_icons.quiz
+              div
+                a(href="https://vk.com/xcom_shop" target="_blank")
+                  img(src="./static/vk.gif")
+                a(href="https://www.facebook.com/XComShop/" target="_blank")
+                  img(src="./static/fb.gif")
+                a(href="https://ok.ru/xcomshop" target="_blank")
+                  img(src="./static/ok.gif")
+                a(href="https://www.instagram.com/xcomshop/" target="_blank")
+                  img(src="./static/instagram.gif")
+                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
+                  img(src="./static/youtube.png")
 
 
 

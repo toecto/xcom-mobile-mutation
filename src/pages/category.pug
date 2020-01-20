@@ -1,0 +1,1444 @@
+extends ../template/layout.pug
+
+block content
+  table(width="100%" cellspacing="0" cellpadding="0")
+    tbody
+      tr
+        td#content
+          script(src="/mod/site/js/scrolltop.js")
+          table.catalog(width="100%" cellpadding="0" cellspacing="0")
+            tbody
+              tr
+                td(width="260px")
+                  #navigation_left
+                    .block-universal.border-gray
+                      ul#catalog_subfolders
+                        li
+                          a(href="/catalog/torgovoe_oborydovanie/pos-oborydovanie/" title="") POS-оборудование
+                        li
+                          a(href="/catalog/torgovoe_oborydovanie/denezhnye_yaschiki/" title="Денежные ящики") Денежные ящики
+                        li
+                          a(href="/catalog/torgovoe_oborydovanie/detektory_banknot/" title="Детекторы банкнот") Детекторы банкнот
+                        li
+                          a(href="/catalog/torgovoe_oborydovanie/kassovye_terminaly/" title="Кассовые терминалы") Кассовые терминалы
+                        li
+                          a(href="/catalog/torgovoe_oborydovanie/printery_chekov_etiketok_shtrih-koda/" title="Принтеры этикеток") Принтеры чеков, этикеток, штрих-кода
+                        li
+                          a(href="/catalog/torgovoe_oborydovanie/skanery_shtrih-koda/" title="Сканеры штрих-кода") Сканеры штрих-кода
+                        li
+                          a(href="/catalog/torgovoe_oborydovanie/schetchiki_banknotmonet/" title="Счетчики монет") Счетчики банкнот/монет
+                        li
+                          a(href="/catalog/torgovoe_oborydovanie/terminaly_sbora_dannyh/" title="Терминалы сбора данных") Терминалы сбора данных
+                    script(type="text/javascript" src="/mod/catalog/js/range.js?2785")
+                    script(type="text/javascript" src="/mod/catalog/js/catalog_filters.js?2785")
+                    #catalog_filters.block-universal.border-gray
+                      p.filter-prop
+                        b Категории:
+                      ul#filter_1
+                        li(data-count="6" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/print-server/?type=156") Принт-серверы
+                          |  (6)
+                        li(data-count="6" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/schetchik_monet/?type=639") Счетчики монет
+                          |  (6)
+                        li(data-count="5" style="display: none;")
+                          a.admin.green(href="/catalog/torgovoe_oborydovanie/bazovyy_tip/?type=1") Базовый тип
+                          |  (5)
+                        li(data-count="5" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/komplektyyuschee_dlya_terminalov/?type=1418") Комплектующие для терминалов
+                          |  (5)
+                        li(data-count="5" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/setevaya_karta/?type=109") Сетевые карты
+                          |  (5)
+                        li(data-count="4" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/rfid-stiker_karta_metka/?type=1304") RFID-стикеры, карты, метки
+                          |  (4)
+                        li(data-count="4" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/vesy_fasovochnye/?type=233") Весы фасовочные
+                          |  (4)
+                        li(data-count="4" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/denezhnyy_yaschik/?type=246") Денежные ящики
+                          |  (4)
+                        li(data-count="4" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/derzhatel_avtomobilnyy/?type=64") Держатели автомобильные
+                          |  (4)
+                        li(data-count="4" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/krepezh/?type=75") Крепежи
+                          |  (4)
+                        li(data-count="4" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/plata_vneshnih_interfeysov/?type=1087") Платы внешних интерфейсов
+                          |  (4)
+                        li(data-count="3" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/adapter_interfeysov/?type=180") Адаптеры интерфейсов
+                          |  (3)
+                        li(data-count="3" style="display: none;")
+                          a.admin.green(href="/catalog/torgovoe_oborydovanie/zapchast_i_optsiya_dlya_printerov_i_mfy_prochee/?type=928") Запчасти и опции для принтеров и МФУ: прочее
+                          |  (3)
+                        li(data-count="3" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/komplektyyuschee_dlya_termoprinterov/?type=1172") Комплектующие для термопринтеров
+                          |  (3)
+                        li(data-count="3" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/kronshteyn_kryshka_ogranichitel_i_krepezh/?type=970") Кронштейны, крышки, ограничители и крепежи
+                          |  (3)
+                        li(data-count="3" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/modyl_rasshireniya/?type=154") Модули расширения
+                          |  (3)
+                        li(data-count="3" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/ypakovschik_banknotmonet/?type=871") Упаковщики банкнот/монет
+                          |  (3)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/blok_dvystoronney_pechati_dypleksy/?type=958") Блоки двусторонней печати (дуплексы)
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/karta_standartnaya_beskontaktnaya/?type=880") Карты стандартные, бесконтактные
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/klaviatyra_dlya_tsd/?type=1291") Клавиатуры для ТСД
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/konteyner_bynker_otrabotannogo_tonera/?type=1085") Контейнеры (бункеры) отработанного тонера
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/lotok_kasseta_i_derzhatel/?type=570") Лотки, кассеты и держатели
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/marshrytizator_tochka_dostypa/?type=197") Маршрутизаторы, точки доступа
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/nayshniki_garnityra/?type=53") Наушники, гарнитуры
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/podatchik_priemniki_faltsevatel_i_sortirovschik/?type=917") Податчики, приемники, фальцеватели и сортировщики
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/printer_lentochnyy/?type=190") Принтеры ленточные
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/programmator_dlya_detektora_banknot/?type=1367") Программаторы для детекторов банкнот
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a.admin.green(href="/catalog/torgovoe_oborydovanie/prochee/?type=134") Прочее
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/remen_privodnoy_i_lenta_pozitsionirovaniya/?type=1090") Ремни приводные и ленты позиционирования
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/rychka_marker_karandash/?type=892") Ручки, маркеры, карандаши
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/rychnoy_applikator_etiketok/?type=975") Ручные аппликаторы этикеток
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/rychag_palets_i_pryzhin/?type=910") Рычаги, пальцы и пружины
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/stilys_i_ih_nakonechnik/?type=563") Стилусы и их наконечники
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/tros_bezopasnosti/?type=34") Тросы безопасности
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/yzel_registratsii_i_otdeleniya/?type=926") Узлы регистрации и отделения
+                          |  (2)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/bazovaya_stantsiya/?type=601") Базовые станции
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/batareya_dlya_kontrollerov/?type=171") Батареи для контроллеров
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/izmeritelnyy_preobrazovatel_termostat_i_sensor/?type=115") Измерительные преобразователи, термостаты и сенсоры
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/karta_rasshireniya/?type=182") Карты расширения
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/keys/?type=845") Кейсы
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/klyuch_dostypa/?type=213") Ключи доступа
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/klyuch_ot_zamkov/?type=1035") Ключи от замков
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/kodirovschik_smart-kart/?type=1073") Кодировщики смарт-карт
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/kontroller_dlya_rs_setevyh_hranilisch_i_serverov/?type=21") Контроллеры для РС, сетевых хранилищ и серверов
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/kreplenie_i_kronshteyn/?type=331") Крепления и кронштейны
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/litsenziya_servisnyy_kontrakt_i_sertifikat/?type=161") Лицензии, сервисные контракты и сертификаты
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/modyl_wi-fi/?type=1359") Модули Wi-Fi
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/monitor_i_panel/?type=31") Мониторы и панели
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/nakladka/?type=606") Накладки
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/plata_rasshireniya_i_pitaniya/?type=996") Платы расширения и питания
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/privod_solenoid_myfta_i_redyktor/?type=1098") Приводы, соленоиды, муфты и редукторы
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/pylt/?type=43") Пульты
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/transiver/?type=589") Трансиверы
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/fotobaraban_korotron_i_yzel_perenosa_izobrazheniy/?type=955") Фотобарабаны, коротроны и узлы переноса изображений
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/chehol_dlya_planshetov/?type=79") Чехлы для планшетов
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/shesternya_sharnir_shpindel_i_podshipnik/?type=860") Шестерни, шарниры, шпиндели и подшипники
+                          |  (1)
+                        li(data-count="35" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/adapter_pitaniya/?type=29") Адаптеры питания
+                          |  (35)
+                        li(data-count="57" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/akkymylyator/?type=78") Аккумуляторы
+                          |  (57)
+                        li(data-count="6" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/antenna/?type=2") Антенны
+                          |  (6)
+                        li(data-count="18" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/bymaga_i_plenka/?type=59") Бумага и пленка
+                          |  (18)
+                        li(data-count="30" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/val_rolik_byshing_i_vtylka/?type=913") Валы, ролики, бушинги и втулки
+                          |  (30)
+                        li(data-count="15" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/detektor_banknot/?type=252") Детекторы банкнот
+                          |  (15)
+                        li(data-count="9" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/displey_pokypatelya/?type=218") Дисплеи покупателя
+                          |  (9)
+                        li(data-count="87" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/zaryadnoe_ystroystvo/?type=51") Зарядные устройства
+                          |  (87)
+                        li(data-count="9" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/zaschitnaya_plenkasteklo/?type=60") Защитные пленки/стекла
+                          |  (9)
+                        li(data-count="16" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/kabel_i_perehodnik_pitaniya/?type=12") Кабели и переходники питания
+                          |  (16)
+                        li(data-count="87" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/kabel_interfeysnyy/?type=56") Кабели интерфейсные
+                          |  (87)
+                        li(data-count="25" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/kartridzh_chernila_i_toner/?type=28") Картриджи, чернила и тонер
+                          |  (25)
+                        li(data-count="7" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/kassovyy_terminal/?type=1286") Кассовые терминалы
+                          |  (7)
+                        li(data-count="8" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/kryshka_dlya_terminala_sbora_dannyh/?type=840") Крышки для терминалов сбора данных
+                          |  (8)
+                        li(data-count="587" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/lenta_krasyaschaya_dlya_printera/?type=237") Ленты красящие для принтеров
+                          |  (587)
+                        li(data-count="100" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/nakleyka/?type=61") Наклейки
+                          |  (100)
+                        li(data-count="8" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/namotchik_i_smotchik_lenty/?type=1031") Намотчики и смотчики лент
+                          |  (8)
+                        li(data-count="33" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/nozhi_rezak_lezvie_i_katter/?type=940") Ножи, резаки, лезвия и каттеры
+                          |  (33)
+                        li(data-count="17" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/optsiya_fynktsionalnaya/?type=950") Опции функциональные
+                          |  (17)
+                        li(data-count="16" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/otdelitel_etiketki/?type=1117") Отделители этикеток
+                          |  (16)
+                        li(data-count="9" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/paket_servisnyh_yslyg/?type=1459") Пакеты сервисных услуг
+                          |  (9)
+                        li(data-count="90" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/pechatayuschaya_golovka/?type=772") Печатающие головки
+                          |  (90)
+                        li(data-count="13" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/plenka_dlya_laminirovaniya/?type=104") Пленки для ламинирования
+                          |  (13)
+                        li(data-count="84" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/podstavka_kreplenie_dlya_skanera_shtrih-koda_terminala_sbora_dannyh/?type=837") Подставки, крепления для сканеров штрих-кода, терминалов сбора данных
+                          |  (84)
+                        li(data-count="12" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/printer_dlya_pechati_nakleek/?type=221") Принтеры для печати наклеек
+                          |  (12)
+                        li(data-count="216" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/printer_plastikovyh_kart_chekovyy_i_termotransfernyy/?type=176") Принтеры пластиковых карт, чековые и термотрансферные
+                          |  (216)
+                        li(data-count="95" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/programmnoe_obespechenie/?type=194") Программное обеспечение
+                          |  (95)
+                        li(data-count="16" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/remeshek_dlya_skanera_shtrih-koda_tsd/?type=841") Ремешки для сканеров штрих-кода, тсд
+                          |  (16)
+                        li(data-count="110" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/skaner_shtrih-koda/?type=121") Сканеры штрих-кода
+                          |  (110)
+                        li(data-count="21" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/schetchik_banknot/?type=181") Счетчики банкнот
+                          |  (21)
+                        li(data-count="8" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/schityvatel/?type=211") Считыватели
+                          |  (8)
+                        li(data-count="180" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/terminal_sbora_dannyh/?type=226") Терминалы сбора данных
+                          |  (180)
+                        li(data-count="55" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/chehol/?type=603") Чехлы
+                          |  (55)
+                        li(data-count="21" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/chistyaschiy_komplekt_rakel/?type=916") Чистящие комплекты, ракели
+                          |  (21)
+                        li(data-count="15" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/chistyaschee_sredstvo_dlya_orgtehniki/?type=191") Чистящие средства для оргтехники
+                          |  (15)
+                        li(data-count="242" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/etiketka_i_plastikovaya_karta/?type=236") Этикетки и пластиковые карты
+                          |  (242)
+                        li.collapse.black
+                          a.js.collapse.black(href="#") Показать все
+                          |  ↓
+                      script(type="text/javascript").
+                        filters_resort($('ul#filter_1'));
+                      p.filter-prop
+                        b Цена:
+                      ul#filter_2.full
+                        li
+                          .range-input-wrap
+                            | от 
+                            input#range_input_1_min.range-input(type="text" name="price1" value="1")
+                            |  до 
+                            input#range_input_1_max.range-input(type="text" name="price2" value="1818535")
+                            a#range_apply_1.tx14.range-apply(href="#") ↲
+                          #filter_price_widget
+                            .range-widget(style="width: 174px;")
+                              .range-scale
+                                .range-scale-active(style="margin-left: 0%; margin-right: 0%;")
+                              .range-marker-container
+                                span.range-marker.range-marker-min(style="left: 0%;")
+                                span.range-marker.range-marker-max(style="left: 100%;")
+                          script(type="text/javascript").
+                            createRangeWidget('filter_price_widget', 174, {"v":1, "input":"range_input_1_min"}, {"v":1818535, "input":"range_input_1_max"}, 'range_apply_1');
+                      script(type="text/javascript").
+                        filters_resort($('ul#filter_2'));
+                      p.filter-prop
+                        b Производитель:
+                      ul#filter_3
+                        li(data-count="43" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/citizen/") Citizen
+                          |  (43)
+                        li(data-count="38" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/fargo/") Fargo
+                          |  (38)
+                        li(data-count="32" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/cipherlab/") CipherLab
+                          |  (32)
+                        li(data-count="31" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/datacard/") Datacard
+                          |  (31)
+                        li(data-count="24" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/dors/") DORS
+                          |  (24)
+                        li(data-count="21" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/cassida/") Cassida
+                          |  (21)
+                        li(data-count="19" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/mindeo/") Mindeo
+                          |  (19)
+                        li(data-count="17" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/brady/") Brady
+                          |  (17)
+                        li(data-count="16" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/newland/") Newland
+                          |  (16)
+                        li(data-count="14" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/hp/") HP
+                          |  (14)
+                        li(data-count="7" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/diebold_nixdorf/") Diebold Nixdorf
+                          |  (7)
+                        li(data-count="5" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/magner/") Magner
+                          |  (5)
+                        li(data-count="5" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/partnertech/") Partnertech
+                          |  (5)
+                        li(data-count="4" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/lomond/") Lomond
+                          |  (4)
+                        li(data-count="4" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/mettler_toledo/") Mettler Toledo
+                          |  (4)
+                        li(data-count="3" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/datalogic/") Datalogic
+                          |  (3)
+                        li(data-count="3" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/partner_techhpc/") Partner Tech/HPC
+                          |  (3)
+                        li(data-count="3" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/towa/") TOWA
+                          |  (3)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/bsmart/") BSmart
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/urovo/") Urovo
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/zebex/") Zebex
+                          |  (2)
+                        li(data-count="2" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/azyr_pos/") Азур ПОС
+                          |  (2)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/cipherlab/") CipherLab
+                          |  (1)
+                        li(data-count="1" style="display: none;")
+                          a(href="/catalog/torgovoe_oborydovanie/_/") _
+                          |  (1)
+                        li(data-count="131" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/brother/") Brother
+                          |  (131)
+                        li(data-count="53" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/casio/") Casio
+                          |  (53)
+                        li(data-count="66" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/datamax/") Datamax
+                          |  (66)
+                        li(data-count="45" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/epson/") Epson
+                          |  (45)
+                        li(data-count="53" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/evolis/") Evolis
+                          |  (53)
+                        li(data-count="117" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/honeywell/") Honeywell
+                          |  (117)
+                        li(data-count="57" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/intermec/") Intermec
+                          |  (57)
+                        li(data-count="65" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/pointmobile/") PointMobile
+                          |  (65)
+                        li(data-count="133" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/print-label/") Print-Label
+                          |  (133)
+                        li(data-count="369" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/proton/") Proton
+                          |  (369)
+                        li(data-count="87" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/tsc/") TSC
+                          |  (87)
+                        li(data-count="46" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/toshiba/") Toshiba
+                          |  (46)
+                        li(data-count="113" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/union_chemicar/") Union Chemicar
+                          |  (113)
+                        li(data-count="754" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/zebra/") Zebra
+                          |  (754)
+                        li(data-count="95" style="display: list-item;")
+                          a(href="/catalog/torgovoe_oborydovanie/kleverens/") Клеверенс
+                          |  (95)
+                        li.collapse.black
+                          a.js.collapse.black(href="#") Показать все
+                          |  ↓
+                      script(type="text/javascript").
+                        filters_resort($('ul#filter_3'));
+                td
+                  p#path.gray(itemscope="" itemtype="https://schema.org/BreadcrumbList")
+                    a(href="/" rel="nofollow")
+                      img(src="/mod/site/images/x-sm.gif")
+                    | 			→
+                    span Торговое оборудование
+                  div
+                    script(type="text/javascript").
+                      var _catalog_banners_base = [
+                      {image: 'https://www.xcom-shop.ru/var/ftp/banners/HP_Carepack_1290x100_2.jpg', link: 'https://www.xcom-shop.ru/actions/hp_care_pack/', start: '2019-08-08', end: '2019-12-31'},
+                      {image: '', link: '', start: '2018-01-01', end: '2019-07-31'},
+                      ];
+                      var _catalog_banners = [];
+                      $.each(_catalog_banners_base, function (i, banner) {
+                      if(!banner.image || !banner.link)
+                      return true;
+                      var _start = banner.start ? new Date(banner.start) : null;
+                      var _end = banner.end ? new Date(banner.end) : null;
+                      if (
+                      ( ( _start != null ) && ( Date.now() > _start && ( Date.now() < _end || _end == null ) ) )
+                      ||
+                      ( ( _start == null ) && ( ( _end != null && Date.now() < _end ) || _end == null ) )
+                      )
+                      _catalog_banners.push({image: banner.image, link: banner.link})
+                      });
+                      if(_catalog_banners.length > 0) {
+                      var _n = Math.floor(Math.random() * _catalog_banners.length);
+                      document.write('<div style="width: 100%; text-align: left; overflow: hidden; height: 100px; background: url(' + _catalog_banners[_n].image + ') left top white; margin-bottom: 15px;"><a style="display: block; width: 100%; height: 100%" href="' + _catalog_banners[_n].link + '"></a></div>')
+                      }
+                  h1 Торговое и банковское оборудование
+                  .gray.sort-line
+                    span.left
+                      span.sort-control Сортировать по:
+                      span.sort-control
+                        a.js(href="/catalog/torgovoe_oborydovanie/?o=p") цене
+                      span.sort-control
+                        a.js(href="/catalog/torgovoe_oborydovanie/?o=nd") имени
+                        |  ↑
+                      span.sort-control
+                        a.js(href="/catalog/torgovoe_oborydovanie/?o=wd") доступности
+                    span.right
+                      | Вид:
+                      noindex
+                        a(href="/catalog/switch_style/?style=list" rel="nofollow")
+                          img(src="/mod/site/images/view-list.gif")
+                        a(href="/catalog/switch_style/?style=tiles" rel="nofollow")
+                          img(src="/mod/site/images/view-tiles-active.gif")
+                  .good-list.catalog-tiles.catalog-goods
+                    .wrap
+                      .item.border-gray.type_1286(data-vendor="Азур ПОС")
+                        .image
+                          .image-vertical-helper
+                          a(href="/azyr_pos_kkt_azyr-01f_675021.html" title="Азур ПОС ККТ АЗУР-01Ф")
+                            img(src="https://img.xcomdb.ru/95/6a/5c49aea956aa1611808678_120.jpg" alt="Азур ПОС ККТ АЗУР-01Ф")
+                        .type Фискальный регистратор
+                        .name
+                          a(href="/azyr_pos_kkt_azyr-01f_675021.html" alt="Азур ПОС ККТ АЗУР-01Ф" title="Азур ПОС ККТ АЗУР-01Ф") Азур ПОС ККТ АЗУР-01Ф
+                        .description
+                          .spec-type-shortcut.hide(data-name="Кассовый терминал" data-key="675021")
+                          p.tx11 черный, ФН на 15 месяцев, ПО "1С:Мобильная касса", эквайринг "2can"
+                        .key Код товара: 675021
+                        .partnumber Артикул: ККТ АЗУР-01Ф-15
+                        .warranty.tx11
+                          p Гарантия 12 мес.
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Водный стадион»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 26 320 
+                              span руб.
+                            .new
+                              | 21 229 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am675021(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="675021")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(675021,_rt("#l_am675021").value(),"");return false;')
+                        #compare_675021.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_1286(data-vendor="Азур ПОС")
+                        .image
+                          .image-vertical-helper
+                          a(href="/azyr_pos_kkt_azyr-01f_675020.html" title="Азур ПОС ККТ АЗУР-01Ф")
+                            img(src="https://img.xcomdb.ru/e0/f2/5c499a1e0f27d485441637_120.jpg" alt="Азур ПОС ККТ АЗУР-01Ф")
+                        .type Фискальный регистратор
+                        .name
+                          a(href="/azyr_pos_kkt_azyr-01f_675020.html" alt="Азур ПОС ККТ АЗУР-01Ф" title="Азур ПОС ККТ АЗУР-01Ф") Азур ПОС ККТ АЗУР-01Ф
+                        .description
+                          .spec-type-shortcut.hide(data-name="Кассовый терминал" data-key="675020")
+                          p.tx11 черный, ФН на 36 месяцев, ПО "1С:Мобильная касса", эквайринг "2can"
+                        .key Код товара: 675020
+                        .partnumber Артикул: ККТ АЗУР-01Ф-36
+                        .warranty.tx11
+                          p Гарантия 12 мес.
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Водный стадион»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 32 011 
+                              span руб.
+                            .new
+                              | 24 306 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am675020(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="675020")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(675020,_rt("#l_am675020").value(),"");return false;')
+                        #compare_675020.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_892(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_bfs-05_338237.html" title="Brady BFS-05")
+                            img(src="https://img.xcomdb.ru/35/36/560ba5935362b616375721_120.jpg" alt="Brady BFS-05")
+                        .type Ручка
+                        .name
+                          a(href="/brady_bfs-05_338237.html" alt="Brady BFS-05" title="Brady BFS-05") Brady BFS-05
+                        .description
+                          .spec-type-shortcut.hide(data-name="Ручка, маркер, карандаш" data-key="338237")
+                          p.tx11 маркер, быстровысыхающие, перманентные чернила (черный)
+                        .key Код товара: 338237
+                        .partnumber Артикул: brd335091
+                        .warranty.tx11
+                          p Гарантия 12 мес.
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Водный стадион»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 427 
+                              span руб.
+                            .new
+                              | 308 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am338237(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="338237")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(338237,_rt("#l_am338237").value(),"");return false;')
+                        #compare_338237.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_892(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_bfs-10_338242.html" title="Brady BFS-10")
+                            img(src="https://img.xcomdb.ru/3a/26/560ba5a3a2661270127907_120.jpg" alt="Brady BFS-10")
+                        .type Ручка
+                        .name
+                          a(href="/brady_bfs-10_338242.html" alt="Brady BFS-10" title="Brady BFS-10") Brady BFS-10
+                        .description
+                          .spec-type-shortcut.hide(data-name="Ручка, маркер, карандаш" data-key="338242")
+                          p.tx11 маркер, ультратонкая капиллярная, перманентная
+                        .key Код товара: 338242
+                        .partnumber Артикул: brd335092
+                        .warranty.tx11
+                          p Гарантия 12 мес.
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 443 
+                              span руб.
+                            .new
+                              | 428 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am338242(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="338242")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(338242,_rt("#l_am338242").value(),"");return false;')
+                        #compare_338242.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_176(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_bmp21-plus_rus_380456.html" title="Brady BMP21-Plus (RUS)")
+                            img(src="https://img.xcomdb.ru/cb/01/573f15fcb0167672575940_120.jpg" alt="Brady BMP21-Plus (RUS)")
+                        .type Принтер термотрансферный
+                        .name
+                          a(href="/brady_bmp21-plus_rus_380456.html" alt="Brady BMP21-Plus (RUS)" title="Brady BMP21-Plus (RUS)") Brady BMP21-Plus (RUS)
+                        .description
+                          .spec-type-shortcut.hide(data-name="Принтер пластиковых карт, чековый и термотрансферный" data-key="380456")
+                          p.tx11 203dpi Портативный ленточный, маркировочный с кириллицей (блистер)
+                        .key Код товара: 380456
+                        .partnumber Артикул: brd139779
+                        .warranty.tx11
+                          p Гарантия 12 мес.
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 11 068 
+                              span руб.
+                            .new
+                              | 10 671 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am380456(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="380456")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(380456,_rt("#l_am380456").value(),"");return false;')
+                        #compare_380456.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_176(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_bmp21-plus_rus_451606.html" title="Brady BMP21-Plus (RUS)")
+                            img(src="https://img.xcomdb.ru/37/be/557e8bf37be28321105827_120.jpg" alt="Brady BMP21-Plus (RUS)")
+                        .type Принтер термотрансферный
+                        .name
+                          a(href="/brady_bmp21-plus_rus_451606.html" alt="Brady BMP21-Plus (RUS)" title="Brady BMP21-Plus (RUS)") Brady BMP21-Plus (RUS)
+                        .description
+                          .spec-type-shortcut.hide(data-name="Принтер пластиковых карт, чековый и термотрансферный" data-key="451606")
+                          p.tx11
+                            | 203dpi Комплект монтажника: жесткий пластиковый кейс, адаптер АС, аккумуляторная батарея, картриджи M21-750-499, M21-750-595-YL, M21-1000-427
+                        .key Код товара: 451606
+                        .partnumber Артикул: brd134471
+                        .warranty.tx11
+                          p Гарантия 12 мес.
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 30 425 
+                              span руб.
+                            .new
+                              | 28 367 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am451606(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="451606")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(451606,_rt("#l_am451606").value(),"");return false;')
+                        #compare_451606.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-1000-427_359500.html" title="Brady M21-1000-427")
+                            img(src="https://img.xcomdb.ru/6e/0b/53be8236e0baa444492804_120.jpg" alt="Brady M21-1000-427")
+                        .type Маркер на кабель
+                        .name
+                          a(href="/brady_m21-1000-427_359500.html" alt="Brady M21-1000-427" title="Brady M21-1000-427") Brady M21-1000-427
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="359500")
+                          p.tx11 самоламинирующиеся, 25.40mm/4.26m (d5mm), винил, черный на белом
+                        .key Код товара: 359500
+                        .partnumber Артикул: brd110928
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 4 733 
+                              span руб.
+                            .new
+                              | 4 366 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am359500(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="359500")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(359500,_rt("#l_am359500").value(),"");return false;')
+                        #compare_359500.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-1250-427_359501.html" title="Brady M21-1250-427")
+                            img(src="https://img.xcomdb.ru/f9/f0/5915ae8f9f060294070237_120.jpg" alt="Brady M21-1250-427")
+                        .type Маркер на кабель
+                        .name
+                          a(href="/brady_m21-1250-427_359501.html" alt="Brady M21-1250-427" title="Brady M21-1250-427") Brady M21-1250-427
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="359501")
+                          p.tx11 самоламинирующиеся, 30.48mm/4.26m (d6mm), винил, черный на белом
+                        .key Код товара: 359501
+                        .partnumber Артикул: brd110929
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 4 614 
+                              span руб.
+                            .new
+                              | 4 449 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am359501(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="359501")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(359501,_rt("#l_am359501").value(),"");return false;')
+                        #compare_359501.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-1500-427_359502.html" title="Brady M21-1500-427")
+                            img(src="https://img.xcomdb.ru/dd/cf/53be85dddcf9e547864858_120.jpg" alt="Brady M21-1500-427")
+                        .type Маркер на кабель
+                        .name
+                          a(href="/brady_m21-1500-427_359502.html" alt="Brady M21-1500-427" title="Brady M21-1500-427") Brady M21-1500-427
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="359502")
+                          p.tx11 самоламинирующиеся, 38.10mm/4.26m (d8mm), винил, черный на белом
+                        .key Код товара: 359502
+                        .partnumber Артикул: brd110930
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .new
+                              | 4 615 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am359502(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="359502")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(359502,_rt("#l_am359502").value(),"");return false;')
+                        #compare_359502.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-250-595-wt_467461.html" title="Brady M21-250-595-WT")
+                            img(src="https://img.xcomdb.ru/58/16/55bf601581603026373674_120.jpg" alt="Brady M21-250-595-WT")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m21-250-595-wt_467461.html" alt="Brady M21-250-595-WT" title="Brady M21-250-595-WT") Brady M21-250-595-WT
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="467461")
+                          p.tx11 6.35 мм/6.4 м винил, черный на белом, для BMP21 Plus
+                        .key Код товара: 467461
+                        .partnumber Артикул: brd139744
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 2 578 
+                              span руб.
+                            .new
+                              | 2 485 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am467461(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="467461")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(467461,_rt("#l_am467461").value(),"");return false;')
+                        #compare_467461.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-375-499_351233.html" title="Brady M21-375-499")
+                            img(src="https://img.xcomdb.ru/13/fb/59195c013fb7c839460377_120.jpg" alt="Brady M21-375-499")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m21-375-499_351233.html" alt="Brady M21-375-499" title="Brady M21-375-499") Brady M21-375-499
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="351233")
+                          p.tx11 9.53mm/4.87m, нейлон, черный на белом для BMP21
+                        .key Код товара: 351233
+                        .partnumber Артикул: brd110893
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 2 484 
+                              span руб.
+                            .new
+                              | 2 395 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am351233(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="351233")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(351233,_rt("#l_am351233").value(),"");return false;')
+                        #compare_351233.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-375-595-wt_359430.html" title="Brady M21-375-595-WT")
+                            img(src="https://img.xcomdb.ru/d5/da/53bf61fd5da8f067492159_120.jpg" alt="Brady M21-375-595-WT")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m21-375-595-wt_359430.html" alt="Brady M21-375-595-WT" title="Brady M21-375-595-WT") Brady M21-375-595-WT
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="359430")
+                          p.tx11 9.53mm/6.4m винил, черный на белом
+                        .key Код товара: 359430
+                        .partnumber Артикул: brd142800
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 2 769 
+                              span руб.
+                            .new
+                              | 2 679 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am359430(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="359430")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(359430,_rt("#l_am359430").value(),"");return false;')
+                        #compare_359430.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-375-595-yl_389684.html" title="Brady M21-375-595-YL")
+                            img(src="https://img.xcomdb.ru/27/c3/55b9fae27c39f566021446_120.jpg" alt="Brady M21-375-595-YL")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m21-375-595-yl_389684.html" alt="Brady M21-375-595-YL" title="Brady M21-375-595-YL") Brady M21-375-595-YL
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="389684")
+                          p.tx11 9.53mm/6.4m винил, черный на желтом
+                        .key Код товара: 389684
+                        .partnumber Артикул: brd142803
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 2 778 
+                              span руб.
+                            .new
+                              | 2 679 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am389684(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="389684")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(389684,_rt("#l_am389684").value(),"");return false;')
+                        #compare_389684.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-500-499_351237.html" title="Brady M21-500-499")
+                            img(src="https://img.xcomdb.ru/9a/51/53be7cc9a51fc229741305_120.jpg" alt="Brady M21-500-499")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m21-500-499_351237.html" alt="Brady M21-500-499" title="Brady M21-500-499") Brady M21-500-499
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="351237")
+                          p.tx11 12.7mm/4.87m, нейлон, черный на белом, для BMP21
+                        .key Код товара: 351237
+                        .partnumber Артикул: brd110894
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 2 696 
+                              span руб.
+                            .new
+                              | 2 512 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am351237(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="351237")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(351237,_rt("#l_am351237").value(),"");return false;')
+                        #compare_351237.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-500-595-yl_389686.html" title="Brady M21-500-595-YL")
+                            img(src="https://img.xcomdb.ru/98/21/59199d99821e3546557836_120.jpg" alt="Brady M21-500-595-YL")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m21-500-595-yl_389686.html" alt="Brady M21-500-595-YL" title="Brady M21-500-595-YL") Brady M21-500-595-YL
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="389686")
+                          p.tx11 12.7mm/6.4m винил, черный на желтом
+                        .key Код товара: 389686
+                        .partnumber Артикул: brd142799
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 3 253 
+                              span руб.
+                            .new
+                              | 3 010 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am389686(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="389686")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(389686,_rt("#l_am389686").value(),"");return false;')
+                        #compare_389686.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-750-427_359499.html" title="Brady M21-750-427")
+                            img(src="https://img.xcomdb.ru/13/4e/5919a20134e73135254138_120.jpg" alt="Brady M21-750-427")
+                        .type Маркер на кабель
+                        .name
+                          a(href="/brady_m21-750-427_359499.html" alt="Brady M21-750-427" title="Brady M21-750-427") Brady M21-750-427
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="359499")
+                          p.tx11 самоламинирующиеся, 19.05mm/4.26m (d3mm), винил, черный на белом
+                        .key Код товара: 359499
+                        .partnumber Артикул: brd110927
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 3 898 
+                              span руб.
+                            .new
+                              | 3 606 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am359499(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="359499")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(359499,_rt("#l_am359499").value(),"");return false;')
+                        #compare_359499.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-750-499_351238.html" title="Brady M21-750-499")
+                            img(src="https://img.xcomdb.ru/75/19/53be7dc7519e4313454938_120.jpg" alt="Brady M21-750-499")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m21-750-499_351238.html" alt="Brady M21-750-499" title="Brady M21-750-499") Brady M21-750-499
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="351238")
+                          p.tx11
+                            | универсальная для маркировки кабеля, 19.05mm/4.87m, нейлон, черный на белом для BMP21
+                        .key Код товара: 351238
+                        .partnumber Артикул: brd110895
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 3 358 
+                              span руб.
+                            .new
+                              | 3 238 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am351238(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="351238")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(351238,_rt("#l_am351238").value(),"");return false;')
+                        #compare_351238.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m21-750-595-wt_359429.html" title="Brady M21-750-595-WT")
+                            img(src="https://img.xcomdb.ru/f9/14/53bf616f91467532419294_120.jpg" alt="Brady M21-750-595-WT")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m21-750-595-wt_359429.html" alt="Brady M21-750-595-WT" title="Brady M21-750-595-WT") Brady M21-750-595-WT
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="359429")
+                          p.tx11 19.05mm/6.4m винил, черный на белом
+                        .key Код товара: 359429
+                        .partnumber Артикул: brd142797
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 3 642 
+                              span руб.
+                            .new
+                              | 3 513 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am359429(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="359429")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(359429,_rt("#l_am359429").value(),"");return false;')
+                        #compare_359429.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_237(data-vendor="Brady")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brady_m71-r6000_489485.html" title="Brady M71-R6000")
+                            img(src="https://img.xcomdb.ru/04/0c/591aa98040c95363231624_120.jpg" alt="Brady M71-R6000")
+                        .type Лента красящая
+                        .name
+                          a(href="/brady_m71-r6000_489485.html" alt="Brady M71-R6000" title="Brady M71-R6000") Brady M71-R6000
+                        .description
+                          .spec-type-shortcut.hide(data-name="Лента красящая для принтера" data-key="489485")
+                          p.tx11 риббон черный (для TLS/HM R-6010) 50.80ммх46м
+                        .key Код товара: 489485
+                        .partnumber Артикул: brd114547
+                        .warranty.tx11
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Водный стадион»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 3 860 
+                              span руб.
+                            .new
+                              | 3 692 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am489485(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="489485")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(489485,_rt("#l_am489485").value(),"");return false;')
+                        #compare_489485.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                    .wrap
+                      .item.border-gray.type_78(data-vendor="Brother")
+                        .image
+                          .image-vertical-helper
+                          a(href="/brother_bt500_488752.html" title="Brother BT500")
+                            img(src="https://img.xcomdb.ru/33/3d/5656b6e333d12137467161_120.jpg" alt="Brother BT500")
+                        .type Аккумулятор
+                        .name
+                          a(href="/brother_bt500_488752.html" alt="Brother BT500" title="Brother BT500") Brother BT500
+                        .description
+                          .spec-type-shortcut.hide(data-name="Аккумулятор" data-key="488752")
+                          p.tx11 Аккумуляторная батарея PA-BT-500 Ni-MH (для PocketJet)
+                        .key Код товара: 488752
+                        .partnumber Артикул: PABT500
+                        .warranty.tx11
+                          p Гарантия 12 мес.
+                        .available.tx11
+                          p.green
+                            | В наличии
+                            span.black , склад «Химки»
+                        .wrap-buy
+                          .price
+                            .old
+                              | 3 075 
+                              span руб.
+                            .new
+                              | 2 817 
+                              span руб.
+                          .buy
+                            form(action="/checkout/handler/add/" method="GET")
+                              input#l_am488752(name="amount" type="hidden" value="1")
+                              input(name="key" type="hidden" value="488752")
+                              input.button-orange.buy-button(type="submit" value=" В корзину " onclick='bw_obj.add_good(488752,_rt("#l_am488752").value(),"");return false;')
+                        #compare_488752.compare.compare-line(from="")
+                          a.js(href="#" onclick="return false;") Добавить к сравнению
+                          span    
+                  script(type="text/javascript" src="https://spec.xcomdb.ru/catalog_list_shortcuts/")
+                  .navigation.block-universal.clear.gray
+                    | Страницы: 
+                    span.active 1
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=2") 2
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=3") 3
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=4") 4
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=5") 5
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=6") 6
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=7") 7
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=8") 8
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=9") 9
+                    | …
+                    span
+                      a(href="/catalog/torgovoe_oborydovanie/?list_page=124") 124
+                  .block-universal.border-gray.bg-light.clear
+                    div
+                      .tree_node_description
+                        h2 Торговое и банковское оборудование
+                        p(style="margin:10px 0 10px 0;")
+                          | В настоящее время
+                          | сферу торговли невозможно представить без наличия сканеров штрих кодов. Также для серьезных организаций незаменимым являются
+                          | многофункциональные POS-системы, ускоряющие во много раз однотипные операции. Одним из самых важных устройств в работе кассира
+                          | становится детектор банкнот.
+                        p(style="margin:10px 0 10px 0;")
+                          | Ни один банк, работающий с крупными суммами, не обойдется без кассового оборудования. От качественного банковского оборудования зависит эффективность кассовой работы: точность и скорость
+                          | пересчета наличности и оценка подлинности денег. В этом разделе к Вашему вниманию представлено торговое и банковское оборудование.
+                          | Широкий ассортимент предлагаемого оборудования отвечает принципам экономичности, надежности и функциональности.
+                    div
+                      | Торговое и банковское оборудование: цена от 1 руб, характеристики, фото в интернете-магазине Xcom-shop.ru. Купить Торговое и банковское оборудование в Москве можно в нашем каталоге или по телефонам 8 (495) 799-96-69, 8 (800) 200-00-69.  Интернет-магазин Xcom-shop.ru осуществляет доставку и продажу Торгового и банковского оборудования по Москве и России.
+          script(type="text/javascript").
+            new desc_compare();
+        td#right_column(width="240px")
+          #slide_fixed(style="margin-top: 0px; position: static;")
+            #bill_box
+              #bill_container.border-gray
+                .heading
+                  a.black(href="/checkout/") Корзина
+                  br
+                  span В корзине 2 товара
+                .triangle
+                #bl585251.bill_good
+                  .highlighter
+                    p.crop
+                      a(href="/rexant_10-6025_585251.html") Rexant 10-6025
+                    p.tx11.gray.crop Розетка радиоуправляемая  c пультом RX-002 (один пульт, две розетки)
+                    .amount.left
+                      a.minus.black(href="#" onclick="adder('ba585251',-1,0);return false;") −
+                      input#ba585251.center(type="text" value="7" data-price="1131" data-discount="0")
+                      a.plus.black(href="#" onclick="adder('ba585251',1,0);return false;") +
+                    .cost.right 1 131 руб.
+                    br.clear
+                .interline  
+                #bl691800.bill_good
+                  .highlighter
+                    p.crop
+                      a(href="/3cott_3cott-450-evo2_691800.html") 3Cott 3COTT-450-EVO2
+                    p.tx11.gray.crop Блок питания ATX v2.3, 450W, P.PFC, вентилятор 120мм, фиксатор кабеля, OEM
+                    .amount.left
+                      a.minus.black(href="#" onclick="adder('ba691800',-1,0);return false;") −
+                      input#ba691800.center(type="text" value="6" data-price="1378" data-discount="0")
+                      a.plus.black(href="#" onclick="adder('ba691800',1,0);return false;") +
+                    .cost.right 1 378 руб.
+                    br.clear
+                .interline  
+                #basket_clear
+                  a.js(href="#") Очистить корзину
+                .interline  
+                .tx11.green(align="center")
+                  | За данный заказ Вы получите 
+                  span#bonus 166
+                  |  бонусных баллов.
+                #dlv_gray_pad
+                  h3 Доставка товаров
+                  table#delivery(width="100%" cellspacing="0" cellpadding="0")
+                    tbody
+                      tr
+                        td Регион:
+                        td(align="right")
+                          select#basket_city(name="city" size="1")
+                            option(value="0") Москва и Моск.обл. до А107
+                            option(value="none") Загрузка ...
+                      tr
+                        td Доставка:
+                        td(align="right")
+                          select#basket_delivery(size="1" name="delivery")
+                            option(value="1") Курьером лично в руки
+                            option(value="none") Загрузка ...
+                      tr
+                        td Оплата:
+                        td(align="right")
+                          select#basket_payment(size="1" name="payment")
+                            option(value="1") Наличными курьеру
+                            option(value="none") Загрузка ...
+                  #warnings
+                  table#dlv_cost_line(width="100%" cellpadding="0" cellspacing="0")
+                    tbody
+                      tr
+                        td(align="left") Стоимость доставки:
+                        td#dlv_cost_cell(align="right") 390 руб.
+                table#total(width="100%" cellspacing="0" cellpadding="0")
+                  tbody
+                    tr
+                      td(align="left")
+                        h3 Итого:
+                      td(align="right")
+                        span#total_cost 16 575 руб.
+                #goto_checkout
+                  a.button-blue(href="/checkout/") Оформить заказ
+            #pay_icons(align="center")
+              img(src="/mod/site/images/pay_icons/visa.gif")
+              img(src="/mod/site/images/pay_icons/mc.gif")
+              img(src="/mod/site/images/pay_icons/mir.gif")
+              img(src="/mod/site/images/pay_icons/wm.gif")
+              br
+              img(src="/mod/site/images/pay_icons/ym.gif")
+              img(src="/mod/site/images/pay_icons/sber.gif")
+              img(src="/mod/site/images/pay_icons/thx.gif")
+              img(src="/mod/site/images/pay_icons/pp.gif")
+              img(src="/mod/site/images/pay_icons/credit.png")
+            .block-right.buttons
+              div
+                a(href="/pages/sale/")
+                  img(src="/mod/site/images/button_sale.png")
+              div
+                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
+                  img(src="/mod/site/images/button_youtube.png")
+              div
+                a(href="/actions/")
+                  img(src="/mod/site/images/buttons_actions.png")
+              div
+                a(href="/pages/brands/")
+                  img(src="/mod/site/images/button_brands.png")
+            .block-right.buttons.center
+              a(href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8")
+                img(src="/mod/site/images/appstore.png" alt="Доступно в AppStore" border="0")
+              a(href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop")
+                img(src="/mod/site/images/googleplay.png" alt="Доступно в Google play" border="0")
+            .block-right
+              ul
+                li
+                  img(src="/mod/site/images/right_menu_icons/mail.png")
+                  a.black(href="mailto:val@xcom.ru")
+                    | Прием жалоб
+                    br
+                    | и предложений
+                li
+                  img(src="/mod/site/images/right_menu_icons/complaint.png")
+                  a.black(href="//www.xcom-shop.ru/complaint/")
+                    | Отдел
+                    br
+                    | рекламаций
+                li
+                  img(src="/mod/site/images/right_menu_icons/tech-support.png")
+                  a.black(href="//www.xcom-shop.ru/pages/services/")
+                    | Наши услуги
+                li
+                  img(src="/mod/site/images/right_menu_icons/b2b.png")
+                  a.black(href="//www.xcom-shop.ru/pages/corporate_department/")
+                    | Постоянным
+                    br
+                    | покупателям
+                li
+                  img(src="/mod/site/images/right_menu_icons/onsale.png")
+                  a.black(href="//www.xcom-shop.ru/catalog/ytsenennye_tovary/")
+                    | Уцененные товары
+                li
+                  img(src="/mod/site/images/right_menu_icons/games.png")
+                  a.black(href="//www.xcom-shop.ru/pages/our_games/")
+                    | Наши игры
+                li
+                  img(src="/mod/site/images/right_menu_icons/customers.png")
+                  a.black(href="//www.xcom-shop.ru/pages/customer/")
+                    | Уголок покупателя
+            #ya_market.block-right
+              a.black(href="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=2508/*https://grade.market.yandex.ru/?id=704&action=link")
+                span Отзывы о нас
+            #right_column_counter.block-universal.border-gray.bg-gray
+              .heading.heading1 Откуда все берется
+              .content
+                .item
+                  .name Товаров на сайте
+                  .count 93 617
+                  br.clear
+                .item
+                  .name Из них товаров на складе
+                  .count 62 731
+                  br.clear
+                .item
+                  .name
+                    | Доставок принято на завтра
+                    .tx11.gray (21.01.2020)
+                  .count 1 950
+                  br.clear
+                .item
+                  .name Из них в регионы России
+                  .count 591
+                  br.clear
+                .item
+                  .name Покупателей на сайте сейчас
+                  .count 420
+                  br.clear
+            .block-right.banner.center
+              a(href="//www.xcom-hobby.ru/quiz/")
+                img(src="//www.xcom-shop.ru/var/ftp/banners/games.jpg")
+            #right_social_icons.quiz
+              div
+                a(href="https://vk.com/xcom_shop" target="_blank")
+                  img(src="/mod/site/images/social_icons/vk.gif")
+                a(href="https://www.facebook.com/XComShop/" target="_blank")
+                  img(src="/mod/site/images/social_icons/fb.gif")
+                a(href="https://ok.ru/xcomshop" target="_blank")
+                  img(src="/mod/site/images/social_icons/ok.gif")
+                a(href="https://www.instagram.com/xcomshop/" target="_blank")
+                  img(src="/mod/site/images/social_icons/instagram.gif")
+                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
+                  img(src="/mod/site/images/social_icons/youtube.png")
+

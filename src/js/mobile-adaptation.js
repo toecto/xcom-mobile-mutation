@@ -1,18 +1,21 @@
 'use strict';
 $(document).ready(function () {
-    $('#news_block_heading .heading1').append('<a href="https://www.xcom-shop.ru/news/rss/" target="_blank" class="rss"></a>')
+    //fix
+    if ($('#news_block_heading').length > 0) {
+        $('#news_block_heading .heading1').append('<a href="/news/rss/" target="_blank" class="rss"></a>')
+    }
+    //end fix
+    
+    
+    
+    
+
     const header = $('.header'),
         mHeader = $('.m-header'),
         bonusNum = $('#head_username .green.push').text();
     
     let mainPage = false
     
-
-        
-
-        
-
-
     if (window.location.pathname == '/') {
         mainPage = true
     } else {
@@ -36,8 +39,9 @@ $(document).ready(function () {
             </ul>
         </div>
         <div class='m-header__rightSide'>
-            <div class="m-header-button">
+            <div class="m-header-button" id='mobile-cart'>
             <div class="m-header-button__icon m-header-button__icon--cart"></div>
+            <div class="m-header-button__notification"><span id='basketCounter'></span></div>
         </div>
         <div class="m-header-button">
             <div class="m-header-button__icon m-header-button__icon--phone"></div>
@@ -144,6 +148,7 @@ $(document).ready(function () {
     })
 
     $('#foot').find('table').addClass('footer-info')
+
     $('#recent_topics').closest('table').addClass('forum-public')
     $('.catalog-nav .search .show-main-menu').attr('id', 'main-menu')
 
@@ -258,8 +263,8 @@ $(document).ready(function () {
 
         if (document.body.clientWidth <= 767) {
             const closeBtn = `
-        <div class="main-menu__close">Закрыть</div>
-      `
+                <div class="main-menu__close">Закрыть</div>
+                `
 
             if (!closeBtnCreate) {
                 setTimeout(function () {
@@ -284,10 +289,58 @@ $(document).ready(function () {
         w767()
     });
 
+    //end Main
+
     //productPage
-    if ($('p.fake-list').length > 0){
-        $('p.fake-list').closest('table').addClass('fake-table')
-    }
+        if ($('p.fake-list').length > 0) {
+            $('p.fake-list').closest('table').addClass('fake-table')
+        }
+        let availability = $('#card #offer_details tr:nth-child(3) td:nth-child(3)').addClass('availability')
+        if (document.body.clientWidth <= 567) {
+            availability.detach()
+            $('.card_content table').prepend('<tr></tr>')
+            availability.appendTo($('.card_content table tr:nth-child(1)'))
+        }
 
+        let basket = 0
 
+        function basketCheck() {
+            const notif = $('#mobile-cart .m-header-button__notification')
+            basket ? notif.fadeIn(200) : notif.hide()
+        }
+        basketCheck()
+
+        function basketCounter() {
+            basket = 0
+            $('#bill_container').find('input[data-price]').each(function (i, el) {
+                const val = $(el).val()
+                basket += +val
+            })
+            $('#basketCounter').text(basket)
+        }
+        basketCounter()
+
+        $(document).on('click', function () {
+            basketCounter()
+            basketCheck()
+        })
+        $(window).resize(function () {
+            basketCheck()
+        });
+    
+    // end productPage
+
+    //category
+    let catalogSubfolders = $('#catalog_subfolders').detach()
+    let catalogFilters = $('#catalog_filters').detach()
+    // let path = $('#path').detach()
+    let content = $('#content .catalog tr td:nth-child(2)').detach()
+    let catalogMobile = `
+        <div id="catalogMobile" class="catalogMobile">
+            
+        </div>`
+    $('#navigation_left').hide()
+    $('#main-menu-mobile').after(catalogMobile)
+    $('#catalogMobile').append(catalogSubfolders).append(catalogFilters).append(content)
+    //end category
 })

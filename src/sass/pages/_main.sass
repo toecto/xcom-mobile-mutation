@@ -41,6 +41,22 @@
       margin: 0 10px
       outline: none
       position: relative
+      &__notification
+        position: absolute
+        right: -5px
+        top: -5px
+        display: flex
+        justify-content: center
+        align-items: center
+        min-width: 16px
+        background-color: #f5882c
+        background-image: linear-gradient(to bottom, #f79620, #f47938);
+        color: #ffffff
+        padding: 3px
+        border-radius: 3px;
+        span
+          font-size: 10px
+          
       &__icon
         width: 70%
         height: 70%
@@ -506,6 +522,9 @@
   .catalog-nav .catalog-menu .main-menu
     display: none
 
+  #foot
+    margin-top: 20px
+
 @media screen and (max-width: 568px)
   #main
     margin: 0
@@ -695,6 +714,8 @@
   #action_tiles .action_tiles__item 
     transform: scale(0.7)
     width: 165px
+
+  
 
 @media screen and (max-width: 370px)
   .catalog-nav .catalog-menu
