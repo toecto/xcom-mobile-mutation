@@ -1,0 +1,755 @@
+extends ../template/layout.pug
+
+block content
+  table(width="100%" cellspacing="0" cellpadding="0")
+    tbody
+      tr
+        td#content
+          .universal
+            .universal
+              h1 Регистрация
+              br
+              form#registrationForm.form(action="/handleForm/?_so=5e26d1a1b41c18.75937918" method="POST" enctype="multipart/form-data")
+                input(type="hidden" name="standartized" value="1")
+                .row
+                  .col
+                    #customer_form.toggle-box.right
+                      nobr.toggle.act
+                        a#fiz.js(href="#" onclick="select_tab(this);$('#c_usertype').prop('checked',false).change();return false;") Для физических лиц
+                      nobr.toggle
+                        a#ur.js(href="#" onclick="select_tab(this);$('#c_usertype').prop('checked',true).change();return false;") Для юридических лиц
+                    h2 Личные данные
+                    div
+                      input#c_usertype(style="display:none;" value="1" type="checkbox" name="user_type")
+                      table(width="100%" cellspacing="0" cellpadding="0")
+                        tbody
+                          tr
+                            td(width="190px")
+                              | Фамилия 
+                              b.red *
+                            td
+                              input#c_lastname.line.short(name="lastname" type="text" value="")
+                          tr
+                            td(width="190px")
+                              | Имя 
+                              b.red *
+                            td
+                              input#c_firstname.line.short(name="firstname" type="text" value="")
+                          tr
+                            td(width="190px") Отчество
+                            td
+                              input#c_midname.line.short(name="midname" type="text" value="")
+                          tr
+                            td
+                              | Контактный телефон 
+                              b.red *
+                            td
+                              p
+                                input#c_phone.line.short(name="phone" type="text" value="")
+                              label.checkbox-indent
+                                input(name="send_sms" value="1" type="checkbox" checked="true")
+                                | Получать смс-сообщения об изменении статусов заказов.
+                          tr
+                            td
+                              | Электронная почта 
+                              b.red *
+                            td
+                              p
+                                input#c_email.line.short(name="email" type="text" value="")
+                              label
+                                input(name="subscribe" value="1" type="checkbox" checked="true")
+                                | Подписка на рассылку новостей.
+                      table#customer_form_ur.customer_form_tab.hide(width="100%" cellspacing="0" cellpadding="0")
+                        tbody
+                          tr
+                            td(width="190px")
+                              | Полное название 
+                              b.red *
+                            td
+                              input#c_firm_name.line.short.suggestions-input(name="firm_name" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="box-sizing: border-box;")
+                          tr
+                            td
+                              | ИНН 
+                              b.red *
+                            td
+                              input#c_firm_inn.line.short.suggestions-input(name="firm_inn" type="text" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="box-sizing: border-box;")
+                              br
+                              span.tx11.gray Только цифры, 10/12 знаков.
+                          tr
+                            td
+                              | КПП 
+                              b.red *
+                            td
+                              input#c_firm_kpp.line.short(name="firm_kpp" type="text" value="")
+                              br
+                              span.tx11.gray Только цифры, 9 знаков. Не заполняется для ИП.
+                          tr
+                            td
+                              | Юр.Адрес 
+                              b.red *
+                            td
+                              textarea#c_firm_address.suggestions-input(name="firm_address" wrap="soft" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="box-sizing: border-box;")
+                          tr
+                            td Факс
+                            td
+                              input#c_firm_fax.line.short(name="firm_fax" type="text" value="")
+                          tr
+                            td
+                              | Телефон 
+                              b.red *
+                            td
+                              input#c_firm_phone.line.short(name="firm_phone" type="text" value="")
+                  .col
+                    h2 Параметры доставки
+                    div
+                      table#bill_table(width="100%" cellspacing="0" cellpadding="0")
+                        tbody
+                          tr
+                            td(colspan="2")
+                              noindex
+                                noscript.error
+                                  | Включите Javascript. 
+                                  a(href="/pages/nojavascript/") Что это такое
+                                  | ?
+                          tr#c_delivreg_line
+                            td(width="190px") Регион доставки товаров:
+                            td
+                              select#basket_city.short(name="dlv_fk_city")
+                                option(value="0") Москва и Моск.обл. до А107
+                                option(value="244") Москва и Моск.обл. за А107
+                                option(value="1") Санкт-Петербург
+                                option(value="111") Абакан
+                                option(value="93") Алтайский край
+                                option(value="239") Альметьевск
+                                option(value="129") Амурская обл.
+                                option(value="127") Анадырь
+                                option(value="183") Анапа
+                                option(value="184") Ангарск
+                                option(value="195") Армавир
+                                option(value="185") Артём
+                                option(value="26") Архангельск
+                                option(value="51") Архангельская обл.
+                                option(value="52") Астраханская обл.
+                                option(value="27") Астрахань
+                                option(value="207") Ачинск
+                                option(value="139") Балаково
+                                option(value="77") Барнаул
+                                option(value="208") Батайск
+                                option(value="140") Белгород
+                                option(value="2") Белгородская обл.
+                                option(value="241") Березники
+                                option(value="186") Бийск
+                                option(value="120") Биробиджан
+                                option(value="119") Благовещенск
+                                option(value="247") Борисоглебск
+                                option(value="196") Братск
+                                option(value="141") Брянск
+                                option(value="3") Брянская обл.
+                                option(value="197") Буденновск
+                                option(value="152") Великий Новгород
+                                option(value="109") Владивосток
+                                option(value="90") Владикавказ
+                                option(value="142") Владимир
+                                option(value="4") Владимирская обл.
+                                option(value="28") Волгоград
+                                option(value="53") Волгоградская обл.
+                                option(value="209") Волгодонск
+                                option(value="198") Волжский
+                                option(value="143") Вологда
+                                option(value="5") Вологодская обл.
+                                option(value="144") Воронеж
+                                option(value="6") Воронежская  обл.
+                                option(value="210") Выборг
+                                option(value="86") Горно-Алтайск
+                                option(value="181") Грозный
+                                option(value="187") Дзержинск
+                                option(value="125") Дудинка
+                                option(value="130") Еврейская АО
+                                option(value="211") Ейск
+                                option(value="44") Екатеринбург
+                                option(value="251") Ессентуки
+                                option(value="212") Железногорск
+                                option(value="213") Зеленогорск
+                                option(value="242") Зеленодольск
+                                option(value="145") Иваново
+                                option(value="7") Ивановская обл.
+                                option(value="46") Ижевск
+                                option(value="78") Иркутск
+                                option(value="94") Иркутская обл.
+                                option(value="50") Йошкар-Ола
+                                option(value="54") Кабардино-Балкарская республика
+                                option(value="40") Казань
+                                option(value="30") Калининград
+                                option(value="55") Калининградская обл.
+                                option(value="146") Калуга
+                                option(value="8") Калужская обл.
+                                option(value="214") Каменск-Уральский
+                                option(value="131") Камчатский край
+                                option(value="215") Камышин
+                                option(value="95") Карачаево-Черкесская республика
+                                option(value="216") Каспийск
+                                option(value="80") Кемерово
+                                option(value="96") Кемеровская обл.
+                                option(value="147") Киров
+                                option(value="9") Кировская обл.
+                                option(value="188") Когалым
+                                option(value="217") Колпино
+                                option(value="62") Коми-Пермятский АО
+                                option(value="189") Комсомольск-на-Амуре
+                                option(value="148") Кострома
+                                option(value="10") Костромская обл.
+                                option(value="31") Краснодар
+                                option(value="56") Краснодарский край
+                                option(value="81") Красноярск
+                                option(value="97") Красноярский край
+                                option(value="248") Кузнецк
+                                option(value="32") Курган
+                                option(value="57") Курганская обл.
+                                option(value="149") Курск
+                                option(value="11") Курская обл.
+                                option(value="110") Кызыл
+                                option(value="12") Ленинградская обл.
+                                option(value="218") Ленинск-Кузнецкий
+                                option(value="150") Липецк
+                                option(value="13") Липецкая обл.
+                                option(value="122") Магадан
+                                option(value="132") Магаданская обл.
+                                option(value="164") Магнитогорск
+                                option(value="85") Майкоп
+                                option(value="38") Махачкала
+                                option(value="219") Миасс
+                                option(value="190") Минеральные Воды
+                                option(value="33") Мурманск
+                                option(value="58") Мурманская обл.
+                                option(value="165") Набережные Челны
+                                option(value="88") Назрань
+                                option(value="29") Нальчик
+                                option(value="82") Нарьян-Мар
+                                option(value="191") Находка
+                                option(value="199") Невинномысск
+                                option(value="98") Ненецкий АО
+                                option(value="200") Нефтекамск
+                                option(value="14") Нижегородская обл.
+                                option(value="166") Нижневартовск
+                                option(value="201") Нижнекамск
+                                option(value="151") Нижний Новгород
+                                option(value="167") Нижний Тагил
+                                option(value="15") Новгородская обл.
+                                option(value="235") Ново-Александровск
+                                option(value="168") Новокузнецк
+                                option(value="220") Новокуйбышевск
+                                option(value="169") Новороссийск
+                                option(value="83") Новосибирск
+                                option(value="99") Новосибирская обл.
+                                option(value="249") Новочебоксарск
+                                option(value="221") Новочеркасск
+                                option(value="245") Новый Уренгой
+                                option(value="229") Норильск
+                                option(value="230") Ноябрьск
+                                option(value="192") Нягань
+                                option(value="84") Омск
+                                option(value="100") Омская обл.
+                                option(value="153") Орел
+                                option(value="34") Оренбург
+                                option(value="59") Оренбургская обл.
+                                option(value="16") Орловская обл.
+                                option(value="170") Орск
+                                option(value="35") Пенза
+                                option(value="60") Пензенская обл.
+                                option(value="222") Первоуральск
+                                option(value="61") Пермский край
+                                option(value="36") Пермь
+                                option(value="155") Петрозаводск
+                                option(value="121") Петропавловск-Камчатский
+                                option(value="114") Приморский край
+                                option(value="206") Прокопьевск
+                                option(value="154") Псков
+                                option(value="17") Псковская обл.
+                                option(value="171") Пятигорск
+                                option(value="101") Республика Адыгея
+                                option(value="102") Республика Алтай
+                                option(value="63") Республика Башкортостан
+                                option(value="103") Республика Бурятия
+                                option(value="64") Республика Дагестан
+                                option(value="104") Республика Ингушетия
+                                option(value="105") Республика Калмыкия
+                                option(value="18") Республика Карелия
+                                option(value="65") Республика Коми
+                                option(value="238") Республика Крым
+                                option(value="66") Республика Марий Эл
+                                option(value="19") Республика Мордовия
+                                option(value="133") Республика Саха (Якутия)
+                                option(value="106") Республика Сев. Осетия-Алания
+                                option(value="67") Республика Татарстан
+                                option(value="115") Республика Тыва
+                                option(value="116") Республика Хакасия
+                                option(value="250") Россошь
+                                option(value="41") Ростов-на-Дону
+                                option(value="68") Ростовская обл.
+                                option(value="223") Рубцовск
+                                option(value="193") Рыбинск
+                                option(value="20") Рязанская обл.
+                                option(value="157") Рязань
+                                option(value="224") Салават
+                                option(value="128") Салехард
+                                option(value="42") Самара
+                                option(value="69") Самарская обл.
+                                option(value="156") Саранск
+                                option(value="43") Саратов
+                                option(value="70") Саратовская обл.
+                                option(value="134") Сахалинская обл.
+                                option(value="71") Свердловская обл.
+                                option(value="237") Севастополь
+                                option(value="202") Северодвинск
+                                option(value="225") Северск
+                                option(value="236") Симферополь
+                                option(value="158") Смоленск
+                                option(value="21") Смоленская обл.
+                                option(value="173") Сочи
+                                option(value="45") Ставрополь
+                                option(value="72") Ставропольский край
+                                option(value="203") Старый Оскол
+                                option(value="174") Стерлитамак
+                                option(value="175") Сургут
+                                option(value="204") Сызрань
+                                option(value="39") Сыктывкар
+                                option(value="176") Таганрог
+                                option(value="135") Таймырский АО
+                                option(value="159") Тамбов
+                                option(value="22") Тамбовская обл.
+                                option(value="23") Тверская обл.
+                                option(value="160") Тверь
+                                option(value="177") Тольятти
+                                option(value="91") Томск
+                                option(value="107") Томская обл.
+                                option(value="226") Туапсе
+                                option(value="161") Тула
+                                option(value="24") Тульская обл.
+                                option(value="108") Тюменская обл.
+                                option(value="92") Тюмень
+                                option(value="73") Удмуртская республика
+                                option(value="179") Улан-Удэ
+                                option(value="47") Ульяновск
+                                option(value="74") Ульяновская обл.
+                                option(value="231") Усинск
+                                option(value="227") Уссурийск
+                                option(value="228") Усть-Илимск
+                                option(value="37") Уфа
+                                option(value="232") Ухта
+                                option(value="112") Хабаровск
+                                option(value="117") Хабаровский край
+                                option(value="113") Ханты-Мансийск
+                                option(value="118") Ханты-Мансийский АО - Югра
+                                option(value="49") Чебоксары
+                                option(value="48") Челябинск
+                                option(value="75") Челябинская обл.
+                                option(value="180") Череповец
+                                option(value="79") Черкесск
+                                option(value="126") Чита
+                                option(value="136") Читинская обл. и Агинский Бурятский АО
+                                option(value="76") Чувашская республика
+                                option(value="137") Чукотский АО
+                                option(value="205") Шахты
+                                option(value="89") Элиста
+                                option(value="194") Энгельс
+                                option(value="124") Южно-Сахалинск
+                                option(value="123") Якутск
+                                option(value="138") Ямало-Ненецкий АО
+                                option(value="162") Ярославль
+                                option(value="25") Ярославская обл.
+                          tr
+                            td(width="190px") Удобный способ доставки:
+                            td
+                              select#basket_delivery.short(name="dlv_type")
+                                option(value="5") Самовывоз
+                                option(value="1") Курьером лично в руки
+                          tr#select_outlet
+                            td(width="190px") Пункт самовывоза:
+                            td
+                              p.outlet-address Адрес: 125130, г. Москва, ул. Выборгская, 22 стр. 3
+                              p.outlet-schedule График работы: по рабочим дням с 09.00 до 21.00, в выходные с 10.00 до 18.00
+                              input#basket_outlet(type="hidden" name="fk_outlet" value="5")
+                              input(type="button" value="Сменить пункт самовывоза" style="")
+                          tr
+                            td(width="190px") Удобный способ оплаты:
+                            td
+                              select#basket_payment.short(name="payment")
+                                option(value="7") Наличными в офисе
+                                option(value="2") Webmoney
+                                option(value="3") Яндекс-Деньги
+                                option(value="24") PayPal
+                                option(value="14") Банковской картой на сайте, бонусы СПАСИБО
+                                option(value="8") Банковской картой в офисе
+                                option(value="0") Безналичная оплата банковским переводом
+                          tr#c_metro_line(style="display: none;")
+                            td(width="190px")
+                              | Метро 
+                              b.red *
+                            td
+                              select#c_metro.short(name="dlv_fk_metro")
+                                option(value="1") Авиамоторная
+                                option(value="2") Автозаводская
+                                option(value="3") Академическая
+                                option(value="4") Александровский сад
+                                option(value="5") Алексеевская
+                                option(value="175") Алма-Атинская
+                                option(value="6") Алтуфьево
+                                option(value="194") Андроновка
+                                option(value="7") Аннино
+                                option(value="8") Арбатская
+                                option(value="9") Аэропорт
+                                option(value="10") Бабушкинская
+                                option(value="11") Багратионовская
+                                option(value="195") Балтийская
+                                option(value="12") Баррикадная
+                                option(value="193") Бауманская
+                                option(value="14") Беговая
+                                option(value="196") Белокаменная
+                                option(value="15") Белорусская
+                                option(value="16") Беляево
+                                option(value="17") Бибирево
+                                option(value="18") Библиотека имени Ленина
+                                option(value="19") Битцевский парк
+                                option(value="179") Борисово
+                                option(value="21") Боровицкая
+                                option(value="197") Боровское шоссе
+                                option(value="22") Ботанический сад
+                                option(value="23") Братиславская
+                                option(value="20") Бульвар Адмирала Ушакова
+                                option(value="24") Бульвар Дмитрия Донского
+                                option(value="184") Бульвар Рокоссовского
+                                option(value="25") Бунинская аллея
+                                option(value="188") Бутырская
+                                option(value="26") Варшавская
+                                option(value="27") ВДНХ
+                                option(value="198") Верхние Котлы
+                                option(value="199") Верхние Лихоборы
+                                option(value="28") Владыкино
+                                option(value="29") Водный стадион
+                                option(value="30") Войковская
+                                option(value="31") Волгоградский проспект
+                                option(value="32") Волжская
+                                option(value="161") Волоколамская
+                                option(value="33") Воробьевы горы
+                                option(value="162") Выставочная
+                                option(value="172") Выставочный центр
+                                option(value="34") Выхино
+                                option(value="182") Деловой центр
+                                option(value="35") Динамо
+                                option(value="36") Дмитровская
+                                option(value="37") Добрынинская
+                                option(value="38") Домодедовская
+                                option(value="163") Достоевская
+                                option(value="39") Дубровка
+                                option(value="180") Жулебино
+                                option(value="200") ЗИЛ
+                                option(value="201") Зорге
+                                option(value="177") Зябликово
+                                option(value="202") Измайлово
+                                option(value="40") Измайловская
+                                option(value="41") Калужская
+                                option(value="42") Кантемировская
+                                option(value="43") Каховская
+                                option(value="44") Каширская
+                                option(value="45") Киевская
+                                option(value="46") Китай-город
+                                option(value="47") Кожуховская
+                                option(value="48") Коломенская
+                                option(value="49") Комсомольская
+                                option(value="50") Коньково
+                                option(value="203") Коптево
+                                option(value="186") Котельники
+                                option(value="51") Красногвардейская
+                                option(value="52") Краснопресненская
+                                option(value="53") Красносельская
+                                option(value="54") Красные ворота
+                                option(value="55") Крестьянская Застава
+                                option(value="56") Кропоткинская
+                                option(value="57") Крылатское
+                                option(value="204") Крымская
+                                option(value="58") Кузнецкий мост
+                                option(value="59") Кузьминки
+                                option(value="60") Кунцевская
+                                option(value="61") Курская
+                                option(value="62") Кутузовская
+                                option(value="63") Ленинский проспект
+                                option(value="181") Лермонтовский проспект
+                                option(value="205") Лесопарковая
+                                option(value="206") Лихоборы
+                                option(value="207") Локомотив
+                                option(value="191") Ломоносовский проспект
+                                option(value="64") Лубянка
+                                option(value="208") Лужники
+                                option(value="65") Люблино
+                                option(value="66") Марксистская
+                                option(value="164") Марьина Роща
+                                option(value="67") Марьино
+                                option(value="68") Маяковская
+                                option(value="69") Медведково
+                                option(value="70") Международная
+                                option(value="71") Менделеевская
+                                option(value="190") Минская
+                                option(value="73") Митино
+                                option(value="72") Молодежная
+                                option(value="160") Мякинино
+                                option(value="74") Нагатинская
+                                option(value="75") Нагорная
+                                option(value="76") Нахимовский проспект
+                                option(value="0" selected="selected") Нет метро
+                                option(value="209") Нижегородская
+                                option(value="77") Новогиреево
+                                option(value="174") Новокосино
+                                option(value="78") Новокузнецкая
+                                option(value="211") Новопеределкино
+                                option(value="79") Новослободская
+                                option(value="210") Новохохловская
+                                option(value="165") Новоясеневская
+                                option(value="80") Новые Черемушки
+                                option(value="231") Озёрная
+                                option(value="212") Окружная
+                                option(value="81") Октябрьская
+                                option(value="82") Октябрьское поле
+                                option(value="83") Орехово
+                                option(value="84") Отрадное
+                                option(value="85") Охотный ряд
+                                option(value="86") Павелецкая
+                                option(value="214") Панфиловская
+                                option(value="87") Парк Культуры
+                                option(value="88") Парк победы
+                                option(value="89") Партизанская 
+                                option(value="90") Первомайская
+                                option(value="232") Перово
+                                option(value="216") Петровский парк
+                                option(value="92") Петровско-Разумовская
+                                option(value="93") Печатники
+                                option(value="94") Пионерская
+                                option(value="95") Планерная
+                                option(value="215") Площадь Гагарина
+                                option(value="96") Площадь Ильича
+                                option(value="97") Площадь Революции
+                                option(value="98") Полежаевская
+                                option(value="99") Полянка
+                                option(value="100") Пражская
+                                option(value="101") Преображенская площадь
+                                option(value="102") Пролетарская
+                                option(value="103") Проспект Вернадского
+                                option(value="104") Проспект Мира
+                                option(value="105") Профсоюзная
+                                option(value="106") Пушкинская
+                                option(value="176") Пятницкое шоссе
+                                option(value="192") Раменки
+                                option(value="218") Рассказовка
+                                option(value="107") Речной вокзал
+                                option(value="108") Рижская
+                                option(value="109") Римская
+                                option(value="217") Ростокино
+                                option(value="187") Румянцево
+                                option(value="110") Рязанский проспект
+                                option(value="111") Савеловская
+                                option(value="189") Саларьево
+                                option(value="112") Свиблово
+                                option(value="113") Севастопольская
+                                option(value="221") Селигерская
+                                option(value="114") Семеновская
+                                option(value="115") Серпуховская
+                                option(value="166") Славянский Бульвар
+                                option(value="116") Смоленская
+                                option(value="117") Сокол
+                                option(value="219") Соколиная гора
+                                option(value="118") Сокольники
+                                option(value="222") Солнцево
+                                option(value="183") Спартак
+                                option(value="119") Спортивная
+                                option(value="167") Сретенский Бульвар
+                                option(value="220") Стрешнево
+                                option(value="159") Строгино
+                                option(value="120") Студенческая
+                                option(value="121") Сухаревская
+                                option(value="122") Сходненская
+                                option(value="123") Таганская
+                                option(value="124") Тверская
+                                option(value="125") Театральная
+                                option(value="126") Текстильщики
+                                option(value="170") Телецентр
+                                option(value="127") Теплый стан
+                                option(value="223") Технопарк
+                                option(value="128") Тимирязевская
+                                option(value="129") Третьяковская
+                                option(value="185") Тропарево
+                                option(value="168") Трубная
+                                option(value="130") Тульская
+                                option(value="131") Тургеневская
+                                option(value="132") Тушинская
+                                option(value="224") Угрешская
+                                option(value="133") Улица 1905 года
+                                option(value="171") Улица Академика Королева
+                                option(value="134") Улица Академика Янгеля
+                                option(value="135") Улица Горчакова
+                                option(value="169") Улица Милашенкова
+                                option(value="173") Улица Сергея Эйзенштейна
+                                option(value="138") Улица Скобелевская
+                                option(value="137") Улица Старокачаловская
+                                option(value="139") Университет
+                                option(value="140") Филевский парк
+                                option(value="141") Фили
+                                option(value="225") Фонвизинская
+                                option(value="142") Фрунзенская
+                                option(value="227") Ховрино
+                                option(value="228") Ходынское поле
+                                option(value="226") Хорошёво
+                                option(value="229") Хорошёвская
+                                option(value="143") Царицыно
+                                option(value="144") Цветной бульвар
+                                option(value="145") Черкизовская
+                                option(value="146") Чертановская
+                                option(value="147") Чеховская
+                                option(value="148") Чистые Пруды
+                                option(value="149") Чкаловская
+                                option(value="150") Шаболовская
+                                option(value="230") Шелепиха
+                                option(value="178") Шипиловская
+                                option(value="151") Шоссе Энтузиастов
+                                option(value="152") Щелковская
+                                option(value="153") Щукинская
+                                option(value="154") Электрозаводская
+                                option(value="155") Юго-Западная
+                                option(value="156") Южная
+                                option(value="157") Ясенево
+                          tr#c_address_line(style="display: none;")
+                            td(width="190px")
+                              | Адрес доставки 
+                              b#necessary_addr.red(style="display: none;") *
+                            td
+                              textarea#c_dlv_address.suggestions-input(name="dlv_address" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="box-sizing: border-box;")
+                              .suggestions-wrapper
+                                span.suggestions-addon(data-addon-type="spinner" style="left: 498.994px; top: -45.5397px; height: 42.0114px; width: 42.0114px;")
+                                ul.suggestions-constraints(style="left: 0.994318px; top: -24.5397px;")
+                                .suggestions-suggestions(style="position: absolute; display: none; left: 0px; top: -3.52838px; width: 100px;")
+                          tr
+                            td
+                            td
+                              p
+                                | Нажимая на кнопку «Зарегистрироваться» я подтверждаю, что даю разрешение на 
+                                a(href="/pages/privacy_policy/" target="_blank") обработку своих персональных данных
+                                | .
+                .form__footer
+                  .form__footer-col
+                    | ← 
+                    a(href="..") Вернуться в каталог
+                  .form__footer-col
+                    input#captchaToken(type="hidden" name="captcha" value="")
+                    div
+                      .grecaptcha-badge(data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;")
+                        .grecaptcha-logo
+                          iframe(src="https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfnITwUAAAAAFiJXotK5_pWoGXfVinL9aeWxxzw&co=aHR0cHM6Ly93d3cueGNvbS1zaG9wLnJ1OjQ0Mw..&hl=ru&v=A1Aard-wURuGsXRGA7JMOqVO&size=invisible&cb=5q3w0ieikwxh" width="256" height="60" role="presentation" name="a-67qo92n9r40e" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox")
+                        .grecaptcha-error
+                        textarea#g-recaptcha-response.g-recaptcha-response(name="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;")
+                    input#submitRegistration.s-button(type="submit" value="Зарегистрироваться")
+              script(type="text/javascript").
+                var initRecaptcha = function() {
+                grecaptcha.render(
+                'submitRegistration',
+                {
+                'sitekey': '6LfnITwUAAAAAFiJXotK5_pWoGXfVinL9aeWxxzw',
+                'callback': function(token) {
+                $('#captchaToken').val(token);
+                $('#registrationForm').submit();
+                }
+                }
+                );
+                }
+              script(src="https://www.google.com/recaptcha/api.js?onload=initRecaptcha&render=explicit" async="" defer="")
+        td#right_column(width="240px")
+          #slide_fixed(style="margin-top: 0px; position: static;")
+            #bill_box
+              #bill_container.border-gray
+                .heading
+                  a.black(href="/checkout/") Корзина
+                  br
+                  span В корзине 2 товара
+                .triangle
+            #pay_icons(align="center")
+              img(src="/mod/site/images/pay_icons/visa.gif")
+              img(src="/mod/site/images/pay_icons/mc.gif")
+              img(src="/mod/site/images/pay_icons/mir.gif")
+              img(src="/mod/site/images/pay_icons/wm.gif")
+              br
+              img(src="/mod/site/images/pay_icons/ym.gif")
+              img(src="/mod/site/images/pay_icons/sber.gif")
+              img(src="/mod/site/images/pay_icons/thx.gif")
+              img(src="/mod/site/images/pay_icons/pp.gif")
+              img(src="/mod/site/images/pay_icons/credit.png")
+            .block-right.buttons
+              div
+                a(href="/pages/sale/")
+                  img(src="/mod/site/images/button_sale.png")
+              div
+                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
+                  img(src="/mod/site/images/button_youtube.png")
+              div
+                a(href="/actions/")
+                  img(src="/mod/site/images/buttons_actions.png")
+              div
+                a(href="/pages/brands/")
+                  img(src="/mod/site/images/button_brands.png")
+            .block-right.buttons.center
+              a(href="https://itunes.apple.com/ru/app/ikskom-sop/id1099197743?mt=8")
+                img(src="/mod/site/images/appstore.png" alt="Доступно в AppStore" border="0")
+              a(href="https://play.google.com/store/apps/details?id=ru.xcom_shop.shop")
+                img(src="/mod/site/images/googleplay.png" alt="Доступно в Google play" border="0")
+            .block-right
+              ul
+                li
+                  img(src="/mod/site/images/right_menu_icons/mail.png")
+                  a.black(href="mailto:val@xcom.ru")
+                    | Прием жалоб
+                    br
+                    | и предложений
+                li
+                  img(src="/mod/site/images/right_menu_icons/complaint.png")
+                  a.black(href="//www.xcom-shop.ru/complaint/")
+                    | Отдел
+                    br
+                    | рекламаций
+                li
+                  img(src="/mod/site/images/right_menu_icons/tech-support.png")
+                  a.black(href="//www.xcom-shop.ru/pages/services/")
+                    | Наши услуги
+                li
+                  img(src="/mod/site/images/right_menu_icons/b2b.png")
+                  a.black(href="//www.xcom-shop.ru/pages/corporate_department/")
+                    | Постоянным
+                    br
+                    | покупателям
+                li
+                  img(src="/mod/site/images/right_menu_icons/onsale.png")
+                  a.black(href="//www.xcom-shop.ru/catalog/ytsenennye_tovary/")
+                    | Уцененные товары
+                li
+                  img(src="/mod/site/images/right_menu_icons/games.png")
+                  a.black(href="//www.xcom-shop.ru/pages/our_games/")
+                    | Наши игры
+                li
+                  img(src="/mod/site/images/right_menu_icons/customers.png")
+                  a.black(href="//www.xcom-shop.ru/pages/customer/")
+                    | Уголок покупателя
+            #ya_market.block-right
+              a.black(href="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=2508/*https://grade.market.yandex.ru/?id=704&action=link")
+                span Отзывы о нас
+            .block-right.banner.center
+              a(href="//www.xcom-hobby.ru/quiz/")
+                img(src="//www.xcom-shop.ru/var/ftp/banners/games.jpg")
+            #right_social_icons.quiz
+              div
+                a(href="https://vk.com/xcom_shop" target="_blank")
+                  img(src="/mod/site/images/social_icons/vk.gif")
+                a(href="https://www.facebook.com/XComShop/" target="_blank")
+                  img(src="/mod/site/images/social_icons/fb.gif")
+                a(href="https://ok.ru/xcomshop" target="_blank")
+                  img(src="/mod/site/images/social_icons/ok.gif")
+                a(href="https://www.instagram.com/xcomshop/" target="_blank")
+                  img(src="/mod/site/images/social_icons/instagram.gif")
+                a(href="https://www.youtube.com/channel/UCkvhVIQnNYY8FJxOcZjwKiQ" target="_blank")
+                  img(src="/mod/site/images/social_icons/youtube.png")
+
+

@@ -944,9 +944,6 @@
     width: 20px;
     height: 100%;
   }
-  #path {
-    margin-top: 20px;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1633,6 +1630,7 @@
   }
   #product-list {
     margin: 0 16px;
+    margin-top: 20px;
   }
   .sort-line .right {
     display: none !important;
@@ -1645,6 +1643,7 @@
 @media screen and (max-width: 568px) {
   #product-list {
     margin: 0;
+    margin-top: 20px;
     padding: 0 5px;
   }
   #path {
@@ -1672,5 +1671,63 @@
   }
   .navigation span {
     margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .universal > .universal {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .universal > .universal {
+    margin-top: 20px;
+  }
+  .form__footer {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .form__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  .form__footer-col {
+    display: block;
+  }
+  .form__footer-col:last-child {
+    margin-bottom: 10px;
+  }
+  #customer_form {
+    float: none;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #customer_form .toggle {
+    display: inline-block;
+  }
+  #customer_form .toggle:first-child {
+    margin-bottom: 5px;
+  }
+  #registrationForm table {
+    font-size: 15px;
+  }
+  #registrationForm table tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
