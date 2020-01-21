@@ -29,6 +29,7 @@ block content
                           a(href="/catalog/torgovoe_oborydovanie/schetchiki_banknotmonet/" title="Счетчики монет") Счетчики банкнот/монет
                         li
                           a(href="/catalog/torgovoe_oborydovanie/terminaly_sbora_dannyh/" title="Терминалы сбора данных") Терминалы сбора данных
+                    
                     script(type="text/javascript" src="/mod/catalog/js/range.js?2785")
                     script(type="text/javascript" src="/mod/catalog/js/catalog_filters.js?2785")
                     #catalog_filters.block-universal.border-gray
@@ -314,8 +315,7 @@ block content
                         li.collapse.black
                           a.js.collapse.black(href="#") Показать все
                           |  ↓
-                      script(type="text/javascript").
-                        filters_resort($('ul#filter_1'));
+                      
                       p.filter-prop
                         b Цена:
                       ul#filter_2.full
@@ -333,10 +333,8 @@ block content
                               .range-marker-container
                                 span.range-marker.range-marker-min(style="left: 0%;")
                                 span.range-marker.range-marker-max(style="left: 100%;")
-                          script(type="text/javascript").
-                            createRangeWidget('filter_price_widget', 174, {"v":1, "input":"range_input_1_min"}, {"v":1818535, "input":"range_input_1_max"}, 'range_apply_1');
-                      script(type="text/javascript").
-                        filters_resort($('ul#filter_2'));
+                          
+                      
                       p.filter-prop
                         b Производитель:
                       ul#filter_3
@@ -460,8 +458,6 @@ block content
                         li.collapse.black
                           a.js.collapse.black(href="#") Показать все
                           |  ↓
-                      script(type="text/javascript").
-                        filters_resort($('ul#filter_3'));
                 td
                   p#path.gray(itemscope="" itemtype="https://schema.org/BreadcrumbList")
                     a(href="/" rel="nofollow")

@@ -506,19 +506,97 @@ block content
             } else {
             $('#offer_details').append('<tr class="card_content"><td>'+card_delivery_content+'</td><td></td><td>'+card_available_content+'</td></tr>');
             }
-          script(src="./static/card_linked.js.Без названия")
-          script(type="text/javascript").
-            new desc_compare('compare_664830');
+          script(src="./static/card_linked.js")
           #comments.clear
             a(name="ancor-review")
             h2.left
               span#xcom_comments_switch Отзывы покупателей Икс-Ком
             #xcom_comments.clear
-              a.js.right.comments_add(href="https://www.xcom-shop.ru/5bites_ctm2020-100bk_664830.html#") Добавить свой отзыв
-              p.clear О данном товаре пока нет отзывов.
+              span#comments_count.tx11.left 3
+              a.js.right.comments_add(href="#") Добавить свой отзыв
+              br.clear
+              .comment.level_0
+                p.first_line
+                  span.bold Квас
+                  a#comment_a_28698(name="comment_28698" href="#comment_a_28698") #
+                  span.gray.tx11 28.02.2019, 11:46
+                  span#rating_28698
+                    span.green.vote
+                      img#vote_pos_28698.vote_pos_enabled(src="/mod/site/images/comments/vote_pos.gif")
+                      span#rating_pos_28698 0
+                    span.red.vote
+                      img#vote_neg_28698.vote_neg_enabled(src="/mod/site/images/comments/vote_neg.gif")
+                      span#rating_neg_28698 0
+                p#comment_28698
+                  | Достоинства: 
+                  br
+                  | быстрый, тонкий, легкий, потребляет мало и не греется. Предыдущий сигейт на 500 Gb шумел и грелся больше, а скорость была раза в полтора-два ниже.
+                  br
+                  | Недостатки: Все Ok, посмотрим насколько он живучий. Визуально и на ощупь кажется очень хлипким и невесомым.
+                  br
+                  | Причина покупки: возникла идея поменять диск в ноутбуке на более быстрый и ёмкий. Поменял, стало быстрей.
+                .moderation.right.green-badge.green
+                  a.admin(href="/cp/catalog_desc_comment/ban/?pk_comment=28698") [Бан]
+                  a.admin(href="/cp/catalog_desc_comment/delete_multiple/?pk_comment=28698") [Удалить по IP/Автору]
+                  a.admin(href="javascript:if(confirm('Вы уверены?')) document.location='/cp/catalog_desc_comment/delete/?pk_comment=28698'") [×]
+                  a.admin.black(href="javascript:if(confirm('Удалить насовсем!? Вы уверены? оО')) document.location='/cp/catalog_desc_comment/delete_permanent/?pk_comment=28698'") [×!]
+                  |  [ip: 31.131.193.20]
+                br.clear
+                #reply_block_28698.reply.off
+                  span.reply_link
+                    a#reply_link_28698.js(href="#") Ответить
+              .comment.level_0
+                p.first_line
+                  span.bold HL3
+                  a#comment_a_29018(name="comment_29018" href="#comment_a_29018") #
+                  span.gray.tx11 13.03.2019, 13:39
+                  span#rating_29018
+                    span.green.vote
+                      img#vote_pos_29018.vote_pos_enabled(src="/mod/site/images/comments/vote_pos.gif")
+                      span#rating_pos_29018 0
+                    span.red.vote
+                      img#vote_neg_29018.vote_neg_enabled(src="/mod/site/images/comments/vote_neg.gif")
+                      span#rating_neg_29018 0
+                p#comment_29018
+                  | Если честно, прирост скорости не большой. Да пошустрее классического hdd, но до ssd далеко. Брал на замену вышедшего из строя диска ноутбука, по этому не очень расстраиваюсь, но менять рабочий hdd на этот не советую.
+                .moderation.right.green-badge.green
+                  a.admin(href="/cp/catalog_desc_comment/ban/?pk_comment=29018") [Бан]
+                  a.admin(href="/cp/catalog_desc_comment/delete_multiple/?pk_comment=29018") [Удалить по IP/Автору]
+                  a.admin(href="javascript:if(confirm('Вы уверены?')) document.location='/cp/catalog_desc_comment/delete/?pk_comment=29018'") [×]
+                  a.admin.black(href="javascript:if(confirm('Удалить насовсем!? Вы уверены? оО')) document.location='/cp/catalog_desc_comment/delete_permanent/?pk_comment=29018'") [×!]
+                  |  [ip: 46.243.12.47]
+                br.clear
+                #reply_block_29018.reply.off
+                  span.reply_link
+                    a#reply_link_29018.js(href="#") Ответить
+              .comment.level_0
+                p.first_line
+                  span.bold Ваганович
+                  a#comment_a_33499(name="comment_33499" href="#comment_a_33499") #
+                  span.gray.tx11 03.10.2019, 12:01
+                  span#rating_33499
+                    span.green.vote
+                      img#vote_pos_33499.vote_pos_enabled(src="/mod/site/images/comments/vote_pos.gif")
+                      span#rating_pos_33499 0
+                    span.red.vote
+                      img#vote_neg_33499.vote_neg_enabled(src="/mod/site/images/comments/vote_neg.gif")
+                      span#rating_neg_33499 0
+                p#comment_33499
+                  | Там работает специальный алгоритм который определяет наиболее часто читаемую инфу и скидывает ее на флешь память. В последствии эти данные загружаются очень быстро. В частности ато работает с загрузкой ОС.
+                .moderation.right.green-badge.green
+                  a.admin(href="/cp/catalog_desc_comment/ban/?pk_comment=33499") [Бан]
+                  a.admin(href="/cp/catalog_desc_comment/delete_multiple/?pk_comment=33499") [Удалить по IP/Автору]
+                  a.admin(href="javascript:if(confirm('Вы уверены?')) document.location='/cp/catalog_desc_comment/delete/?pk_comment=33499'") [×]
+                  a.admin.black(href="javascript:if(confirm('Удалить насовсем!? Вы уверены? оО')) document.location='/cp/catalog_desc_comment/delete_permanent/?pk_comment=33499'") [×!]
+                  |  [ip: 46.243.12.47]
+                br.clear
+                #reply_block_33499.reply.off
+                  span.reply_link
+                    a#reply_link_33499.js(href="#") Ответить
+              a.js.right.comments_add(href="#") Добавить свой отзыв
               #reply_block_0.reply.off
-              form#comment_form.hide(action="https://www.xcom-shop.ru/add_comment/" method="post")
-          script(type="text/javascript" src="./static/comments.js.Без названия")
+              form#comment_form.hide(action="//www.xcom-shop.ru/add_comment/" method="post")
+
 
           br
           .hr

@@ -180,8 +180,7 @@ $(document).ready(function () {
 
     //1023
     function w1023() {
-        if (document.body.clientWidth <= 1023) {
-            console.log('Desktop');
+        if (screen.width <= 1023) {
             header.find('.right-block').hide()
             mHeader.show()
 
@@ -192,8 +191,7 @@ $(document).ready(function () {
     }
 
     function w999() {
-        if (document.body.clientWidth <= 999) {
-            console.log('Table');
+        if (screen.width <= 999) {
             let catalog = $('#catalog_nav')
 
             const mainMenuBtn = `
@@ -261,7 +259,7 @@ $(document).ready(function () {
     let closeBtnCreate = false
     function w767() {
 
-        if (document.body.clientWidth <= 767) {
+        if (screen.width <= 767) {
             const closeBtn = `
                 <div class="main-menu__close">Закрыть</div>
                 `
@@ -296,7 +294,7 @@ $(document).ready(function () {
             $('p.fake-list').closest('table').addClass('fake-table')
         }
         let availability = $('#card #offer_details tr:nth-child(3) td:nth-child(3)').addClass('availability')
-        if (document.body.clientWidth <= 567) {
+        if (screen.width <= 567) {
             availability.detach()
             $('.card_content table').prepend('<tr></tr>')
             availability.appendTo($('.card_content table tr:nth-child(1)'))
@@ -331,16 +329,107 @@ $(document).ready(function () {
     // end productPage
 
     //category
-    let catalogSubfolders = $('#catalog_subfolders').detach()
-    let catalogFilters = $('#catalog_filters').detach()
-    // let path = $('#path').detach()
-    let content = $('#content .catalog tr td:nth-child(2)').detach()
-    let catalogMobile = `
-        <div id="catalogMobile" class="catalogMobile">
+    let catalogTransform = false
+    let catalogMobileCreate = false
+    function category(){
+        if (screen.width <= 999 && !catalogTransform) {
+
+            let catalogSubfolders = $('#catalog_subfolders').addClass('category-tabs__item').detach()
+
+            let catalogFilters = $('#catalog_filters').addClass('category-tabs__item').detach()
+            let content = $('#content .catalog tr td:nth-child(2)').attr('id', 'product-list').addClass('category-tabs__item').detach()
             
-        </div>`
-    $('#navigation_left').hide()
-    $('#main-menu-mobile').after(catalogMobile)
-    $('#catalogMobile').append(catalogSubfolders).append(catalogFilters).append(content)
+            let catalogMobile = `
+            <div id="catalogMobile" class="catalogMobile">
+                <ul id="category-link" class="category-link">
+                    <li class='category-link__item'>Разделы</li>
+                    <li class='category-link__item'>Фильтры</li>
+                    <li class='category-link__item'>Товары</li>
+                </ul>
+
+                <div id="category-tabs" class="category-tabs">
+                </div>
+            </div>`
+            
+            
+            $('#navigation_left').hide()
+            if (!catalogMobileCreate){
+                $('#main-menu-mobile').after(catalogMobile)
+                catalogMobileCreate = true
+            }
+            if(catalogMobileCreate){
+                $('.category-link__item').each(function () {
+                    $(this).removeClass('active')
+                })
+                $('.category-tabs__item').each(function () {
+                    $(this).removeClass('active')
+                })
+                $('.category-tabs__item:nth-child(1)').addClass('active')
+            }
+            
+
+
+            $('#category-tabs').append(catalogSubfolders).append(catalogFilters).append(content)
+            if (catalogSubfolders.length == 0 || null) {
+                $('#category-link li:nth-child(1)').remove()
+                $('#product-list').addClass('active')
+                $('#category-link').addClass('w50')
+                $('#category-link li:nth-child(2)').addClass('active')
+            } else {
+                $('#catalog_subfolders').addClass('active')
+                $('#category-link li:nth-child(1)').addClass('active')
+            }
+
+
+            function tabsSelect(tab, contentTab, callback) {
+                var tcl = $(tab);
+                var ct = $(contentTab);
+
+                tcl.click(function () {
+                    if (!$(this).hasClass('active')) {
+                        tcl.removeClass('active')
+                        var i = $(this).index();
+                        $(this).addClass('active');
+                        ct.children().removeClass('active').hide().eq(i).addClass('active').fadeIn(300);
+                        $(window).scrollTop(95) 
+                    }
+
+                });
+            }
+            tabsSelect('#category-link li', '#category-tabs')
+            catalogTransform = true
+            $(document).on('scroll', function (e) {
+                if ($(this).scrollTop() > 97){
+                    $('#category-link').css('position','fixed')
+                    $('#catalog_nav').css('margin-bottom', '38px')
+                } else {
+                    $('#category-link').css('position', 'relative')
+                    $('#catalog_nav').css('margin-bottom', '0')
+                }
+            })
+        } else if (screen.width > 999 && catalogTransform) {
+            $('.category-tabs__item').each(function(){
+                $(this).removeClass('active').show()
+            })
+            let catalogSubfolders = $('#catalog_subfolders').detach()
+            let catalogFilters = $('#catalog_filters').detach()
+            let content = $('#product-list').detach()
+
+            $('#navigation_left .block-universal:nth-child(1)').append(catalogSubfolders)
+            $('#navigation_left').append(catalogFilters)
+            $('#content .catalog tr').append(content)
+            $('#navigation_left').show()
+            catalogTransform = false
+        }
+    }
+    category()
+    $(window).resize(function () {
+        category()
+    });
     //end category
+
+    //temp
+    
+    // $('#category-link li:nth-child(3)').addClass('active')
+    
 })

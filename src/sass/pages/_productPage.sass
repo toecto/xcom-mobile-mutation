@@ -11,6 +11,9 @@
     margin: 0 16px
   #comments
     margin: 10px 16px
+  #comments_count
+    display: none
+  
 
 @media screen and (max-width: 767px)
   #card_table
@@ -114,7 +117,9 @@
   #path
     line-height: 22px
     margin-bottom: 10px
-
+    
+  .catalog-goods.catalog-tiles .wrap
+    padding-right: 0
 
   #card #offer_details td table, #card #offer_details td ul
     tr
@@ -145,6 +150,10 @@
   .catalog-tiles .wrap
     width: 100%
     padding: 0 16px
+
+  .catalog-goods.catalog-tiles .wrap
+    margin-bottom: 10px
+
   .linked h2
     margin: 0 16px 15px 16px
   .catalog-goods .one-line
@@ -153,8 +162,7 @@
 
   .catalog-tiles .item
     max-width: 350px
-    width: 100%
-    padding: 10px
+    padding: 20px 10px
     margin: 0 auto
   
   #card_prop .prop-value
@@ -222,22 +230,34 @@
     &:nth-child(3)
       max-width: 320px
 
+  .catalog-goods.catalog-tiles .wrap
+    padding: 0
+
+  .sort-line 
+    margin-bottom: 40px
+
   .catalog h1
     line-height: 28px
 
-  .catalog-tiles .item
-    border: 0
-  
+  // .catalog-tiles .item
+    // border: 0
+  .good-list.catalog-tiles
+    margin: 0
+
+  #comments .moderation
+    margin: 15px 0
+  .comment.level_0
+    p
+      margin: 5px 0
+      line-height: 18px
       
 
     
 @media screen and (max-width: 400px)
-  .tx11
-    font-size: 11px
+  //
     
 @media screen and (max-width: 370px)
-  .tx11
-    font-size: 10px
+  //
 
   #box_showhide_fulldesc 
     .toggle

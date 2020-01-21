@@ -1,0 +1,130 @@
+.category
+  &-link
+    width: 100%
+    display: none
+    list-style: none
+    border-bottom: 2px solid #0765a0
+    top: 0
+    left: 0
+    background-color: #ffffff
+    z-index: 3000
+    &.w50
+      .category-link__item
+        flex-basis: 50% !important
+    &__item
+      border-right: 2px solid #0765a0
+      flex-basis: calc(100% / 3)
+      color: #0765a0
+      padding: 15px 0
+      flex-shrink: 0
+      display: block
+      margin-left: 0
+      font-size: 14px
+      cursor: pointer
+      text-align: center
+      font-weight: bold
+      transition: 0.25s
+      &.active
+        background-color: #0765a0
+        color: #ffffff
+
+  &-tabs
+    margin-bottom: 50px
+    &__item
+      display: block
+      
+  
+  
+@media screen and (max-width: 1200px)
+  //
+
+@media screen and (max-width: 1023px)
+  //
+
+@media screen and (max-width: 999px)
+  .category
+    &-link
+      display: flex
+    &-tabs
+      &__item
+        display: none
+        &.active
+          display: block !important
+  .range-apply
+    font-size: 11px
+  h1
+    font-size: 15px
+    margin: 5px 0
+
+  #catalog_subfolders
+    font-size: 18px
+    line-height: 22px
+    margin: 20px 16px
+  #catalog_filters
+    font-size: 15px
+    border: 0 !important
+    padding: 0
+    .filter-prop
+      padding-left: 0
+    li
+      margin-left: 0
+    p
+      margin: 5px 0
+    #filter_2
+      max-width: 400px
+      margin: 20px 0 20px 20px
+      .range-input-wrap
+        text-align: left
+      .range-marker-min
+        border-width: 0 0 20px 20px
+        margin-left: -20px
+      .range-marker-max
+        border-width: 20px 0 0 20px
+
+  #product-list
+    margin: 0 16px
+  .sort-line 
+    .right 
+      display: none !important
+    .sort-control
+      margin-right: 20px
+      
+
+@media screen and (max-width: 767px)
+  //
+
+@media screen and (max-width: 568px)
+  #product-list
+    margin: 0
+    padding: 0 5px
+  #path
+    margin-left: 0
+  .catalog-tiles .item
+    // padding: 0
+
+  .sort-line 
+    .sort-control
+      font-size: 12px
+      margin-right: 5px
+      &:nth-child(1)
+        display: block
+        width: 100%
+  #catalog_filters ul li a
+    line-height: 17px
+  .category-link
+    border-top: 1px solid #0765a0
+    border-bottom: 1px solid #0765a0
+    &__item
+      padding: 10px 0
+      border-right: 1px solid #0765a0
+      font-weight: normal
+  .navigation
+    span
+      margin-bottom: 5px
+
+@media screen and (max-width: 400px)
+  //
+    
+@media screen and (max-width: 370px)
+  //
+
