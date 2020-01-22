@@ -27,6 +27,12 @@
   #customer_form
     float: none
     margin-bottom: 25px
+  .universal
+    > .universal
+      td
+        font-size: 15px
+      input,select
+        font-size: 15px
 
 @media screen and (max-width: 400px)
   #customer_form
@@ -34,14 +40,23 @@
       display: inline-block
       &:first-child
         margin-bottom: 5px
-        
-        
+
   #registrationForm
     table
       font-size: 15px
       tr
         display: flex
         flex-direction: column
+
+  .universal
+    > .universal
+      tr
+        td
+          &:nth-child(1)
+            padding-bottom: 0
+          &:nth-child(2)
+            padding-top: 5px
+            
 
     
 @media screen and (max-width: 370px)

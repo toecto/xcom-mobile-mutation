@@ -5,10 +5,6 @@ $(document).ready(function () {
         $('#news_block_heading .heading1').append('<a href="/news/rss/" target="_blank" class="rss"></a>')
     }
     //end fix
-    
-    
-    
-    
 
     const header = $('.header'),
         mHeader = $('.m-header'),
@@ -43,7 +39,7 @@ $(document).ready(function () {
             <div class="m-header-button__icon m-header-button__icon--cart"></div>
             <div class="m-header-button__notification"><span id='basketCounter'></span></div>
         </div>
-        <div class="m-header-button">
+        <div class="m-header-button m-phone">
             <div class="m-header-button__icon m-header-button__icon--phone"></div>
         </div>
         <div class="m-header-button m-user">
@@ -156,11 +152,8 @@ $(document).ready(function () {
         $('#main-menu-mobile').fadeOut(200)
     })
 
-    $(document).on('click', '#main-menu-btn', function () {
-        $('#main-menu-mobile').slideToggle(200)
-    })
-
-    //main-menu
+    
+    
     let items = []
     $('.navbar-catalog .catalog-menu .catalog-menu__item').each(function (i, el) {
         const item = {}
@@ -173,7 +166,7 @@ $(document).ready(function () {
         items.push(item)
     })
 
-    // end main-menu
+    
 
     let mainMenuBtnCreate = false,
         mainMenuMobileCreate = false
@@ -277,6 +270,9 @@ $(document).ready(function () {
         }
     }
 
+    
+
+
     w1023()
     w999()
     w767()
@@ -287,18 +283,49 @@ $(document).ready(function () {
         w767()
     });
 
+    let mainMenuMobileCheck = false
+    if ($('#main-menu-mobile').is(":visible")) {
+        mainMenuMobileCheck = true
+    } 
+    $(document).on('click', '#main-menu-btn', function () {
+        $('#main-menu-mobile').slideToggle(200)
+        mainMenuMobileCheck = !mainMenuMobileCheck
+    })
     //end Main
 
     //productPage
         if ($('p.fake-list').length > 0) {
             $('p.fake-list').closest('table').addClass('fake-table')
         }
-        let availability = $('#card #offer_details tr:nth-child(3) td:nth-child(3)').addClass('availability')
-        if (screen.width <= 567) {
-            availability.detach()
-            $('.card_content table').prepend('<tr></tr>')
-            availability.appendTo($('.card_content table tr:nth-child(1)'))
+            let aDetachMobile = false,
+                aDetachDesc = false,
+                trCreate = false
+        function availability() {
+            let availability = $('#card #offer_details tr:nth-child(3) td:nth-child(3)').addClass('availability').attr('id', 'availability')
+            if (screen.width <= 567) {
+                if (!trCreate){
+                    trCreate = true
+                    $('.card_content table').prepend('<tr></tr>')
+                }
+                if (!aDetachMobile){
+                    availability.detach()
+                    availability.appendTo($('.card_content table tr:nth-child(1)'))
+                    aDetachMobile = true
+                    aDetachDesc = false
+                }
+            }
+            else {
+                if (!aDetachDesc) {
+                    $('#availability').detach().appendTo($('#card #offer_details tr.no_padding_bottom'))
+                    aDetachDesc = true,
+                    aDetachMobile = false
+                }
+
+            }
+
         }
+        availability()
+        
 
         let basket = 0
 
@@ -324,6 +351,7 @@ $(document).ready(function () {
         })
         $(window).resize(function () {
             basketCheck()
+            availability()
         });
     
     // end productPage
@@ -403,7 +431,7 @@ $(document).ready(function () {
                 tabsSelect('#category-link li', '#category-tabs')
                 catalogTransform = true
                 $(document).on('scroll', function (e) {
-                    if ($(this).scrollTop() > 97){
+                    if ($(this).scrollTop() > 97 && !mainMenuMobileCheck) {
                         $('#category-link').css('position','fixed')
                         $('#catalog_nav').css('margin-bottom', '38px')
                     } else {
